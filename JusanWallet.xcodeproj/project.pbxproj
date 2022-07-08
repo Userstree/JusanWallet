@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		055EBD0328782FD500E5F703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EBD0228782FD500E5F703 /* AppDelegate.swift */; };
-		055EBD0528782FD500E5F703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EBD0428782FD500E5F703 /* SceneDelegate.swift */; };
-		055EBD0728782FD500E5F703 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EBD0628782FD500E5F703 /* ViewController.swift */; };
 		055EBD0A28782FD500E5F703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0828782FD500E5F703 /* Main.storyboard */; };
-		055EBD0C28782FD600E5F703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0B28782FD600E5F703 /* Assets.xcassets */; };
 		055EBD0F28782FD600E5F703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0D28782FD600E5F703 /* LaunchScreen.storyboard */; };
+		F88431B11D75EB99F272ADBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843162EDD28A074434735D /* AppDelegate.swift */; };
+		F8843B98DD172F367D21A7BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F884351AA98769D6A88890DE /* SceneDelegate.swift */; };
+		F8843C0D3651F9B5C216D503 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F884389131AF780A4C3989FB /* ViewController.swift */; };
+		F8843FC5D8E2C8B16200D0E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F884363D359F76FDADB20F44 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		055EBCFF28782FD500E5F703 /* JusanWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JusanWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		055EBD0228782FD500E5F703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		055EBD0428782FD500E5F703 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		055EBD0628782FD500E5F703 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		055EBD0928782FD500E5F703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		055EBD0B28782FD600E5F703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		055EBD0E28782FD600E5F703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		055EBD1028782FD600E5F703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8843162EDD28A074434735D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F884351AA98769D6A88890DE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F884363D359F76FDADB20F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F884389131AF780A4C3989FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8843E8FDC59AB271150505A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,39 @@
 		055EBD0128782FD500E5F703 /* JusanWallet */ = {
 			isa = PBXGroup;
 			children = (
-				055EBD0228782FD500E5F703 /* AppDelegate.swift */,
-				055EBD0428782FD500E5F703 /* SceneDelegate.swift */,
-				055EBD0628782FD500E5F703 /* ViewController.swift */,
 				055EBD0828782FD500E5F703 /* Main.storyboard */,
-				055EBD0B28782FD600E5F703 /* Assets.xcassets */,
 				055EBD0D28782FD600E5F703 /* LaunchScreen.storyboard */,
-				055EBD1028782FD600E5F703 /* Info.plist */,
+				F8843E9D3473DA3FE4E292E6 /* Supporting Files */,
+				F884388D2E2CC0D4A2303399 /* ViewControllers */,
+				F884374229EF2BD26C7003E8 /* Application */,
 			);
 			path = JusanWallet;
+			sourceTree = "<group>";
+		};
+		F884374229EF2BD26C7003E8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F8843162EDD28A074434735D /* AppDelegate.swift */,
+				F884351AA98769D6A88890DE /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F884388D2E2CC0D4A2303399 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F884389131AF780A4C3989FB /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8843E9D3473DA3FE4E292E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F884363D359F76FDADB20F44 /* Assets.xcassets */,
+				F8843E8FDC59AB271150505A /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				055EBD0F28782FD600E5F703 /* LaunchScreen.storyboard in Resources */,
-				055EBD0C28782FD600E5F703 /* Assets.xcassets in Resources */,
 				055EBD0A28782FD500E5F703 /* Main.storyboard in Resources */,
+				F8843FC5D8E2C8B16200D0E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				055EBD0728782FD500E5F703 /* ViewController.swift in Sources */,
-				055EBD0328782FD500E5F703 /* AppDelegate.swift in Sources */,
-				055EBD0528782FD500E5F703 /* SceneDelegate.swift in Sources */,
+				F88431B11D75EB99F272ADBA /* AppDelegate.swift in Sources */,
+				F8843B98DD172F367D21A7BD /* SceneDelegate.swift in Sources */,
+				F8843C0D3651F9B5C216D503 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,10 +313,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4FJ736MWC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JusanWallet/Info.plist;
+				INFOPLIST_FILE = "JusanWallet/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +340,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4FJ736MWC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JusanWallet/Info.plist;
+				INFOPLIST_FILE = "JusanWallet/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
