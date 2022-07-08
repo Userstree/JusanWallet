@@ -4,4 +4,6 @@
 
 import Foundation
 
-protocol BaseView: NSObjectProtocol, Presentable {  }
+final class LoginController {
+
+}

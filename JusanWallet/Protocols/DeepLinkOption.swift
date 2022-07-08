@@ -15,7 +15,7 @@ struct DeepLinkURLConstants {
 }
 
 enum DeepLinkOption {
-
+    case onboarding
     case settings
     case login
     case terms
@@ -40,6 +40,7 @@ enum DeepLinkOption {
         let itemID = dict?["item_id"] as? String
 
         switch id {
+        case DeepLinkURLConstants.Onboarding: return .onboarding
         case DeepLinkURLConstants.Items: return .items
         case DeepLinkURLConstants.Item: return .item(itemID)
         case DeepLinkURLConstants.Settings: return .settings

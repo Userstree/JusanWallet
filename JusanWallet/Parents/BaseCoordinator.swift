@@ -10,7 +10,7 @@ class BaseCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = []
 
-    var type: CoordinatorType
+//    var type: CoordinatorType
 
     func start(with option: DeepLinkOption) {  }
 

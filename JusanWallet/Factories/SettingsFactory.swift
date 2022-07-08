@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol SettingsModuleFactory {
+protocol SettingsFactory {
     func makeSettingsOutput() -> SettingsView
 }
 

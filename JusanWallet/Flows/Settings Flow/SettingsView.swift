@@ -4,4 +4,4 @@
 
 import Foundation
 
-protocol BaseView: NSObjectProtocol, Presentable {  }
+protocol SettingsView: BaseView {  }

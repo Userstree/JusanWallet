@@ -1,16 +1,11 @@
 //
-//  DateFormatter.swift
-//  HauteCurator
+// Created by Dossymkhan Zhulamanov on 08.07.2022.
 //
-//  Created by Pavle Pesic on 1/28/19.
-//  Copyright © 2019 Pavle Pesic. All rights reserved.
-//
+
 
 import Foundation
 
 extension DateFormatter {
-    
-    // MARK: - Public methods
     
     static func fullDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
@@ -29,5 +24,4 @@ extension DateFormatter {
         dayMonthDateFormatter.dateFormat = "EEEE, MMMM dd"
         return dayMonthDateFormatter
     }
-    
 }

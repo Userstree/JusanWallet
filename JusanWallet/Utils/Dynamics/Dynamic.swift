@@ -1,18 +1,10 @@
 //
-//  Dynamic.swift
-//  iOSStyleguide
-//
-//  Created by Petar on 3/6/18.
-//  Copyright © 2018 Fabrika. All rights reserved.
+// Created by Dossymkhan Zhulamanov on 08.07.2022.
 //
 
+
 class Dynamic<T> {
-    
-    // MARK: - Typealias
-    
     typealias Listener = (T) -> ()
-    
-    // MARK: - Vars & Lets
     
     var listener: Listener?
     var value: T {
@@ -21,13 +13,9 @@ class Dynamic<T> {
         }
     }
     
-    // MARK: - Initialization
-    
     init(_ v: T) {
         value = v
     }
-    
-    // MARK: - Public func
     
     func bind(_ listener: Listener?) {
         self.listener = listener
@@ -38,10 +26,7 @@ class Dynamic<T> {
         listener?(value)
     }
     
-    // MARK: -
-    
     internal func fire() {
         self.listener?(value)
     }
-    
 }

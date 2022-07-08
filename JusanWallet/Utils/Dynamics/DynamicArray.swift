@@ -1,10 +1,7 @@
 //
-//  DynamicArray.swift
-//  iOSStyleguide
+// Created by Dossymkhan Zhulamanov on 08.07.2022.
 //
-//  Created by Pavle Pesic on 5/8/18.
-//  Copyright © 2018 Fabrika. All rights reserved.
-//
+
 
 import Foundation
 
