@@ -1,0 +1,49 @@
+.Menu {
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .Menu a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .Menu a.active {
+    background-color: #103265;
+    color: white;
+  }
+  
+  .Menu a:hover:not(.active) {
+    background-color: #9ba4d0;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .Menu {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .Menu a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .Menu a {
+      text-align: center;
+      float: none;
+    }
+  }

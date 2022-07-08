@@ -1,10 +1,12 @@
 import './App.css';
+import Menu from './components/Menu'
 
 function App() {
   return (
     <div className='App'>
+      <Menu />
       <header className='App-header'>
-        <h1>Jusan Wallet</h1>
+      
       </header>
     </div>
   );
