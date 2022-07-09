@@ -10,14 +10,30 @@
 		055EBD0A28782FD500E5F703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0828782FD500E5F703 /* Main.storyboard */; };
 		055EBD0F28782FD600E5F703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0D28782FD600E5F703 /* LaunchScreen.storyboard */; };
 		615B405A50D61B0EDBC1C94E /* DeepLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E393DAFCC4FB09751AF /* DeepLinkCoordinator.swift */; };
-		615B416C962B2267A5E64E98 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B471F39DA4A7E4CF70CDF /* HomeCoordinator.swift */; };
+		615B414E67A98513A88CBC4A /* PaymentsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41233730C2DC56D577E0 /* PaymentsBaseCoordinator.swift */; };
+		615B418E0013FC578E47F680 /* CategoriesCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B40EFA73EB85D2A3C513F /* CategoriesCollectionDataSource.swift */; };
+		615B41ED1CDCD084DE831D51 /* UIStackView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B43E651CAE101AB0B66CF /* UIStackView+ext.swift */; };
+		615B422BBBD5345D7AA90364 /* PaymentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B405EEFC699B79A61776D /* PaymentsCoordinator.swift */; };
+		615B441F1D7DD2D54E8865B3 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E2A64160499560B8FFA /* ExpensesViewController.swift */; };
 		615B445BF35BFEFAC04D3D13 /* MainBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4EE2C792D0C32506883C /* MainBaseCoordinator.swift */; };
+		615B449650372F34CC22E370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B492608F63E0A4A7DFB25 /* HomeViewController.swift */; };
+		615B4505907A57E6A316BE8D /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B47D91D2CFC9B0AB6E12F /* CreditCardView.swift */; };
 		615B45492B6DD5D87289BBF0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B451744D390FA196ED4F7 /* Coordinator.swift */; };
-		615B45EAA5CFF1DA6C0E88C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4C0B3F5E274AB7C56512 /* HomeViewController.swift */; };
+		615B4708D1AA8FC2734260B2 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */; };
 		615B480256DBB123AA566BC2 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B488FB37EE73F5B2F129B /* AppFlow.swift */; };
-		615B48375BDA48F8DD5BF69C /* HomeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4D821E431C86F2A064EF /* HomeBaseCoordinator.swift */; };
 		615B4844DB58B30FF4E70EFF /* DeepLinkBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B405EFED3ED4C9AE75506 /* DeepLinkBaseCoordinator.swift */; };
+		615B48C0463361AE5B1D5CBD /* HomeViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */; };
+		615B48FCB28BBC495500B436 /* ExpensesBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B480FFF12B363366E6211 /* ExpensesBaseCoordinator.swift */; };
+		615B4A408AB0C362B8619F56 /* ExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */; };
+		615B4AC60980B26E878DA297 /* CategoriesCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B48478F907EDE39143051 /* CategoriesCollectionDelegate.swift */; };
+		615B4AE4B38BB5F7DA4C4282 /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41DFD1DB33303226F865 /* UIViewController+ext.swift */; };
+		615B4CD348B0E4412CC7D08B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */; };
+		615B4EC638BD22A85A690C06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B402CF8D95F7242CEE20F /* CategoryCell.swift */; };
 		615B4F5343BB762B6D80E9FB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4AAEFCF45A64FB38F5F3 /* MainCoordinator.swift */; };
+		615B4FF4D7D25775D54030C1 /* HomeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */; };
+		8E498DA3C75CF09B77E8F669 /* Pods_JusanWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584B96249068A475F1574C28 /* Pods_JusanWallet.framework */; };
+		C2D1786B2879CCD8005662DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1786A2879CCD8005662DD /* UIColor.swift */; };
+		C2D1786E2879DDFB005662DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1786D2879DDFB005662DD /* HomeViewModel.swift */; };
 		F88430EFDCD40F4A920503C6 /* GenericUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843185FBBB40B996CC1432 /* GenericUtils.swift */; };
 		F88431B11D75EB99F272ADBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843162EDD28A074434735D /* AppDelegate.swift */; };
 		F884392B8AD62F5350C511C6 /* DynamicAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843E1DB7F8C33E44737CF3 /* DynamicAsync.swift */; };
@@ -32,15 +48,33 @@
 		055EBCFF28782FD500E5F703 /* JusanWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JusanWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055EBD0928782FD500E5F703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		055EBD0E28782FD600E5F703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B26AE0A2773263D6963780E /* Pods-JusanWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JusanWallet.release.xcconfig"; path = "Target Support Files/Pods-JusanWallet/Pods-JusanWallet.release.xcconfig"; sourceTree = "<group>"; };
+		584B96249068A475F1574C28 /* Pods_JusanWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JusanWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		615B402CF8D95F7242CEE20F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		615B405EEFC699B79A61776D /* PaymentsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsCoordinator.swift; sourceTree = "<group>"; };
 		615B405EFED3ED4C9AE75506 /* DeepLinkBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkBaseCoordinator.swift; sourceTree = "<group>"; };
+		615B40EFA73EB85D2A3C513F /* CategoriesCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionDataSource.swift; sourceTree = "<group>"; };
+		615B41233730C2DC56D577E0 /* PaymentsBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsBaseCoordinator.swift; sourceTree = "<group>"; };
+		615B41DFD1DB33303226F865 /* UIViewController+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
+		615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		615B43E651CAE101AB0B66CF /* UIStackView+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ext.swift"; sourceTree = "<group>"; };
 		615B451744D390FA196ED4F7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		615B471F39DA4A7E4CF70CDF /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		615B47D91D2CFC9B0AB6E12F /* CreditCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
+		615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelImpl.swift; sourceTree = "<group>"; };
+		615B480FFF12B363366E6211 /* ExpensesBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesBaseCoordinator.swift; sourceTree = "<group>"; };
+		615B48478F907EDE39143051 /* CategoriesCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionDelegate.swift; sourceTree = "<group>"; };
 		615B488FB37EE73F5B2F129B /* AppFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		615B492608F63E0A4A7DFB25 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		615B4AAEFCF45A64FB38F5F3 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		615B4C0B3F5E274AB7C56512 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		615B4D821E431C86F2A064EF /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
+		615B4E2A64160499560B8FFA /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		615B4E393DAFCC4FB09751AF /* DeepLinkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCoordinator.swift; sourceTree = "<group>"; };
+		615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
+		615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B4EE2C792D0C32506883C /* MainBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBaseCoordinator.swift; sourceTree = "<group>"; };
+		615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		BD6119CA5A8524C9A23AA370 /* Pods-JusanWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JusanWallet.debug.xcconfig"; path = "Target Support Files/Pods-JusanWallet/Pods-JusanWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		C2D1786A2879CCD8005662DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C2D1786D2879DDFB005662DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F8843162EDD28A074434735D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8843185FBBB40B996CC1432 /* GenericUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericUtils.swift; sourceTree = "<group>"; };
 		F8843397C99E1D16C2F442EE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -57,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E498DA3C75CF09B77E8F669 /* Pods_JusanWallet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +103,8 @@
 			children = (
 				055EBD0128782FD500E5F703 /* JusanWallet */,
 				055EBD0028782FD500E5F703 /* Products */,
+				9E096A446EBC95D076F5B696 /* Pods */,
+				B1763F19E68049B1EC1D3A25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,10 +124,20 @@
 				F8843E9D3473DA3FE4E292E6 /* Supporting Files */,
 				F884374229EF2BD26C7003E8 /* Application */,
 				F884324B9CF4EE2CC30FBB5C /* Utils */,
-				615B4CB806D3EB85CCCF3F35 /* Home */,
 				615B41A3EA4DEEAD669048B1 /* Coordinator */,
+				615B4C4A386DCA01FD00BF3E /* Scenes */,
+				615B45482F4CF2DE2829C098 /* Extensions */,
 			);
 			path = JusanWallet;
+			sourceTree = "<group>";
+		};
+		615B4002BE02A8A270EA137C /* CollectionDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				615B40EFA73EB85D2A3C513F /* CategoriesCollectionDataSource.swift */,
+				615B48478F907EDE39143051 /* CategoriesCollectionDelegate.swift */,
+			);
+			path = CollectionDataManager;
 			sourceTree = "<group>";
 		};
 		615B41A3EA4DEEAD669048B1 /* Coordinator */ = {
@@ -106,6 +153,33 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		615B45482F4CF2DE2829C098 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				615B4CA1DAA59CC78D96D5DA /* UI */,
+				615B41DFD1DB33303226F865 /* UIViewController+ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		615B45BEE2647A21D994493B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				615B47D91D2CFC9B0AB6E12F /* CreditCardView.swift */,
+				615B402CF8D95F7242CEE20F /* CategoryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		615B465489AB6E48704A38EC /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				615B48EA0BD8E60B3DE606F7 /* Coordinator */,
+				615B498C276A6686AA19F19B /* ViewControllers */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
 		615B4707AA79D5CE677E78C4 /* AppFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,30 +188,113 @@
 			path = AppFlow;
 			sourceTree = "<group>";
 		};
-		615B4B4EA4DEF0FBA441930A /* Coordinator */ = {
+		615B48579A15EB01A1F007FF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				615B471F39DA4A7E4CF70CDF /* HomeCoordinator.swift */,
-				615B4D821E431C86F2A064EF /* HomeBaseCoordinator.swift */,
+				615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */,
+				615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		615B4CB806D3EB85CCCF3F35 /* Home */ = {
+		615B48EA0BD8E60B3DE606F7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				615B4B4EA4DEF0FBA441930A /* Coordinator */,
-				615B4EC58EDC61B0D19A4BF0 /* ViewControllers */,
+				615B480FFF12B363366E6211 /* ExpensesBaseCoordinator.swift */,
+				615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		615B498C276A6686AA19F19B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				615B4E2A64160499560B8FFA /* ExpensesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		615B49B993FA0EBE03E08CDC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				615B48579A15EB01A1F007FF /* Coordinator */,
+				615B4DE19CC5BFC235A26EF2 /* ViewControllers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		615B4EC58EDC61B0D19A4BF0 /* ViewControllers */ = {
+		615B4C4A386DCA01FD00BF3E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				615B4C0B3F5E274AB7C56512 /* HomeViewController.swift */,
+				615B49B993FA0EBE03E08CDC /* Home */,
+				615B465489AB6E48704A38EC /* Expenses */,
+				615B4D7D3369035D274479AA /* Payments */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		615B4CA1DAA59CC78D96D5DA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				615B43E651CAE101AB0B66CF /* UIStackView+ext.swift */,
+				C2D1786A2879CCD8005662DD /* UIColor.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		615B4CBF89BE59713770CDBE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				615B41233730C2DC56D577E0 /* PaymentsBaseCoordinator.swift */,
+				615B405EEFC699B79A61776D /* PaymentsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		615B4D7D3369035D274479AA /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				615B4CBF89BE59713770CDBE /* Coordinator */,
+				615B4F32164B5F8DF4F4AF58 /* ViewControllers */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		615B4DE19CC5BFC235A26EF2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2D1786D2879DDFB005662DD /* HomeViewModel.swift */,
+				615B492608F63E0A4A7DFB25 /* HomeViewController.swift */,
+				615B45BEE2647A21D994493B /* Views */,
+				615B4002BE02A8A270EA137C /* CollectionDataManager */,
+				615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		615B4F32164B5F8DF4F4AF58 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E096A446EBC95D076F5B696 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD6119CA5A8524C9A23AA370 /* Pods-JusanWallet.debug.xcconfig */,
+				4B26AE0A2773263D6963780E /* Pods-JusanWallet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B1763F19E68049B1EC1D3A25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				584B96249068A475F1574C28 /* Pods_JusanWallet.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F88431263283AEF34F541395 /* Constants */ = {
@@ -193,9 +350,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 055EBD1328782FD600E5F703 /* Build configuration list for PBXNativeTarget "JusanWallet" */;
 			buildPhases = (
+				C6761A326FC3162F8ECB0FEA /* [CP] Check Pods Manifest.lock */,
 				055EBCFB28782FD500E5F703 /* Sources */,
 				055EBCFC28782FD500E5F703 /* Frameworks */,
 				055EBCFD28782FD500E5F703 /* Resources */,
+				9294025B7F6A0DF5E4845E76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +411,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9294025B7F6A0DF5E4845E76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JusanWallet/Pods-JusanWallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JusanWallet/Pods-JusanWallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JusanWallet/Pods-JusanWallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6761A326FC3162F8ECB0FEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JusanWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		055EBCFB28782FD500E5F703 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,15 +465,30 @@
 				F884392B8AD62F5350C511C6 /* DynamicAsync.swift in Sources */,
 				F8843C15F6BA556A912151CC /* Constants.swift in Sources */,
 				F88430EFDCD40F4A920503C6 /* GenericUtils.swift in Sources */,
-				615B416C962B2267A5E64E98 /* HomeCoordinator.swift in Sources */,
-				615B48375BDA48F8DD5BF69C /* HomeBaseCoordinator.swift in Sources */,
-				615B45EAA5CFF1DA6C0E88C5 /* HomeViewController.swift in Sources */,
 				615B45492B6DD5D87289BBF0 /* Coordinator.swift in Sources */,
 				615B4F5343BB762B6D80E9FB /* MainCoordinator.swift in Sources */,
+				C2D1786B2879CCD8005662DD /* UIColor.swift in Sources */,
 				615B405A50D61B0EDBC1C94E /* DeepLinkCoordinator.swift in Sources */,
 				615B445BF35BFEFAC04D3D13 /* MainBaseCoordinator.swift in Sources */,
 				615B4844DB58B30FF4E70EFF /* DeepLinkBaseCoordinator.swift in Sources */,
+				C2D1786E2879DDFB005662DD /* HomeViewModel.swift in Sources */,
 				615B480256DBB123AA566BC2 /* AppFlow.swift in Sources */,
+				615B4CD348B0E4412CC7D08B /* HomeCoordinator.swift in Sources */,
+				615B4FF4D7D25775D54030C1 /* HomeBaseCoordinator.swift in Sources */,
+				615B449650372F34CC22E370 /* HomeViewController.swift in Sources */,
+				615B48FCB28BBC495500B436 /* ExpensesBaseCoordinator.swift in Sources */,
+				615B4A408AB0C362B8619F56 /* ExpensesCoordinator.swift in Sources */,
+				615B414E67A98513A88CBC4A /* PaymentsBaseCoordinator.swift in Sources */,
+				615B422BBBD5345D7AA90364 /* PaymentsCoordinator.swift in Sources */,
+				615B441F1D7DD2D54E8865B3 /* ExpensesViewController.swift in Sources */,
+				615B4708D1AA8FC2734260B2 /* PaymentsViewController.swift in Sources */,
+				615B41ED1CDCD084DE831D51 /* UIStackView+ext.swift in Sources */,
+				615B4AE4B38BB5F7DA4C4282 /* UIViewController+ext.swift in Sources */,
+				615B4505907A57E6A316BE8D /* CreditCardView.swift in Sources */,
+				615B4EC638BD22A85A690C06 /* CategoryCell.swift in Sources */,
+				615B418E0013FC578E47F680 /* CategoriesCollectionDataSource.swift in Sources */,
+				615B4AC60980B26E878DA297 /* CategoriesCollectionDelegate.swift in Sources */,
+				615B48C0463361AE5B1D5CBD /* HomeViewModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +630,9 @@
 		};
 		055EBD1428782FD600E5F703 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD6119CA5A8524C9A23AA370 /* Pods-JusanWallet.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,17 +649,21 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = zlmnv.JusanWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 			};
 			name = Debug;
 		};
 		055EBD1528782FD600E5F703 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B26AE0A2773263D6963780E /* Pods-JusanWallet.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,11 +680,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = zlmnv.JusanWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 			};
 			name = Release;
 		};

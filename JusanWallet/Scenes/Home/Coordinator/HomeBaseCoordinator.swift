@@ -5,3 +5,7 @@
 import Foundation
 
 protocol HomeBaseCoordinator: Coordinator {  }
+
+protocol HomeBaseCoordinated {
+    var coordinator: HomeBaseCoordinator? { get }
+}

@@ -9,7 +9,3 @@ protocol MainBaseCoordinator: Coordinator {
     var deepLinkCoordinator: DeepLinkBaseCoordinator { get }
     func handleDeepLink(text: String)
 }
-
-protocol HomeBaseCoordinated {
-    var coordinator: HomeBaseCoordinator? { get }
-}
