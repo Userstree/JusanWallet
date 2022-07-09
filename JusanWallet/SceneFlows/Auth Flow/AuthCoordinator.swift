@@ -4,11 +4,12 @@
 
 import Foundation
 
-final class AuthCoordinator: BaseCoordinator {
+final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     var finishFlow: (() -> Void)?
 
     private let factory: AuthModuleFactory
     private let router: Router
+    private weak var signUpView: SignUpView?
 
     init(factory: AuthModuleFactory, router: Router) {
         self.factory = factory
@@ -31,6 +32,13 @@ final class AuthCoordinator: BaseCoordinator {
     }
 
     private func showSignUp() {
-
+        signUpView = factory.makeSignUpHandler()
+        signUpView?.onSignUpComplete = { [weak self] in
+            self?.finishFlow?()
+        }
+        signUpView?.onTermsButtonTap = { [weak self] in
+            self?.showTerms()
+        }
+        router.push(signUpView)
     }
 }
