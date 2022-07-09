@@ -4,5 +4,4 @@
 
 import Foundation
 
-protocol TabbarCoordinator {
-}
+protocol HomeBaseCoordinator: Coordinator {  }
