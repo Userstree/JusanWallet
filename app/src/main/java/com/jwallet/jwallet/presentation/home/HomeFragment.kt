@@ -16,20 +16,28 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
 
     private lateinit var categoryAdapter: CategoryAdapter
+    private lateinit var transactionAdapter: TransactionAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        setupRecyclerView()
+        setupCategoriesRecyclerView()
+        setupTransactionsRecyclerView()
         return binding.root
     }
 
-    private fun setupRecyclerView() {
+    private fun setupCategoriesRecyclerView() {
         categoryAdapter = CategoryAdapter()
         categoryAdapter.submitList(viewModel.getCategoriesList())
         binding.rvCategories.adapter = categoryAdapter
+    }
+
+    private fun setupTransactionsRecyclerView() {
+        transactionAdapter = TransactionAdapter()
+        transactionAdapter.submitList(viewModel.getTransactionsList())
+        binding.rvTransactions.adapter = transactionAdapter
     }
 
     override fun onDestroyView() {
