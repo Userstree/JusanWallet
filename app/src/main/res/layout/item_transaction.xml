@@ -5,60 +5,71 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
-    <ImageView
-        android:id="@+id/iv_avatar"
+    <LinearLayout
+        android:id="@+id/ll_avatar_container"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
-        android:backgroundTint="#11000000"
+        android:padding="4dp"
+        android:backgroundTint="@color/purple_200"
         android:background="@drawable/shape_rectangle_rounded"
-        android:padding="12dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_baseline_perm_identity_24"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rectangle_rounded"
+            android:backgroundTint="#fefefe"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_perm_identity_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_transaction_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="16sp"
+        android:layout_marginStart="16dp"
         android:text="Starbucks"
-        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
-        app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ll_avatar_container"
+        app:layout_constraintTop_toTopOf="@+id/ll_avatar_container" />
 
     <TextView
         android:id="@+id/tv_transaction_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textColor="#a0000000"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="Coffee company"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
-        app:layout_constraintStart_toEndOf="@+id/iv_avatar" />
+        android:textColor="#a0000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_avatar_container"
+        app:layout_constraintStart_toEndOf="@+id/ll_avatar_container" />
 
     <TextView
         android:id="@+id/tv_transaction_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:layout_marginEnd="8dp"
         android:text="-$30.50"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+        app:layout_constraintTop_toTopOf="@+id/ll_avatar_container" />
 
     <TextView
         android:id="@+id/tv_transaction_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:text="15:50"
         android:textColor="#a0000000"
         android:textSize="12sp"
-        android:text="15:50"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_avatar_container"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

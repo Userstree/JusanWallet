@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.jwallet.jwallet.databinding.FragmentHomeBinding
+import com.jwallet.jwallet.domain.models.SpendingCategory
 
 class HomeFragment : Fragment() {
 
@@ -38,6 +39,16 @@ class HomeFragment : Fragment() {
         transactionAdapter = TransactionAdapter()
         transactionAdapter.submitList(viewModel.getTransactionsList())
         binding.rvTransactions.adapter = transactionAdapter
+    }
+
+    private fun setupLayout() {
+        binding.ibtnAddCategory.setOnClickListener {
+            val category = viewModel.getCategory()
+        }
+
+        binding.ibtnAddTransaction.setOnClickListener {
+            val transaction = viewModel.getTransaction()
+        }
     }
 
     override fun onDestroyView() {
