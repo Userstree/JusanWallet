@@ -7,16 +7,6 @@ import UIKit
 class ExpensesViewController: UIViewController, ExpensesBaseCoordinated {
     var coordinator: ExpensesCoordinator?
 
-    init(coordinator: ExpensesCoordinator) {
-        super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-        title = "Expenses"
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .primaryColor
@@ -30,5 +20,15 @@ class ExpensesViewController: UIViewController, ExpensesBaseCoordinated {
         appearance.backgroundColor = .primaryColor
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
+    }
+
+    init(coordinator: ExpensesCoordinator) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+        title = "Expenses"
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

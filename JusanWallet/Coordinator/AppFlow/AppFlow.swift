@@ -7,7 +7,8 @@ import Foundation
 enum AppFlow {
     case home(HomeScreen)
     case expenses(ExpensesScreen)
-    case automaticPayments(AutomaticPayments)
+    case automaticPayments(AutomaticPaymentsScreen)
+    case account(AccountScreen)
 }
 
 enum HomeScreen {
@@ -18,6 +19,10 @@ enum ExpensesScreen {
     case initialScreen
 }
 
-enum AutomaticPayments {
+enum AutomaticPaymentsScreen {
+    case initialScreen
+}
+
+enum AccountScreen {
     case initialScreen
 }

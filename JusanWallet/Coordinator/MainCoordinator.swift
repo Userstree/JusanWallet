@@ -11,6 +11,7 @@ class MainCoordinator: MainBaseCoordinator {
     lazy var homeCoordinator: HomeBaseCoordinator = HomeCoordinator()
     lazy var expensesCoordinator: ExpensesBaseCoordinator = ExpensesCoordinator()
     lazy var paymentsCoordinator: PaymentsBaseCoordinator = PaymentsCoordinator()
+    lazy var accountCoordinator: AccountBaseCoordinator = AccountCoordinator()
     lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(mainBaseCoordinator: self)
 
     private var tabBarController: UITabBarController = {
@@ -40,10 +41,13 @@ class MainCoordinator: MainBaseCoordinator {
         let paymentsViewController = paymentsCoordinator.start()
         paymentsCoordinator.parentCoordinator = self
         paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.left.arrow.right"), tag: 2)
-        
-        let tabBarControllers = [homeViewController, expensesViewController, paymentsViewController]
+
+        let accountViewController = accountCoordinator.start()
+        accountCoordinator.parentCoordinator = self
+        accountViewController.tabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "person"), tag: 3)
+
+        let tabBarControllers = [homeViewController, expensesViewController, paymentsViewController, accountViewController]
         (rootViewController as? UITabBarController)?.setViewControllers(tabBarControllers, animated: true)
-        let appearance = UINavigationBarAppearance(idiom: .phone)
         return rootViewController
     }
 
@@ -55,6 +59,8 @@ class MainCoordinator: MainBaseCoordinator {
             goToExpenses(flow)
         case .automaticPayments:
             goToAutoPayments(flow)
+        case .account:
+            goToAccount(flow)
         }
     }
 
@@ -71,6 +77,11 @@ class MainCoordinator: MainBaseCoordinator {
     private func goToAutoPayments(_ flow: AppFlow) {
         paymentsCoordinator.moveTo(flow: flow, userData: nil)
         (rootViewController as? UITabBarController)?.selectedIndex = 2
+    }
+
+    private func goToAccount(_ flow: AppFlow) {
+        paymentsCoordinator.moveTo(flow: flow, userData: nil)
+        (rootViewController as? UITabBarController)?.selectedIndex = 3
     }
 
     func handleDeepLink(text: String) {

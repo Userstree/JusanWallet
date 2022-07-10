@@ -11,7 +11,11 @@ class HomeCoordinator: HomeBaseCoordinator {
     lazy var rootViewController: UIViewController = UIViewController()
 
     func start() -> UIViewController {
-        rootViewController = UINavigationController(rootViewController: HomeViewController(coordinator: self))
+        let controller = HomeViewController(coordinator: self)
+        let cardService = MockHomeService()
+        let viewModel = HomeViewModelImpl(service: cardService)
+        controller.bind(to: viewModel)
+        rootViewController = UINavigationController(rootViewController: controller)
         return rootViewController
     }
 

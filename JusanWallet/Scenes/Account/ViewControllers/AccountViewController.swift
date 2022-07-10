@@ -1,11 +1,11 @@
 //
-// Created by Dossymkhan Zhulamanov on 09.07.2022.
+// Created by Dossymkhan Zhulamanov on 10.07.2022.
 //
 
 import UIKit
 
-class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
-    private(set) var coordinator: PaymentsCoordinator?
+class AccountViewController: UIViewController, AccountBaseCoordinated {
+    var coordinator: AccountCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,10 @@ class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
         navigationItem.scrollEdgeAppearance = appearance
     }
 
-    init(coordinator: PaymentsCoordinator) {
+    init(coordinator: AccountCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
-        title = "Payments"
+        title = "Account"
     }
 
     required init?(coder: NSCoder) {

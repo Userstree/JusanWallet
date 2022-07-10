@@ -6,4 +6,11 @@ import Foundation
 
 class HomeViewModelImpl: HomeViewModel {
 
+    var categoryData: [String] = []
+
+    private var cardService: HomeService
+
+    init(service: HomeService) {
+        cardService = service
+    }
 }

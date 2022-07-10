@@ -10,10 +10,13 @@
 		055EBD0A28782FD500E5F703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0828782FD500E5F703 /* Main.storyboard */; };
 		055EBD0F28782FD600E5F703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055EBD0D28782FD600E5F703 /* LaunchScreen.storyboard */; };
 		615B405A50D61B0EDBC1C94E /* DeepLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E393DAFCC4FB09751AF /* DeepLinkCoordinator.swift */; };
+		615B4139D2AC26F16FE7E8B1 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B479CCC55274204607DA1 /* BindableType.swift */; };
 		615B414E67A98513A88CBC4A /* PaymentsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41233730C2DC56D577E0 /* PaymentsBaseCoordinator.swift */; };
 		615B418E0013FC578E47F680 /* CategoriesCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B40EFA73EB85D2A3C513F /* CategoriesCollectionDataSource.swift */; };
 		615B41ED1CDCD084DE831D51 /* UIStackView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B43E651CAE101AB0B66CF /* UIStackView+ext.swift */; };
 		615B422BBBD5345D7AA90364 /* PaymentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B405EEFC699B79A61776D /* PaymentsCoordinator.swift */; };
+		615B4256D305C9BA4538ACCE /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4A6C72E46262383A2CD0 /* HomeService.swift */; };
+		615B4418255AE94180015691 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4F2BDAF027D438E4D1F7 /* AccountViewController.swift */; };
 		615B441F1D7DD2D54E8865B3 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E2A64160499560B8FFA /* ExpensesViewController.swift */; };
 		615B445BF35BFEFAC04D3D13 /* MainBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4EE2C792D0C32506883C /* MainBaseCoordinator.swift */; };
 		615B449650372F34CC22E370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B492608F63E0A4A7DFB25 /* HomeViewController.swift */; };
@@ -22,12 +25,16 @@
 		615B4708D1AA8FC2734260B2 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */; };
 		615B480256DBB123AA566BC2 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B488FB37EE73F5B2F129B /* AppFlow.swift */; };
 		615B4844DB58B30FF4E70EFF /* DeepLinkBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B405EFED3ED4C9AE75506 /* DeepLinkBaseCoordinator.swift */; };
+		615B4854E18C72749633B256 /* AccountBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4917D0511F33B07A3668 /* AccountBaseCoordinator.swift */; };
 		615B48C0463361AE5B1D5CBD /* HomeViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */; };
 		615B48FCB28BBC495500B436 /* ExpensesBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B480FFF12B363366E6211 /* ExpensesBaseCoordinator.swift */; };
+		615B4A2F55F95416864BB8D6 /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4C510F0AC23C07FCE9E2 /* AccountCoordinator.swift */; };
 		615B4A408AB0C362B8619F56 /* ExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */; };
 		615B4AC60980B26E878DA297 /* CategoriesCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B48478F907EDE39143051 /* CategoriesCollectionDelegate.swift */; };
 		615B4AE4B38BB5F7DA4C4282 /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41DFD1DB33303226F865 /* UIViewController+ext.swift */; };
+		615B4C7740F7AE7D4C37697E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4DCF67B17D0F7DB78569 /* BaseViewController.swift */; };
 		615B4CD348B0E4412CC7D08B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */; };
+		615B4E8B17C4F20B409AD0A1 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B45C9AC5E0B5565A72C56 /* CategoryService.swift */; };
 		615B4EC638BD22A85A690C06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B402CF8D95F7242CEE20F /* CategoryCell.swift */; };
 		615B4F5343BB762B6D80E9FB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4AAEFCF45A64FB38F5F3 /* MainCoordinator.swift */; };
 		615B4FF4D7D25775D54030C1 /* HomeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */; };
@@ -59,19 +66,26 @@
 		615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		615B43E651CAE101AB0B66CF /* UIStackView+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ext.swift"; sourceTree = "<group>"; };
 		615B451744D390FA196ED4F7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		615B45C9AC5E0B5565A72C56 /* CategoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		615B479CCC55274204607DA1 /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		615B47D91D2CFC9B0AB6E12F /* CreditCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelImpl.swift; sourceTree = "<group>"; };
 		615B480FFF12B363366E6211 /* ExpensesBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B48478F907EDE39143051 /* CategoriesCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionDelegate.swift; sourceTree = "<group>"; };
 		615B488FB37EE73F5B2F129B /* AppFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		615B4917D0511F33B07A3668 /* AccountBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B492608F63E0A4A7DFB25 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		615B4A6C72E46262383A2CD0 /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		615B4AAEFCF45A64FB38F5F3 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		615B4C510F0AC23C07FCE9E2 /* AccountCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
+		615B4DCF67B17D0F7DB78569 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		615B4E2A64160499560B8FFA /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		615B4E393DAFCC4FB09751AF /* DeepLinkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCoordinator.swift; sourceTree = "<group>"; };
 		615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
 		615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B4EE2C792D0C32506883C /* MainBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		615B4F2BDAF027D438E4D1F7 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		BD6119CA5A8524C9A23AA370 /* Pods-JusanWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JusanWallet.debug.xcconfig"; path = "Target Support Files/Pods-JusanWallet/Pods-JusanWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		C2D1786A2879CCD8005662DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C2D1786D2879DDFB005662DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -127,6 +141,7 @@
 				615B41A3EA4DEEAD669048B1 /* Coordinator */,
 				615B4C4A386DCA01FD00BF3E /* Scenes */,
 				615B45482F4CF2DE2829C098 /* Extensions */,
+				615B43BC6C8EE25B8B65A8E6 /* Services */,
 			);
 			path = JusanWallet;
 			sourceTree = "<group>";
@@ -151,6 +166,15 @@
 				615B4707AA79D5CE677E78C4 /* AppFlow */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		615B43BC6C8EE25B8B65A8E6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				615B4A6C72E46262383A2CD0 /* HomeService.swift */,
+				615B45C9AC5E0B5565A72C56 /* CategoryService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		615B45482F4CF2DE2829C098 /* Extensions */ = {
@@ -188,11 +212,29 @@
 			path = AppFlow;
 			sourceTree = "<group>";
 		};
+		615B48231A7DD95710386E4F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				615B48D28DE1670534DA2AC1 /* Coordinator */,
+				615B48F9D9F419E83D47E80D /* ViewControllers */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		615B48579A15EB01A1F007FF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				615B41E1DFE79C89B12D70E4 /* HomeCoordinator.swift */,
 				615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		615B48D28DE1670534DA2AC1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				615B4917D0511F33B07A3668 /* AccountBaseCoordinator.swift */,
+				615B4C510F0AC23C07FCE9E2 /* AccountCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -204,6 +246,14 @@
 				615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		615B48F9D9F419E83D47E80D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				615B4F2BDAF027D438E4D1F7 /* AccountViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		615B498C276A6686AA19F19B /* ViewControllers */ = {
@@ -229,6 +279,8 @@
 				615B49B993FA0EBE03E08CDC /* Home */,
 				615B465489AB6E48704A38EC /* Expenses */,
 				615B4D7D3369035D274479AA /* Payments */,
+				615B48231A7DD95710386E4F /* Account */,
+				615B4DCF67B17D0F7DB78569 /* BaseViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -311,6 +363,7 @@
 				F8843B603CC199E05EB66D27 /* Dynamics */,
 				F88431263283AEF34F541395 /* Constants */,
 				F8843185FBBB40B996CC1432 /* GenericUtils.swift */,
+				615B479CCC55274204607DA1 /* BindableType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -489,6 +542,13 @@
 				615B418E0013FC578E47F680 /* CategoriesCollectionDataSource.swift in Sources */,
 				615B4AC60980B26E878DA297 /* CategoriesCollectionDelegate.swift in Sources */,
 				615B48C0463361AE5B1D5CBD /* HomeViewModelImpl.swift in Sources */,
+				615B4139D2AC26F16FE7E8B1 /* BindableType.swift in Sources */,
+				615B4256D305C9BA4538ACCE /* HomeService.swift in Sources */,
+				615B4E8B17C4F20B409AD0A1 /* CategoryService.swift in Sources */,
+				615B4854E18C72749633B256 /* AccountBaseCoordinator.swift in Sources */,
+				615B4A2F55F95416864BB8D6 /* AccountCoordinator.swift in Sources */,
+				615B4418255AE94180015691 /* AccountViewController.swift in Sources */,
+				615B4C7740F7AE7D4C37697E /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

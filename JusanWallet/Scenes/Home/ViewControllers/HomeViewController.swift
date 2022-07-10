@@ -5,15 +5,9 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController, HomeBaseCoordinated {
+class HomeViewController: UIViewController, HomeBaseCoordinated, BindableType {
+    var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
-    init(coordinator: HomeBaseCoordinator) {
-        super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     let collectionDataSource = CategoriesCollectionDataSource()
     let collectionDelegate = CategoriesCollectionDelegate()
@@ -37,6 +31,10 @@ class HomeViewController: UIViewController, HomeBaseCoordinated {
         add(creditCardView, frame: view.frame)
     }
 
+    func bindViewModel() {
+
+    }
+
     private func configureView() {
         [creditCardView.view].forEach(view.addSubview)
     }
@@ -44,5 +42,13 @@ class HomeViewController: UIViewController, HomeBaseCoordinated {
         creditCardView.view.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(2)
         }
+    }
+
+    init(coordinator: HomeBaseCoordinator) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

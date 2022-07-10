@@ -16,7 +16,7 @@ class DynamicArray<T>: DynamicAsync<[T]> {
     // MARK: - typealias
     
     typealias RemoveListener = (Int) -> ()
-    typealias AddListener = ((Int)) -> ()
+    typealias AddListener = (Int) -> ()
     
     // MARK: - Vars & Lets
     
