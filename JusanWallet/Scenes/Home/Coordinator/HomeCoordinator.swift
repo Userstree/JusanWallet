@@ -12,10 +12,11 @@ class HomeCoordinator: HomeBaseCoordinator {
 
     func start() -> UIViewController {
         let controller = HomeViewController(coordinator: self)
-        let cardService = MockHomeService()
-        let viewModel = HomeViewModelImpl(service: cardService)
+        let categoriesService = MockCategoryService()
+        let viewModel = HomeViewModelImpl(service: categoriesService)
         controller.bind(to: viewModel)
         rootViewController = UINavigationController(rootViewController: controller)
+
         return rootViewController
     }
 

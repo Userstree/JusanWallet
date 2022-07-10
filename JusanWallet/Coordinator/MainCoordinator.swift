@@ -28,11 +28,7 @@ class MainCoordinator: MainBaseCoordinator {
 
         let homeViewController = homeCoordinator.start()
         homeCoordinator.parentCoordinator = self
-        homeViewController.tabBarItem = UITabBarItem(
-                title: "Home",
-                image: UIImage(systemName: "house"),
-                tag: 0
-        )
+        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
 
         let expensesViewController = expensesCoordinator.start()
         expensesCoordinator.parentCoordinator = self

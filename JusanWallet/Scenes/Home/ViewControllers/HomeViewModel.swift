@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HomeViewModel {
-    
+    var categoryData: [EcosystemCategory] { get set }
 }

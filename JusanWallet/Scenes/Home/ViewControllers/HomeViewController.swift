@@ -5,42 +5,73 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController, HomeBaseCoordinated, BindableType {
+class HomeViewController: DesignableViewController, HomeBaseCoordinated, BindableType {
     var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
+    private var balanceCardView = BalanceCardView(frame: .zero)
 
-    let collectionDataSource = CategoriesCollectionDataSource()
-    let collectionDelegate = CategoriesCollectionDelegate()
+    private lazy var collectionDataSource = CategoriesCollectionDataSource(viewModel: viewModel)
+    private let collectionDelegate = CategoriesCollectionDelegate()
 
     private lazy var categoriesCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collection = CategoryCollectionView()
         collection.register(CategoryCell.self, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
         collection.dataSource = collectionDataSource
         collection.delegate = collectionDelegate
         return collection
     }()
 
-    private var creditCardView = CreditCardView()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .primaryColor
-        configureView()
-        add(creditCardView, frame: view.frame)
+        balanceCardView.view.isUserInteractionEnabled = true
+        configureNavBar()
+        configureViews()
+    }
+
+    private func configureNavBar() {
+        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonTapped))
+        let notifications = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationsButtonTapped))
+        search.tintColor = .white
+        notifications.tintColor = .white
+        navigationItem.rightBarButtonItems = [search, notifications]
+        title = "Home"
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.standardAppearance = appearance
+    }
+
+    @objc private func searchButtonTapped() {
+        print("Search button tapped")
+    }
+
+    @objc private func notificationsButtonTapped() {
+        print("Search button tapped")
     }
 
     func bindViewModel() {
 
     }
 
-    private func configureView() {
-        [creditCardView.view].forEach(view.addSubview)
+    private func configureViews() {
+        [balanceCardView.view,
+         categoriesCollection,
+        ].forEach(view.addSubview)
+        makeConstraints()
     }
-    private func makeConstraints(){
-        creditCardView.view.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(2)
+
+    private func makeConstraints() {
+        balanceCardView.view.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-26)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.height.equalTo(balanceCardView.cardView.snp.height)
+            $0.width.equalTo(view.snp.width)
+        }
+        categoriesCollection.snp.makeConstraints {
+            $0.top.equalTo(balanceCardView.view.snp.bottom).offset(65)
+            $0.width.equalTo(balanceCardView.cardView.snp.width)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.height.equalTo(140)
         }
     }
 

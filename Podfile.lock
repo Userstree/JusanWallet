@@ -1,16 +1,20 @@
 PODS:
+  - DropDown (2.3.2)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - DropDown (= 2.3.2)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - SnapKit
 
 SPEC CHECKSUMS:
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 7c186da9b385db7be80318b57bc9a5fa95465fa6
+PODFILE CHECKSUM: 391906717f725c74363d0bb98cd406acc11f490c
 
 COCOAPODS: 1.11.2
