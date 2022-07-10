@@ -5,13 +5,12 @@
 import Foundation
 
 class HomeViewModelImpl: HomeViewModel {
-
     var categoryData: [EcosystemCategory] = []
 
     private var cardService: CategoryService
 
-    init(service: CategoryService) {
-        cardService = service
-        categoryData = service.allCategories()
+    init(categoryService: CategoryService) {
+        cardService = categoryService
+        categoryData = categoryService.allCategories()
     }
 }

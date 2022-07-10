@@ -14,7 +14,7 @@ protocol CategoryCellDataSource {
 
 class CategoryCell: UICollectionViewCell {
 
-    private lazy var iconView = UIButton()
+    private lazy var iconImage = UIImageView()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -42,30 +42,29 @@ class CategoryCell: UICollectionViewCell {
         contentView.layer.shadowOpacity = 0.4
         contentView.layer.shadowRadius = 3
         contentView.backgroundColor = .systemGray5
-//        iconView.tintColor = .orange
         configureViews()
     }
 
     func configure(with dataSource: CategoryCellDataSource) {
         titleLabel.text = dataSource.title
-        iconView.setImage(dataSource.icon, for: .normal)
+        iconImage.image = dataSource.icon
         amountLabel.text = "$\(dataSource.amount)"
-        self.iconView.tintColor = dataSource.cardColor
+        self.iconImage.tintColor = dataSource.cardColor
     }
 
     private func configureViews() {
-        [titleLabel, iconView, amountLabel].forEach(contentView.addSubview)
+        [titleLabel, iconImage, amountLabel].forEach(contentView.addSubview)
         makeConstraints()
     }
 
     private func makeConstraints() {
-        iconView.snp.makeConstraints {
+        iconImage.snp.makeConstraints {
             $0.top.equalTo(contentView.snp.top).offset(28)
             $0.centerX.equalTo(contentView.snp.centerX)
             $0.size.equalTo(CGSize(width: 24, height: 24))
         }
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(iconView.snp.bottom).offset(5)
+            $0.top.equalTo(iconImage.snp.bottom).offset(5)
             $0.centerX.equalTo(contentView.snp.centerX)
         }
         amountLabel.snp.makeConstraints {

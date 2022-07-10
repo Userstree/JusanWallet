@@ -41,6 +41,15 @@ class BalanceCardView: UIViewController {
         dropDown.dataSource = currenciesList
         dropDown.direction = .bottom
         dropDown.anchorView = currencyLabel
+        dropDown.selectionAction = { [unowned self] index, item in
+            if index == 0 {
+                currencyLabel.text = currenciesList[0]
+            } else if index == 1 {
+                currencyLabel.text = currenciesList[1]
+            } else {
+                currencyLabel.text = currenciesList[2]
+            }
+        }
         return dropDown
     }()
 
@@ -56,18 +65,9 @@ class BalanceCardView: UIViewController {
         return view
     }()
 
-    private lazy var statiscticsCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 118, height: 144)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(StatisticsCollectionCell.self, forCellWithReuseIdentifier: String(describing: StatisticsCollectionCell.self))
-        return collection
-    }()
-    
+    private let incomeCard: StatisticsView
+    private let expensesCard: StatisticsView
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -77,37 +77,45 @@ class BalanceCardView: UIViewController {
         dropDownView.show()
     }
 
+    private lazy var leadingVStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
+        stack.axis = .vertical
+        return stack
+    }()
+
+    private lazy var bottomHStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
+        stack.axis = .horizontal
+        return stack
+    }()
+
+    lazy var mainHStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [leadingVStack])
+        stack.axis = .horizontal
+        stack.layer.cornerRadius = 16
+        stack.layer.cornerCurve = .continuous
+        stack.layer.shadowColor = UIColor.black.cgColor
+        stack.layer.shadowOffset = CGSize(width: 3, height: 3)
+        stack.layer.shadowOpacity = 0.7
+        stack.layer.shadowRadius = 4
+        stack.backgroundColor = .white
+        return stack
+    }()
+
     private func configureViews() {
-        [cardView,
-         totalBalanceTextLabel,
-         totalBalanceNumericLabel,
-         currencyLabel,
-        ].forEach(view.addSubview)
+        view.addSubview(mainHStack)
         makeConstraints()
     }
 
     private func makeConstraints() {
-        totalBalanceTextLabel.snp.makeConstraints {
-            $0.top.equalTo(cardView.snp.top).offset(16)
-            $0.left.equalTo(cardView.snp.left).offset(16)
-        }
-        totalBalanceNumericLabel.snp.makeConstraints {
-            $0.top.equalTo(totalBalanceTextLabel.snp.bottom).offset(6)
-            $0.left.equalTo(cardView.snp.left).offset(16)
-        }
-        currencyLabel.snp.makeConstraints{
-            $0.leading.equalTo(totalBalanceNumericLabel.snp.trailing).offset(4)
-            $0.bottom.equalTo(totalBalanceNumericLabel.snp.bottom).offset(-2)
-        }
-        cardView.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset(48)
-            $0.leading.equalTo(view.snp.leading).offset(18)
-            $0.trailing.equalTo(view.snp.trailing).offset(-18)
-            $0.bottom.equalTo(totalBalanceNumericLabel.snp.bottom).offset(15)
+        mainHStack.snp.makeConstraints{
+            $0.edges.equalTo(view.snp.edges)
         }
     }
 
-    init(frame: CGRect) {
+    init(frame: CGRect, dataSource: StatisticsProvidable) {
+        incomeCard = StatisticsView(dataSource: dataSource.incomeStatistics)
+        expensesCard = StatisticsView(dataSource: dataSource.expensesStatistics)
         super.init(nibName: nil, bundle: nil)
         view.frame = frame
     }

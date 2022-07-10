@@ -8,7 +8,7 @@ import SnapKit
 class HomeViewController: DesignableViewController, HomeBaseCoordinated, BindableType {
     var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
-    private var balanceCardView = BalanceCardView(frame: .zero)
+    private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)
 
     private lazy var collectionDataSource = CategoriesCollectionDataSource(viewModel: viewModel)
     private let collectionDelegate = CategoriesCollectionDelegate()
@@ -62,14 +62,14 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
 
     private func makeConstraints() {
         balanceCardView.view.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-26)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             $0.centerX.equalTo(view.snp.centerX)
-            $0.height.equalTo(balanceCardView.cardView.snp.height)
+            $0.height.equalTo(balanceCardView.mainHStack.snp.height)
             $0.width.equalTo(view.snp.width)
         }
         categoriesCollection.snp.makeConstraints {
-            $0.top.equalTo(balanceCardView.view.snp.bottom).offset(65)
-            $0.width.equalTo(balanceCardView.cardView.snp.width)
+            $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)
+            $0.width.equalTo(balanceCardView.mainHStack.snp.width)
             $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(140)
         }
