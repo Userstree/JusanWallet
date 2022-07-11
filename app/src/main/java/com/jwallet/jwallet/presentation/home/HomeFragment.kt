@@ -1,13 +1,13 @@
 package com.jwallet.jwallet.presentation.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.jwallet.jwallet.R
 import com.jwallet.jwallet.databinding.FragmentHomeBinding
-import com.jwallet.jwallet.domain.models.SpendingCategory
 
 class HomeFragment : Fragment() {
 
@@ -18,6 +18,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var transactionAdapter: TransactionAdapter
+    private lateinit var menuHost: MenuHost
+    private lateinit var menuProvider: MenuProvider
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +28,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         setupCategoriesRecyclerView()
         setupTransactionsRecyclerView()
+        setupLayout()
+        setupToolbarMenu()
         return binding.root
     }
 
@@ -51,8 +55,29 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setupToolbarMenu() {
+        menuHost = requireActivity()
+        menuProvider = getMenuProvider()
+        menuHost.addMenuProvider(menuProvider)
+    }
+
+    private fun getMenuProvider() = object : MenuProvider {
+        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+            menuInflater.inflate(R.menu.menu_toolbar_home, menu)
+        }
+
+        override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+            when (menuItem.itemId) {
+                R.id.item_profile -> ""
+            }
+            return true
+        }
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
+        menuHost.removeMenuProvider(menuProvider)
         _binding = null
     }
 }

@@ -9,7 +9,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="4dp"
+        android:layout_marginVertical="4dp"
+        android:layout_marginEnd="8dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:1"
@@ -21,7 +22,7 @@
             android:id="@+id/tv_category_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:text="Category" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
