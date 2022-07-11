@@ -14,6 +14,7 @@
     <string name="transfers">Transfers</string>
     <string name="planner">Planner</string>
     <string name="targets">targets</string>
-    <string name="statistics">statistics</string>
+    <string name="statistics">Statistics</string>
     <string name="total">Total</string>
+    <string name="all">All</string>
 </resources>

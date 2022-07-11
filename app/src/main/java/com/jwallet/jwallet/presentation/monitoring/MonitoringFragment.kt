@@ -57,10 +57,10 @@ class MonitoringFragment : Fragment() {
         val views = listOf(binding.tvStatistics, binding.tvHistory)
         views.forEachIndexed { index, textView ->
             if (textView.id == view.id) {
-                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded_black)
+                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded_black_8dp)
                 textView.setTextColor(Color.WHITE)
             } else {
-                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded)
+                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded_8dp)
                 textView.setTextColor(Color.BLACK)
             }
         }

@@ -20,7 +20,7 @@
         <entry key="app/src/main/res/drawable/shape_rectangle_rounded_black.xml" value="0.2975" />
         <entry key="app/src/main/res/drawable/shape_rectangle_rounded_black_8dp.xml" value="0.2975" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38958333333333334" />
-        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_monitoring.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_planner.xml" value="0.38958333333333334" />
