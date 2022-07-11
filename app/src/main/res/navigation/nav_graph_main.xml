@@ -11,10 +11,10 @@
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/history_fragment"
-        android:name="com.jwallet.jwallet.presentation.history.HistoryFragment"
-        android:label="History"
-        tools:layout="@layout/fragment_history" />
+        android:id="@+id/monitoring_fragment"
+        android:name="com.jwallet.jwallet.presentation.monitoring.MonitoringFragment"
+        android:label="Monitoring"
+        tools:layout="@layout/fragment_monitoring" />
     <fragment
         android:id="@+id/subscriptions_fragment"
         android:name="com.jwallet.jwallet.presentation.subscriptsions.SubscriptionsFragment"

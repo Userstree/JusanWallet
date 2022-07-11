@@ -11,11 +11,11 @@
         android:id="@+id/mtb_main"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:titleCentered="false"
-        tools:title="Home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleCentered="false"
+        tools:title="Home" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_main"

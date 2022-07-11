@@ -1,4 +1,4 @@
-package com.jwallet.jwallet.presentation.history
+package com.jwallet.jwallet.presentation.monitoring.history
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

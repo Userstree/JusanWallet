@@ -5,7 +5,7 @@
         android:icon="@drawable/home_48px"
         android:title="@string/home" />
     <item
-        android:id="@+id/history_fragment"
+        android:id="@+id/monitoring_fragment"
         android:icon="@drawable/monitoring_48px"
         android:title="@string/history" />
     <item
