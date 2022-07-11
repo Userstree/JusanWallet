@@ -4,15 +4,15 @@
 
 import UIKit
 
-protocol CategoryService {
-    func allCategories() -> [EcosystemCategory]
+protocol CatalogService {
+    func allCatalogs() -> [CatalogCard]
 }
 
-class MockCategoryService: CategoryService {
+class MockCatalogService: CatalogService {
 
-    func allCategories() -> [EcosystemCategory] {
-        categoryTitlesList.enumerated().map { index, title -> EcosystemCategory in
-            EcosystemCategory(
+    func allCatalogs() -> [CatalogCard] {
+        catalogTitlesList.enumerated().map { index, title -> CatalogCard in
+            CatalogCard(
                     title: title,
                     amount: Int.random(in: 0..<5000),
                     cardColor: cardColors[index],
@@ -39,7 +39,7 @@ class MockCategoryService: CategoryService {
         UIImage(systemName: "dots.and.line.vertical.and.cursorarrow.rectangle"),
     ]
 
-    let categoryTitlesList = [
+    let catalogTitlesList = [
         "Магазин",
         "Jusan Invest",
         "Страхование",

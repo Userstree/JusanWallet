@@ -4,8 +4,8 @@
 
 import Foundation
 
-protocol AccountBaseCoordinator: Coordinator {  }
+protocol PlannerBaseCoordinator: Coordinator {  }
 
 protocol AccountBaseCoordinated {
-    var coordinator: AccountCoordinator? { get set }
+    var coordinator: PlannerCoordinator? { get set }
 }

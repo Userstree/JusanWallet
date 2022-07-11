@@ -4,7 +4,7 @@
 
 import UIKit
 
-struct EcosystemCategory: CategoryCellDataSource {
+struct CatalogCard: CatalogCardDataSource {
     var title: String
     var amount: Int
     var cardColor: UIColor

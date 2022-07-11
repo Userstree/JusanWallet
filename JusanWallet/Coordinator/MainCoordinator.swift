@@ -11,7 +11,7 @@ class MainCoordinator: MainBaseCoordinator {
     lazy var homeCoordinator: HomeBaseCoordinator = HomeCoordinator()
     lazy var expensesCoordinator: ExpensesBaseCoordinator = ExpensesCoordinator()
     lazy var paymentsCoordinator: PaymentsBaseCoordinator = PaymentsCoordinator()
-    lazy var accountCoordinator: AccountBaseCoordinator = AccountCoordinator()
+    lazy var plannerCoordinator: PlannerBaseCoordinator = PlannerCoordinator()
     lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(mainBaseCoordinator: self)
 
     private var tabBarController: UITabBarController = {
@@ -34,15 +34,16 @@ class MainCoordinator: MainBaseCoordinator {
         expensesCoordinator.parentCoordinator = self
         expensesViewController.tabBarItem = UITabBarItem(title: "Expenses", image: UIImage(systemName: "clock.arrow.circlepath"), tag: 1)
 
+
+        let plannerViewController = plannerCoordinator.start()
+        plannerCoordinator.parentCoordinator = self
+        plannerViewController.tabBarItem = UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
+
         let paymentsViewController = paymentsCoordinator.start()
         paymentsCoordinator.parentCoordinator = self
-        paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.left.arrow.right"), tag: 2)
+        paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.left.arrow.right"), tag: 3)
 
-        let accountViewController = accountCoordinator.start()
-        accountCoordinator.parentCoordinator = self
-        accountViewController.tabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "person"), tag: 3)
-
-        let tabBarControllers = [homeViewController, expensesViewController, paymentsViewController, accountViewController]
+        let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
         (rootViewController as? UITabBarController)?.setViewControllers(tabBarControllers, animated: true)
         return rootViewController
     }
@@ -55,8 +56,8 @@ class MainCoordinator: MainBaseCoordinator {
             goToExpenses(flow)
         case .automaticPayments:
             goToAutoPayments(flow)
-        case .account:
-            goToAccount(flow)
+        case .planner:
+            goToPlanner(flow)
         }
     }
 
@@ -70,12 +71,12 @@ class MainCoordinator: MainBaseCoordinator {
         (rootViewController as? UITabBarController)?.selectedIndex = 1
     }
 
-    private func goToAutoPayments(_ flow: AppFlow) {
+    private func goToPlanner(_ flow: AppFlow) {
         paymentsCoordinator.moveTo(flow: flow, userData: nil)
         (rootViewController as? UITabBarController)?.selectedIndex = 2
     }
 
-    private func goToAccount(_ flow: AppFlow) {
+    private func goToAutoPayments(_ flow: AppFlow) {
         paymentsCoordinator.moveTo(flow: flow, userData: nil)
         (rootViewController as? UITabBarController)?.selectedIndex = 3
     }

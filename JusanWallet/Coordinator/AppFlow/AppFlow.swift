@@ -8,7 +8,7 @@ enum AppFlow {
     case home(HomeScreen)
     case expenses(ExpensesScreen)
     case automaticPayments(AutomaticPaymentsScreen)
-    case account(AccountScreen)
+    case planner(PlannerScreen)
 }
 
 enum HomeScreen {
@@ -23,6 +23,6 @@ enum AutomaticPaymentsScreen {
     case initialScreen
 }
 
-enum AccountScreen {
+enum PlannerScreen {
     case initialScreen
 }

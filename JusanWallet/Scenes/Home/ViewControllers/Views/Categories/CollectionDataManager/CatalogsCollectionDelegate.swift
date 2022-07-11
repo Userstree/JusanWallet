@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CategoriesCollectionDelegate: NSObject, UICollectionViewDelegate {
+class CatalogsCollectionDelegate: NSObject, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
 

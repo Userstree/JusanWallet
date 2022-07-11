@@ -10,15 +10,25 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
     var coordinator: HomeBaseCoordinator?
     private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)
 
-    private lazy var collectionDataSource = CategoriesCollectionDataSource(viewModel: viewModel)
-    private let collectionDelegate = CategoriesCollectionDelegate()
+    private lazy var collectionDataSource = CatalogsCollectionDataSource(viewModel: viewModel)
+    private let collectionDelegate = CatalogsCollectionDelegate()
 
-    private lazy var categoriesCollection: UICollectionView = {
-        let collection = CategoriesCollectionView()
-        collection.register(CategoryCell.self, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
+    private lazy var catalogsCollection: UICollectionView = {
+        let collection = CatalogsCollectionView()
+        collection.register(CatalogCell.self, forCellWithReuseIdentifier: String(describing: CatalogCell.self))
         collection.dataSource = collectionDataSource
         collection.delegate = collectionDelegate
         return collection
+    }()
+
+    private lazy var categoryItemsTable = CatalogItemsTableView(dataSource: viewModel.catalogData)
+
+    private lazy var catalogTitle: UILabel = {
+        let label = UILabel()
+        label.text = viewModel.catalogCards[0].title
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        return label
     }()
 
     override func viewDidLoad() {
@@ -30,19 +40,13 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
     }
 
     private func configureNavBar() {
-        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonTapped))
         let notifications = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationsButtonTapped))
-        search.tintColor = .white
         notifications.tintColor = .white
-        navigationItem.rightBarButtonItems = [search, notifications]
+        navigationItem.rightBarButtonItem = notifications
         title = "Home"
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.standardAppearance = appearance
-    }
-
-    @objc private func searchButtonTapped() {
-        print("Search button tapped")
     }
 
     @objc private func notificationsButtonTapped() {
@@ -55,7 +59,9 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
 
     private func configureViews() {
         [balanceCardView.view,
-         categoriesCollection,
+         catalogsCollection,
+         catalogTitle,
+         categoryItemsTable.mainVStack,
         ].forEach(view.addSubview)
         makeConstraints()
     }
@@ -67,11 +73,21 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
             $0.height.equalTo(balanceCardView.mainHStack.snp.height)
             $0.width.equalTo(view.snp.width).offset(-32)
         }
-        categoriesCollection.snp.makeConstraints {
+        catalogsCollection.snp.makeConstraints {
             $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)
             $0.width.equalTo(balanceCardView.mainHStack.snp.width)
             $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(140)
+        }
+        catalogTitle.snp.makeConstraints {
+            $0.top.equalTo(catalogsCollection.snp.bottom).offset(16)
+            $0.leading.equalTo(balanceCardView.view.snp.leading)
+        }
+        categoryItemsTable.mainVStack.snp.makeConstraints {
+            $0.top.equalTo(catalogTitle.snp.bottom).offset(16)
+            $0.width.equalTo(balanceCardView.mainHStack.snp.width)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.bottom.equalTo(view.snp.bottom)
         }
     }
 
@@ -79,6 +95,7 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

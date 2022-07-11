@@ -33,7 +33,6 @@ class StatisticsView: UIViewController {
         let stack = UIStackView(arrangedSubviews: [currentMonthLabel, chartView])
         stack.distribution = .fillProportionally
         stack.spacing = 8
-        stack.axis = .horizontal
         return stack
     }()
 

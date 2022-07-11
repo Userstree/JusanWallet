@@ -15,26 +15,11 @@ class BalanceCardView: UIViewController {
     }()
     private lazy var totalBalanceNumericLabel: UILabel = {
         let label = UILabel()
-        label.text = "$12,530"
+        label.text = "12,530"
         label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         return label
     }()
-
-    private lazy var currencyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "KZT"
-        label.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 2, right: 4)
-        label.layer.cornerRadius = 6
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        label.layer.borderWidth = 0.4
-        label.layer.borderColor = UIColor.black.cgColor
-        label.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(currencyButtonTapped(_:)))
-        label.addGestureRecognizer(tap)
-        return label
-    }()
-
     private let currenciesList = ["USD", "KZT", "EU"]
 
     private lazy var dropDownView: DropDown = {
@@ -54,6 +39,19 @@ class BalanceCardView: UIViewController {
         return dropDown
     }()
 
+    private lazy var currencyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "KZT"
+        label.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 2, right: 4)
+        label.layer.cornerRadius = 6
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.layer.borderWidth = 0.4
+        label.layer.borderColor = UIColor.black.cgColor
+        label.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(currencyButtonTapped(_:)))
+        label.addGestureRecognizer(tap)
+        return label
+    }()
     lazy var cardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
@@ -65,38 +63,18 @@ class BalanceCardView: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-
     private let incomeCard: StatisticsView
     private let expensesCard: StatisticsView
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureViews()
-    }
-
-    @objc private func currencyButtonTapped(_ sender: UITapGestureRecognizer) {
-        dropDownView.show()
-    }
-
-    private lazy var leadingVStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
-        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
-        stack.axis = .vertical
-        return stack
-    }()
 
     private lazy var bottomHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
         stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
         stack.spacing = 8
-        stack.axis = .horizontal
         return stack
     }()
-
     lazy var mainHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [leadingVStack,incomeCard.view, expensesCard.view])
         stack.alignment = .center
-        stack.axis = .horizontal
         stack.layer.cornerRadius = 16
         stack.layer.cornerCurve = .continuous
         stack.layer.shadowColor = UIColor.black.cgColor
@@ -110,6 +88,21 @@ class BalanceCardView: UIViewController {
         stack.backgroundColor = .white
         return stack
     }()
+    private lazy var leadingVStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
+        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
+        stack.axis = .vertical
+        return stack
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureViews()
+    }
+
+    @objc private func currencyButtonTapped(_ sender: UITapGestureRecognizer) {
+        dropDownView.show()
+    }
 
     private func configureViews() {
         view.addSubview(mainHStack)
@@ -122,7 +115,7 @@ class BalanceCardView: UIViewController {
         }
     }
 
-    init(frame: CGRect, dataSource: StatisticsProvidable) {
+    init(frame: CGRect, dataSource: BalanceStatisticsServiceProvidable) {
         incomeCard = StatisticsView(dataSource: dataSource.incomeStatistics)
         expensesCard = StatisticsView(dataSource: dataSource.expensesStatistics)
         super.init(nibName: nil, bundle: nil)

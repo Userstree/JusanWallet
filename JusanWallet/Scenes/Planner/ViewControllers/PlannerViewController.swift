@@ -4,8 +4,8 @@
 
 import UIKit
 
-class AccountViewController: UIViewController, AccountBaseCoordinated {
-    var coordinator: AccountCoordinator?
+class PlannerViewController: UIViewController, AccountBaseCoordinated {
+    var coordinator: PlannerCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,10 @@ class AccountViewController: UIViewController, AccountBaseCoordinated {
         navigationItem.scrollEdgeAppearance = appearance
     }
 
-    init(coordinator: AccountCoordinator) {
+    init(coordinator: PlannerCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
-        title = "Account"
+        title = "Planner"
     }
 
     required init?(coder: NSCoder) {

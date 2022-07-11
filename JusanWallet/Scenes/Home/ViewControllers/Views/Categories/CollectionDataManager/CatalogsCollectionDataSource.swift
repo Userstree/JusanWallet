@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CategoriesCollectionDataSource: NSObject, UICollectionViewDataSource {
+class CatalogsCollectionDataSource: NSObject, UICollectionViewDataSource {
 
     private var viewModel: HomeViewModel!
 
@@ -17,14 +17,14 @@ class CategoriesCollectionDataSource: NSObject, UICollectionViewDataSource {
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        viewModel.categoryData.count
+        viewModel.catalogCards.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: String(describing: CategoryCell.self),
-                for: indexPath) as! CategoryCell
-        cell.configure(with: viewModel.categoryData[indexPath.section])
+                withReuseIdentifier: String(describing: CatalogCell.self),
+                for: indexPath) as! CatalogCell
+        cell.configure(with: viewModel.catalogCards[indexPath.section])
         return cell
     }
 }

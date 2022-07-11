@@ -9,7 +9,7 @@ protocol HomeService {
 }
 
 class MockHomeService: HomeService {
-    private let categories = MockCategoryService()
+    private let categories = MockCatalogService()
 
 
 }
