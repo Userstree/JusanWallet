@@ -1,8 +1,7 @@
 import './menu.css';
-import { AiFillHome, AiOutlineHistory, AiFillContacts, AiFillSetting } from 'react-icons/ai';
-import { SiContactlesspayment } from 'react-icons/si';
+import { AiFillHome, AiOutlineHistory, AiFillSetting } from 'react-icons/ai';
 import { IoIosNotifications } from 'react-icons/io';
-import { CgProfile } from 'react-icons/cg';
+import { MdOutlineEditCalendar, MdAutorenew } from 'react-icons/md';
 
 
 export function Menu() {
@@ -12,11 +11,10 @@ export function Menu() {
         <AiFillHome/>
       </a>
       <a href='#history'><AiOutlineHistory /></a>
-      <a href='#auto'><SiContactlesspayment /></a>
-      <a href='#contact'><AiFillContacts /></a>
-      <a href='#contact'><IoIosNotifications /></a>
-      <a href='#contact'><CgProfile /></a>
-      <a href='#contact'><AiFillSetting /></a>
+      <a href='#auto'><MdAutorenew /></a>
+      <a href='#'><MdOutlineEditCalendar /></a>
+      <a href='#'><IoIosNotifications /></a>
+      <a href='#'><AiFillSetting /></a>
 
     </div>
   );

@@ -2,6 +2,7 @@ import './home.css';
 // import { Card } from '../Card';
 // import { ReactComponent as Logo } from './jusan-logo.svg';
 // import { ReactComponent as Jmart } from './jmart2.svg';
+import { Autopayment } from "../Autopayment";
 
 import * as React from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
@@ -91,6 +92,7 @@ export function Home() {
               )}
             </List>
       </div>
+      <Autopayment />
     </div>
   );
 }
