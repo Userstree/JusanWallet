@@ -23,6 +23,8 @@ class MonitoringFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMonitoringBinding.inflate(inflater, container, false)
+        setupNavigation()
+        setupListeners()
         return binding.root
     }
 
@@ -32,7 +34,7 @@ class MonitoringFragment : Fragment() {
     }
 
     private fun setupNavigation() {
-        navHostFragment = parentFragmentManager.findFragmentById(R.id.nav_host_fragment_monitoring) as NavHostFragment
+        navHostFragment = childFragmentManager.findFragmentById(R.id.nav_host_fragment_monitoring) as NavHostFragment
         navController = navHostFragment.navController
     }
 
