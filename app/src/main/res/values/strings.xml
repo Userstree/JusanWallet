@@ -9,4 +9,7 @@
     <string name="category_image">category image</string>
     <string name="category">Category</string>
     <string name="user_profile">User Profile</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="planner">Planner</string>
 </resources>

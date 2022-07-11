@@ -20,4 +20,9 @@
         android:name="com.jwallet.jwallet.presentation.subscriptsions.SubscriptionsFragment"
         android:label="Subscriptions"
         tools:layout="@layout/fragment_subscriptions" />
+    <fragment
+        android:id="@+id/planner_fragment"
+        android:name="com.jwallet.jwallet.presentation.planner.PlannerFragment"
+        android:label="Planner"
+        tools:layout="@layout/fragment_planner" />
 </navigation>
