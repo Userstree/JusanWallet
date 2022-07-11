@@ -9,6 +9,7 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
     var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
     private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)
+    private var selectedCatalog: Int = 0
 
     private lazy var collectionDataSource = CatalogsCollectionDataSource(viewModel: viewModel)
     private let collectionDelegate = CatalogsCollectionDelegate()
@@ -84,7 +85,7 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
             $0.leading.equalTo(balanceCardView.view.snp.leading)
         }
         categoryItemsTable.mainVStack.snp.makeConstraints {
-            $0.top.equalTo(catalogTitle.snp.bottom).offset(16)
+            $0.top.equalTo(catalogTitle.snp.bottom).offset(8)
             $0.width.equalTo(balanceCardView.mainHStack.snp.width)
             $0.centerX.equalTo(view.snp.centerX)
             $0.bottom.equalTo(view.snp.bottom)

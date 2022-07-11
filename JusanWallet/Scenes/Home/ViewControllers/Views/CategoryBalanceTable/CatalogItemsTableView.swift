@@ -29,6 +29,8 @@ class CatalogItemsTableView: UIViewController {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CategoryItemTableViewCell.self, forCellReuseIdentifier: String(describing: CategoryItemTableViewCell.self))
         table.dataSource = self
+        table.delegate = self
+        table.showsVerticalScrollIndicator = false
         table.layer.cornerRadius = 16
         table.layer.cornerCurve = .continuous
         table.layer.shadowColor = UIColor.black.cgColor
@@ -71,6 +73,21 @@ class CatalogItemsTableView: UIViewController {
     }
 }
 
+extension CatalogItemsTableView: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        CGFloat(75)
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        CGFloat(5)
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+}
+
 extension CatalogItemsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -83,7 +100,7 @@ extension CatalogItemsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoryItemTableViewCell.self), for: indexPath) as! CategoryItemTableViewCell
         cell.configure(with: dataSource.catalogData[indexPath.section])
-        cell.contentView.layer.cornerRadius = 12
+        cell.backgroundColor = .clear
         return cell
     }
 }

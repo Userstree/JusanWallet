@@ -15,7 +15,7 @@ class CategoryItemTableViewCell: UITableViewCell {
 
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return label
     }()
 
@@ -53,10 +53,10 @@ class CategoryItemTableViewCell: UITableViewCell {
 
     lazy var mainHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [leadingHStack, rightVStack])
-        stack.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-        stack.distribution = .fillProportionally
-        stack.alignment = .center
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         stack.isLayoutMarginsRelativeArrangement = true
+        stack.distribution = .equalSpacing
+        stack.alignment = .center
         stack.setContentCompressionResistancePriority(.defaultHigh + 50, for: .horizontal)
         stack.spacing = 5
         return stack
@@ -65,6 +65,8 @@ class CategoryItemTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         configureViews()
+        contentView.layer.cornerRadius = 12
+        contentView.layer.cornerCurve = .continuous
         contentView.backgroundColor = .systemGray4
     }
 

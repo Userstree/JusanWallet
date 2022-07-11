@@ -32,7 +32,7 @@ class MainCoordinator: MainBaseCoordinator {
 
         let expensesViewController = expensesCoordinator.start()
         expensesCoordinator.parentCoordinator = self
-        expensesViewController.tabBarItem = UITabBarItem(title: "Expenses", image: UIImage(systemName: "clock.arrow.circlepath"), tag: 1)
+        expensesViewController.tabBarItem = UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
 
 
         let plannerViewController = plannerCoordinator.start()
@@ -41,7 +41,7 @@ class MainCoordinator: MainBaseCoordinator {
 
         let paymentsViewController = paymentsCoordinator.start()
         paymentsCoordinator.parentCoordinator = self
-        paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.left.arrow.right"), tag: 3)
+        paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
 
         let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
         (rootViewController as? UITabBarController)?.setViewControllers(tabBarControllers, animated: true)
