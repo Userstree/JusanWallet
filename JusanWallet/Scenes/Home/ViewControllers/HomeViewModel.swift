@@ -21,7 +21,7 @@ extension StatisticsProvidable {
         get {
             let income = CurrentStatistics(
                     currentMonth: "July",
-                    title: "Income",
+                    title: "Доходы",
                     moneyAmount: 1440,
                     moneyMode: .income(UIImage(named: "uptrendChart")!)
             )
@@ -33,7 +33,7 @@ extension StatisticsProvidable {
         get {
             let expenses = CurrentStatistics(
                     currentMonth: "July",
-                    title: "Expenses",
+                    title: "Расходы",
                     moneyAmount: 1440,
                     moneyMode: .expenses(UIImage(named: "declineChart")!)
             )

@@ -16,6 +16,7 @@ class BalanceCardView: UIViewController {
     private lazy var totalBalanceNumericLabel: UILabel = {
         let label = UILabel()
         label.text = "$12,530"
+        label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         return label
     }()
@@ -79,18 +80,22 @@ class BalanceCardView: UIViewController {
 
     private lazy var leadingVStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
+        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
         stack.axis = .vertical
         return stack
     }()
 
     private lazy var bottomHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
+        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
+        stack.spacing = 8
         stack.axis = .horizontal
         return stack
     }()
 
     lazy var mainHStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [leadingVStack])
+        let stack = UIStackView(arrangedSubviews: [leadingVStack,incomeCard.view, expensesCard.view])
+        stack.alignment = .center
         stack.axis = .horizontal
         stack.layer.cornerRadius = 16
         stack.layer.cornerCurve = .continuous
@@ -98,6 +103,10 @@ class BalanceCardView: UIViewController {
         stack.layer.shadowOffset = CGSize(width: 3, height: 3)
         stack.layer.shadowOpacity = 0.7
         stack.layer.shadowRadius = 4
+        stack.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.setContentCompressionResistancePriority(.defaultHigh + 50, for: .horizontal)
+        stack.spacing = 5
         stack.backgroundColor = .white
         return stack
     }()

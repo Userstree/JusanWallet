@@ -14,7 +14,7 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
     private let collectionDelegate = CategoriesCollectionDelegate()
 
     private lazy var categoriesCollection: UICollectionView = {
-        let collection = CategoryCollectionView()
+        let collection = CategoriesCollectionView()
         collection.register(CategoryCell.self, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
         collection.dataSource = collectionDataSource
         collection.delegate = collectionDelegate
@@ -65,7 +65,7 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(balanceCardView.mainHStack.snp.height)
-            $0.width.equalTo(view.snp.width)
+            $0.width.equalTo(view.snp.width).offset(-32)
         }
         categoriesCollection.snp.makeConstraints {
             $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)

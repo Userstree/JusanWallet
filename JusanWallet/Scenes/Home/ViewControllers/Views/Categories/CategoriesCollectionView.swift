@@ -4,11 +4,11 @@
 
 import UIKit
 
-class CategoryCollectionView: UICollectionView {
+class CategoriesCollectionView: UICollectionView {
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 118, height: 144)
+        layout.itemSize = CGSize(width: 108, height: 138)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0

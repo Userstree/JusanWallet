@@ -32,13 +32,20 @@ class StatisticsView: UIViewController {
     private lazy var upperHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [currentMonthLabel, chartView])
         stack.distribution = .fillProportionally
+        stack.spacing = 8
         stack.axis = .horizontal
         return stack
     }()
 
     private lazy var mainVStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [upperHStack, titleLabel, moneyAmountLabel])
+        stack.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.layer.cornerRadius = 8
+        stack.layer.cornerCurve = .continuous
         stack.axis = .vertical
+        stack.spacing = 8
+        stack.backgroundColor = .black.withAlphaComponent(0.64)
         return stack
     }()
 
@@ -58,13 +65,17 @@ class StatisticsView: UIViewController {
         switch dataSource.moneyMode {
         case .income(let image):
             chartView.image = image
-            titleLabel.text = "Income"
+            chartView.tintColor = .red
+            titleLabel.text = dataSource.title
             moneyAmountLabel.text = "+$\(dataSource.moneyAmount)"
+            moneyAmountLabel.textColor = .systemGreen.withAlphaComponent(0.78)
         case .expenses(let image):
             chartView.image = image
-            titleLabel.text = "Expenses"
+            titleLabel.text = dataSource.title
             moneyAmountLabel.text = "-$\(dataSource.moneyAmount)"
+            moneyAmountLabel.textColor = .systemRed
         }
+//        mainVStack.backgroundColor = .systemGreen
         currentMonthLabel.text = dataSource.currentMonth
     }
 
