@@ -1,10 +1,13 @@
 package com.jwallet.jwallet.presentation.monitoring
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.jwallet.jwallet.R
@@ -41,10 +44,25 @@ class MonitoringFragment : Fragment() {
     private fun setupListeners() {
         binding.tvStatistics.setOnClickListener {
             navController.navigate(R.id.statisticsFragment)
+            toggleBackground(binding.tvStatistics)
         }
 
         binding.tvHistory.setOnClickListener {
             navController.navigate(R.id.historyFragment)
+            toggleBackground(binding.tvHistory)
+        }
+    }
+
+    private fun toggleBackground(view: TextView) {
+        val views = listOf(binding.tvStatistics, binding.tvHistory)
+        views.forEachIndexed { index, textView ->
+            if (textView.id == view.id) {
+                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded_black)
+                textView.setTextColor(Color.WHITE)
+            } else {
+                textView.setBackgroundResource(R.drawable.shape_rectangle_rounded)
+                textView.setTextColor(Color.BLACK)
+            }
         }
     }
 }

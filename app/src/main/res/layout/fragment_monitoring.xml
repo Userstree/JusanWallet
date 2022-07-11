@@ -12,12 +12,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="@drawable/shape_rectangle_rounded_8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/shape_rectangle_rounded_black"
+        android:textColor="@android:color/white"
         android:padding="6dp"
         android:text="@string/statistics"
         android:textAlignment="center"
         android:textAllCaps="true"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_history_tabs_bottom"
         app:layout_constraintEnd_toStartOf="@+id/tv_history"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,23 +30,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
-        android:background="@drawable/shape_rectangle_rounded_8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/shape_rectangle_rounded"
         android:padding="6dp"
         android:text="@string/history"
         android:textAlignment="center"
         android:textAllCaps="true"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_history_tabs_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_statistics"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_history_tabs_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.051983584" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_monitoring"
@@ -53,8 +49,15 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_history_tabs_bottom"
+        app:layout_constraintStart_toStartOf="@id/barrier_monitoring_tabs"
+        app:layout_constraintTop_toBottomOf="@+id/tv_statistics"
         app:navGraph="@navigation/nav_graph_monitoring" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_monitoring_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_history, tv_statistics" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,9 +9,11 @@
     <string name="category_image">category image</string>
     <string name="category">Category</string>
     <string name="user_profile">User Profile</string>
-    <string name="income">Income</string>
-    <string name="expense">Expense</string>
+    <string name="income">Incomes</string>
+    <string name="expense">Expenses</string>
+    <string name="transfers">Transfers</string>
     <string name="planner">Planner</string>
     <string name="targets">targets</string>
     <string name="statistics">statistics</string>
+    <string name="total">Total</string>
 </resources>
