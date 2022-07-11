@@ -1,0 +1,7 @@
+.Home{
+    margin-left: 50px;
+    padding: 0;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
