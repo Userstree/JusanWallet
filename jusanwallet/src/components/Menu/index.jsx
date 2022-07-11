@@ -5,10 +5,10 @@ import { IoIosNotifications } from 'react-icons/io';
 import { CgProfile } from 'react-icons/cg';
 
 
-function Menu() {
+export function Menu() {
   return (
     <div className='Menu'>
-      <a class='active' href='#home'>
+      <a className='active' href='#home'>
         <AiFillHome/>
       </a>
       <a href='#history'><AiOutlineHistory /></a>
@@ -22,4 +22,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+// export default Menu;

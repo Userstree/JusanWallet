@@ -1,13 +1,13 @@
 import '../../App.css';
-import Home from '../Home';
-import Menu from './Menu';
+import {Home} from '../Home';
+import {Menu} from '../Menu';
 
 
 function Main() {
   return (
     <div className='Main'>
       <Menu />
-     <Home />
+      <Home />
     </div>
   );
 }
