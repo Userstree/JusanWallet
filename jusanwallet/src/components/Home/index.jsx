@@ -33,7 +33,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export function Home() {
+export default function Home() {
   return (
     <div className='Home'>
       <div className='header'>
