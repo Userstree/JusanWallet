@@ -26,4 +26,6 @@
     <string name="wallets">Wallets</string>
     <string name="up_arrow">up arrow</string>
     <string name="e_mail">E-mail</string>
+    <string name="notifications">Notifications</string>
+    <string name="category_icon">category icon</string>
 </resources>
