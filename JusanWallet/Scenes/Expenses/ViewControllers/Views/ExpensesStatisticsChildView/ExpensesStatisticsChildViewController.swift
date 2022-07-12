@@ -6,7 +6,6 @@ import UIKit
 import SnapKit
 import Charts
 import Persei
-import SwipeMenuViewController
 
 final class ExpensesStatisticsChildViewController: UIViewController, BindableType {
     var viewModel: ExpensesViewModel!

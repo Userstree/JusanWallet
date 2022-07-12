@@ -9,7 +9,7 @@ final class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .primaryColor
+        view.backgroundColor = .background
         configureNavTitle()
     }
 
@@ -17,7 +17,7 @@ final class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
         let appearance = UINavigationBarAppearance(idiom: .phone)
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .primaryColor
+        appearance.backgroundColor = .primary
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
     }

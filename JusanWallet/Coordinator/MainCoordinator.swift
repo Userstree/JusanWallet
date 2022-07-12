@@ -23,8 +23,8 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
 //        let tabController = UITabBarController()
         let tab = BATabBarController()
         tab.delegate = self
-        tab.tabBarBackgroundColor = .systemGray5
-        tab.tabBarItemStrokeColor = .orange
+        tab.tabBarBackgroundColor = .primary
+        tab.tabBarItemStrokeColor = .primaryVariant
 //        tabController.tabBar.backgroundColor = .primaryDarkColor
 //        tabController.tabBar.tintColor = .secondaryColor
 //        tabController.tabBar.unselectedItemTintColor = .systemGray2

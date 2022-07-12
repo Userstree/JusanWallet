@@ -7,19 +7,19 @@ PODS:
     - SwiftAlgorithms (~> 1.0)
   - DropDown (2.3.2)
   - EasySocialButton (1.0.2)
+  - Parchment (3.2.0)
   - Persei (4.0.0)
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
-  - SwipeMenuViewController (4.1.0)
 
 DEPENDENCIES:
   - BATabBarController (~> 2.0.2)
   - Charts
   - DropDown (= 2.3.2)
   - EasySocialButton
+  - Parchment (~> 3.2)
   - Persei (~> 4.0)
   - SnapKit (~> 5.6.0)
-  - SwipeMenuViewController
 
 SPEC REPOS:
   trunk:
@@ -27,21 +27,21 @@ SPEC REPOS:
     - Charts
     - DropDown
     - EasySocialButton
+    - Parchment
     - Persei
     - SnapKit
     - SwiftAlgorithms
-    - SwipeMenuViewController
 
 SPEC CHECKSUMS:
   BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
   Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   EasySocialButton: 8f2464e11dd5b52d612964243cc899d8fae0f1eb
+  Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
   Persei: 9c22ebdea5ae5d54347dfdd6a2e2c600bbb08e10
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
-  SwipeMenuViewController: 94fac81cc192d9f08f218fe4c0c853569b735e1f
 
-PODFILE CHECKSUM: d1d99bb0a84a6e7d89482e39ad3b8df7602ccc3e
+PODFILE CHECKSUM: b649ae1e84adb4351eebd471b4936b0f372685be
 
 COCOAPODS: 1.11.3

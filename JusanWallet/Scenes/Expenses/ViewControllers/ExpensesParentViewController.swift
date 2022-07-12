@@ -5,67 +5,19 @@
 import UIKit
 import SnapKit
 import EasySocialButton
-import SwipeMenuViewController
+import Parchment
 
-final class ExpensesParentViewController: SwipeMenuViewController, ExpensesBaseCoordinated, BindableType {
+final class ExpensesParentViewController: UIViewController, ExpensesBaseCoordinated, BindableType {
     var coordinator: ExpensesCoordinator?
     var viewModel: ExpensesViewModel!
-//    private var isStatisticsActive: Bool = true {
-//        didSet {
-//            if isStatisticsActive {
-//                switchChildViewControllers(isFirst: isStatisticsActive)
-//                historyChildViewController.remove()
-//            } else {
-//                expensesChildViewController.remove()
-//                switchChildViewControllers(isFirst: isStatisticsActive)
-//            }
-//        }
-//    }
     private var controllerTitles = ["Expenses", "Income", ]
-
-//    private lazy var statisticsButton: AZSocialButton = {
-//        let button = AZSocialButton()
-//        button.animateInteraction = true
-//        button.useCornerRadius = true
-//        button.setTitle("Statistics", for: .normal)
-//        button.backgroundColor = .systemGray5
-//        button.cornerRadius = 12
-//        button.layer.cornerCurve = .continuous
-//        button.setTitleColor(.black, for: .normal)
-//        button.addTarget(self, action: #selector(statisticsButtonTapped), for: .touchUpInside)
-//        return button
-//    }()
-
-//    private lazy var historyButton: AZSocialButton = {
-//        let button = AZSocialButton()
-//        button.animateInteraction = true
-//        button.useCornerRadius = true
-//        button.setTitle("History", for: .normal)
-//        button.backgroundColor = .systemGray5
-//        button.cornerRadius = 12
-//        button.setTitleColor(.black, for: .normal)
-//        button.addTarget(self, action: #selector(historyButtonTapped), for: .touchUpInside)
-//        return button
-//    }()
-
-//    private var mainHStack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .horizontal
-//        stack.distribution = .fillEqually
-//        stack.spacing = 12
-//        return stack
-//    }()
 
     private lazy var expensesChildViewController = ExpensesStatisticsChildViewController(viewModel: viewModel)
     private lazy var historyChildViewController = HistoryChildViewController(viewModel: viewModel)
 
-//    @objc private func historyButtonTapped() {
-//        isStatisticsActive = false
-//    }
-
-//    @objc private func statisticsButtonTapped() {
-//        isStatisticsActive = true
-//    }
+//    private lazy var pagingViewController: PagingViewController = {
+//        let pagingVC = PagingViewController(viewControllers: <#T##[UIViewController]##[UIKit.UIViewController]#>)
+//    }()
 
     func bindViewModel() {
 
@@ -75,7 +27,7 @@ final class ExpensesParentViewController: SwipeMenuViewController, ExpensesBaseC
         let appearance = UINavigationBarAppearance(idiom: .phone)
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .primaryColor
+        appearance.backgroundColor = .primary
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
     }
@@ -87,19 +39,11 @@ final class ExpensesParentViewController: SwipeMenuViewController, ExpensesBaseC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .primaryColor
+        view.backgroundColor = .background
         configureNavTitle()
         configureViews()
-//        switchChildViewControllers(isFirst: true)
     }
 
-//    private func switchChildViewControllers(isFirst: Bool) {
-//        if isFirst {
-//            addRelativeTo(someView: mainHStack, offsetTop: 4, offsetBottom: 88, expensesChildViewController)
-//        } else {
-//            addRelativeTo(someView: mainHStack, offsetTop: 4, offsetBottom: 88, historyChildViewController)
-//        }
-//    }
 
     private func configureViews() {
 //        [statisticsButton, historyButton].forEach(mainHStack.addArrangedSubview)

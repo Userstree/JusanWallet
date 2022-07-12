@@ -34,7 +34,7 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .primaryColor
+        view.backgroundColor = .background
         balanceCardView.view.isUserInteractionEnabled = true
         configureNavBar()
         configureViews()
