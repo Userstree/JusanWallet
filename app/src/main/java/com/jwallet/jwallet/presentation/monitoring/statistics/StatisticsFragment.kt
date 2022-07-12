@@ -42,7 +42,7 @@ class StatisticsFragment : Fragment() {
             binding.tvStatisticsExpense,
             binding.tvStatisticsTransfers
         )
-        views.forEachIndexed { index, textView ->
+        views.forEach { textView ->
             if (textView.id == view.id) {
                 textView.setBackgroundResource(R.drawable.shape_rectangle_rounded_black_8dp)
                 textView.setTextColor(Color.WHITE)

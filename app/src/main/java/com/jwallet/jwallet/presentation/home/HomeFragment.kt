@@ -2,6 +2,7 @@ package com.jwallet.jwallet.presentation.home
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -47,11 +48,11 @@ class HomeFragment : Fragment() {
 
     private fun setupLayout() {
         binding.ibtnAddCategory.setOnClickListener {
-            val category = viewModel.getCategory()
+            displayToast("Add category button clicked!")
         }
 
         binding.ibtnAddTransaction.setOnClickListener {
-            val transaction = viewModel.getTransaction()
+            displayToast("Add transaction button clicked!")
         }
     }
 
@@ -68,11 +69,15 @@ class HomeFragment : Fragment() {
 
         override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
             when (menuItem.itemId) {
-                R.id.item_profile -> ""
+                R.id.item_profile -> displayToast("User profile clicked!")
             }
             return true
         }
 
+    }
+
+    private fun displayToast(msg: String = "Message") {
+        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {

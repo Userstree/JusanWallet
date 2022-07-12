@@ -10,21 +10,22 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:background="@drawable/shape_rectangle_rounded"
-        android:layout_margin="8dp"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@null"
         android:layout_height="wrap_content"
+        app:queryHint="Search"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_rectangle_rounded"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@null" />
 
     <TextView
         android:id="@+id/tv_all"
         android:layout_width="0dp"
-        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_rectangle_rounded_black_8dp"
         android:padding="6dp"
         android:text="@string/all"
@@ -38,9 +39,9 @@
     <TextView
         android:id="@+id/tv_incomes"
         android:layout_width="0dp"
-        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_rectangle_rounded_8dp"
         android:padding="6dp"
         android:text="@string/income"
@@ -53,9 +54,9 @@
     <TextView
         android:id="@+id/tv_expenses"
         android:layout_width="0dp"
-        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_rectangle_rounded_8dp"
         android:padding="6dp"
         android:text="@string/expense"
@@ -68,9 +69,9 @@
     <TextView
         android:id="@+id/tv_transfers"
         android:layout_width="0dp"
-        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_rectangle_rounded_8dp"
         android:padding="6dp"
         android:text="@string/transfers"
@@ -80,11 +81,22 @@
         app:layout_constraintStart_toEndOf="@+id/tv_expenses"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier_history_tabs_bottom"
+        tools:layout_editor_absoluteX="8dp">
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_history_tabs_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_all, tv_expenses,tv_incomes, tv_transfers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
