@@ -5,6 +5,7 @@
 import UIKit
 import SnapKit
 import EasySocialButton
+import SwipeMenuViewController
 
 final class ExpensesParentViewController: UIViewController, ExpensesBaseCoordinated, BindableType {
     var coordinator: ExpensesCoordinator?

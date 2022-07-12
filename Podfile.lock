@@ -10,6 +10,7 @@ PODS:
   - Persei (4.0.0)
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
+  - SwipeMenuViewController (4.1.0)
 
 DEPENDENCIES:
   - BATabBarController (~> 2.0.2)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - EasySocialButton
   - Persei (~> 4.0)
   - SnapKit (~> 5.6.0)
+  - SwipeMenuViewController
 
 SPEC REPOS:
   trunk:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - Persei
     - SnapKit
     - SwiftAlgorithms
+    - SwipeMenuViewController
 
 SPEC CHECKSUMS:
   BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
@@ -37,7 +40,8 @@ SPEC CHECKSUMS:
   Persei: 9c22ebdea5ae5d54347dfdd6a2e2c600bbb08e10
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+  SwipeMenuViewController: 94fac81cc192d9f08f218fe4c0c853569b735e1f
 
-PODFILE CHECKSUM: 2aed6f4c79f8217a50c15b443efbf3bf2c66e2e3
+PODFILE CHECKSUM: d1d99bb0a84a6e7d89482e39ad3b8df7602ccc3e
 
 COCOAPODS: 1.11.3

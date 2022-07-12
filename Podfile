@@ -12,4 +12,5 @@ target 'JusanWallet' do
 	pod 'BATabBarController', '~> 2.0.2'
 	pod 'EasySocialButton'
 	pod 'Persei', '~> 4.0'
+	pod 'SwipeMenuViewController'
 end
