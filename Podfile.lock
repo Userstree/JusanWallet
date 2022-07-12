@@ -1,4 +1,6 @@
 PODS:
+  - BATabBarController (2.0.2):
+    - SnapKit
   - Charts (4.0.2):
     - Charts/Core (= 4.0.2)
   - Charts/Core (4.0.2):
@@ -8,23 +10,26 @@ PODS:
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
+  - BATabBarController (~> 2.0.2)
   - Charts
   - DropDown (= 2.3.2)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - BATabBarController
     - Charts
     - DropDown
     - SnapKit
     - SwiftAlgorithms
 
 SPEC CHECKSUMS:
+  BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
   Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: 5106a898ad45dc30248841280bd2c13708ba9829
+PODFILE CHECKSUM: fd113f6eb34f4d9cc906a2007d6a555bb2265ac3
 
 COCOAPODS: 1.11.3

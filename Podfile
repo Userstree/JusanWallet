@@ -9,4 +9,5 @@ target 'JusanWallet' do
 	pod 'SnapKit', '~> 5.6.0'
 	pod 'DropDown', '2.3.2'
 	pod 'Charts'
+	pod 'BATabBarController', '~> 2.0.2'
 end

@@ -11,7 +11,7 @@ protocol CatalogService {
 class MockCatalogService: CatalogService {
 
     func allCatalogs() -> [CatalogCard] {
-        catalogTitlesList.enumerated().map { index, title -> CatalogCard in
+        companyTitlesList.enumerated().map { index, title -> CatalogCard in
             CatalogCard(
                     title: title,
                     amount: Int.random(in: 0..<5000),
@@ -39,7 +39,7 @@ class MockCatalogService: CatalogService {
         UIImage(systemName: "dots.and.line.vertical.and.cursorarrow.rectangle"),
     ]
 
-    let catalogTitlesList = [
+    let companyTitlesList = [
         "Магазин",
         "Jusan Invest",
         "Страхование",

@@ -10,5 +10,5 @@ import UIKit
 typealias DataProvidable =  BalanceStatisticsServiceProvidable & CatalogItemsDataListProvidable
 
 protocol HomeViewModel: DataProvidable {
-    var catalogCards: [CatalogCard] { get set }
+    var companyCards: [CatalogCard] { get set }
 }

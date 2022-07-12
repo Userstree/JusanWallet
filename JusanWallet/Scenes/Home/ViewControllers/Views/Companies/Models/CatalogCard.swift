@@ -4,7 +4,7 @@
 
 import UIKit
 
-struct CatalogCard: CatalogCardDataSource {
+struct CatalogCard: CompaniesCardDataSource {
     var title: String
     var amount: Int
     var cardColor: UIColor

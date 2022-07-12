@@ -11,22 +11,22 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
     private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)
     private var selectedCatalog: Int = 0
 
-    private lazy var collectionDataSource = CatalogsCollectionDataSource(viewModel: viewModel)
-    private let collectionDelegate = CatalogsCollectionDelegate()
+    private lazy var collectionDataSource = CompaniesCollectionDataSource(viewModel: viewModel)
+    private let collectionDelegate = CompaniesCollectionDelegate()
 
-    private lazy var catalogsCollection: UICollectionView = {
-        let collection = CatalogsCollectionView()
-        collection.register(CatalogCell.self, forCellWithReuseIdentifier: String(describing: CatalogCell.self))
+    private lazy var companiesCollection: UICollectionView = {
+        let collection = CompaniesCollectionView()
+        collection.register(CompaniesCell.self, forCellWithReuseIdentifier: String(describing: CompaniesCell.self))
         collection.dataSource = collectionDataSource
         collection.delegate = collectionDelegate
         return collection
     }()
 
-    private lazy var categoryItemsTable = CatalogItemsTableView(dataSource: viewModel.catalogData)
+    private lazy var categoryItemsTable = CatalogItemsTableView(dataSource: viewModel.companyData)
 
-    private lazy var catalogTitle: UILabel = {
+    private lazy var companyTitle: UILabel = {
         let label = UILabel()
-        label.text = viewModel.catalogCards[0].title
+        label.text = viewModel.companyCards[0].title
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         return label
@@ -60,8 +60,8 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
 
     private func configureViews() {
         [balanceCardView.view,
-         catalogsCollection,
-         catalogTitle,
+         companiesCollection,
+         companyTitle,
          categoryItemsTable.mainVStack,
         ].forEach(view.addSubview)
         makeConstraints()
@@ -74,18 +74,18 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
             $0.height.equalTo(balanceCardView.mainHStack.snp.height)
             $0.width.equalTo(view.snp.width).offset(-32)
         }
-        catalogsCollection.snp.makeConstraints {
+        companiesCollection.snp.makeConstraints {
             $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)
             $0.width.equalTo(balanceCardView.mainHStack.snp.width)
             $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(140)
         }
-        catalogTitle.snp.makeConstraints {
-            $0.top.equalTo(catalogsCollection.snp.bottom).offset(16)
+        companyTitle.snp.makeConstraints {
+            $0.top.equalTo(companiesCollection.snp.bottom).offset(16)
             $0.leading.equalTo(balanceCardView.view.snp.leading)
         }
         categoryItemsTable.mainVStack.snp.makeConstraints {
-            $0.top.equalTo(catalogTitle.snp.bottom).offset(8)
+            $0.top.equalTo(companyTitle.snp.bottom).offset(8)
             $0.width.equalTo(balanceCardView.mainHStack.snp.width)
             $0.centerX.equalTo(view.snp.centerX)
             $0.bottom.equalTo(view.snp.bottom)

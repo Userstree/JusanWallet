@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CatalogsCollectionView: UICollectionView {
+class CompaniesCollectionView: UICollectionView {
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -13,9 +13,10 @@ class CatalogsCollectionView: UICollectionView {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
-        self.register(CatalogCell.self, forCellWithReuseIdentifier: String(describing: CatalogCell.self))
+        self.register(CompaniesCell.self, forCellWithReuseIdentifier: String(describing: CompaniesCell.self))
         backgroundColor = .clear
         showsHorizontalScrollIndicator = false
+        decelerationRate = .normal
     }
 
     required init?(coder: NSCoder) {

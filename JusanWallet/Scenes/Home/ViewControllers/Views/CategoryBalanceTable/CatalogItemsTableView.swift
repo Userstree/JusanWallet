@@ -5,13 +5,13 @@
 import UIKit
 
 protocol CatalogItemsDataListProvidable {
-    var catalogData: [CatalogTableItemDataSource] { get set }
+    var companyData: [CatalogTableItemDataSource] { get set }
 }
 
 class CatalogItemsTableView: UIViewController {
     var dataSource: CatalogItemsDataList!
 
-    lazy var catalogTable: UITableView = {
+    lazy var companyTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CategoryItemTableViewCell.self, forCellReuseIdentifier: String(describing: CategoryItemTableViewCell.self))
         table.dataSource = self
@@ -28,7 +28,7 @@ class CatalogItemsTableView: UIViewController {
     }()
 
     lazy var mainVStack: UIStackView = {
-        let stack = UIStackView(viewElements: [catalogTable])
+        let stack = UIStackView(viewElements: [companyTable])
         stack.axis = .vertical
         return stack
     }()
@@ -39,7 +39,7 @@ class CatalogItemsTableView: UIViewController {
     }
 
     private func configureViews() {
-        view.addSubview(catalogTable)
+        view.addSubview(companyTable)
         makeConstraints()
     }
 
@@ -80,12 +80,12 @@ extension CatalogItemsTableView: UITableViewDataSource {
     }
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        dataSource.catalogData.count
+        dataSource.companyData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoryItemTableViewCell.self), for: indexPath) as! CategoryItemTableViewCell
-        cell.configure(with: dataSource.catalogData[indexPath.section])
+        cell.configure(with: dataSource.companyData[indexPath.section])
         cell.backgroundColor = .clear
         return cell
     }

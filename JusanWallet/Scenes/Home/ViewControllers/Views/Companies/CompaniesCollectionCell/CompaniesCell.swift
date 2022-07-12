@@ -5,14 +5,14 @@
 import UIKit
 import SnapKit
 
-protocol CatalogCardDataSource {
+protocol CompaniesCardDataSource {
     var title: String { get set }
     var icon: UIImage { get set }
     var amount: Int { get set }
     var cardColor: UIColor { get set }
 }
 
-class CatalogCell: UICollectionViewCell {
+class CompaniesCell: UICollectionViewCell {
 
     private lazy var iconImage = UIImageView()
 
@@ -45,7 +45,7 @@ class CatalogCell: UICollectionViewCell {
         configureViews()
     }
 
-    func configure(with dataSource: CatalogCardDataSource) {
+    func configure(with dataSource: CompaniesCardDataSource) {
         titleLabel.text = dataSource.title
         iconImage.image = dataSource.icon
         amountLabel.text = "$\(dataSource.amount)"

@@ -7,15 +7,15 @@ import UIKit
 typealias CatalogItemsDataList = [CatalogTableItemDataSource]
 
 extension CatalogItemsDataList {
-    var catalogData: [CatalogTableItemDataSource] {
+    var companyData: [CatalogTableItemDataSource] {
         get {
-            let catalogTableItems: [CatalogTableItemDataSource] = [
+            let companyTableItems: [CatalogTableItemDataSource] = [
                 CatalogTableItem(title: "IPhone 13 mini", subTitle: "IPoint", amount: 799, logoImage: UIImage(systemName: "iphone")!),
                 CatalogTableItem(title: "Sony Headphones", subTitle: "Sony Store", amount: 499, logoImage: UIImage(systemName: "headphones")!),
                 CatalogTableItem(title: "Magic Mouse", subTitle: "IPoint", amount: 249, logoImage: UIImage(systemName: "magicmouse")!),
                 CatalogTableItem(title: "Macbook Pro 14'", subTitle: "Apple", amount: 1799, logoImage: UIImage(systemName: "laptopcomputer")!),
             ]
-            return catalogTableItems
+            return companyTableItems
         }
     }
 }

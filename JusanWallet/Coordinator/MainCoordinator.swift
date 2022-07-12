@@ -3,8 +3,13 @@
 //
 
 import UIKit
+import BATabBarController
 
-class MainCoordinator: MainBaseCoordinator {
+extension UIViewController: BATabBarControllerDelegate {
+    public func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {  }
+}
+
+class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate {
 
     var parentCoordinator: MainBaseCoordinator?
 
@@ -14,12 +19,16 @@ class MainCoordinator: MainBaseCoordinator {
     lazy var plannerCoordinator: PlannerBaseCoordinator = PlannerCoordinator()
     lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(mainBaseCoordinator: self)
 
-    private var tabBarController: UITabBarController = {
-        let tabController = UITabBarController()
-        tabController.tabBar.backgroundColor = .primaryDarkColor
-        tabController.tabBar.tintColor = .secondaryColor
-        tabController.tabBar.unselectedItemTintColor = .systemGray2
-        return tabController
+    private lazy var tabBarController: BATabBarController = {
+//        let tabController = UITabBarController()
+        let tab = BATabBarController()
+        tab.delegate = self
+        tab.tabBarBackgroundColor = .systemGray5
+        tab.tabBarItemStrokeColor = .orange
+//        tabController.tabBar.backgroundColor = .primaryDarkColor
+//        tabController.tabBar.tintColor = .secondaryColor
+//        tabController.tabBar.unselectedItemTintColor = .systemGray2
+        return tab
     }()
 
     lazy var rootViewController: UIViewController = tabBarController
@@ -28,24 +37,42 @@ class MainCoordinator: MainBaseCoordinator {
 
         let homeViewController = homeCoordinator.start()
         homeCoordinator.parentCoordinator = self
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        let homeTitle = NSMutableAttributedString(string: "Home")
+        let homeImage = UIImage(systemName: "house")!
+        let homeItem = BATabBarItem(image: homeImage, selectedImage: homeImage, title: homeTitle)
+        homeViewController.tabBarController(tabBarController, didSelect: homeViewController)//UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+
 
         let expensesViewController = expensesCoordinator.start()
         expensesCoordinator.parentCoordinator = self
-        expensesViewController.tabBarItem = UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
+        let expensesTitle = NSMutableAttributedString(string: "Expenses")
+        let expensesImage = UIImage(systemName: "dollarsign.circle.fill")!
+        let expensesItem = BATabBarItem(image: expensesImage, selectedImage: expensesImage, title: expensesTitle)
+        expensesViewController.tabBarController(tabBarController, didSelect: expensesViewController) //UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
 
 
         let plannerViewController = plannerCoordinator.start()
         plannerCoordinator.parentCoordinator = self
-        plannerViewController.tabBarItem = UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
+        let plannerTitle = NSMutableAttributedString(string: "Planner")
+        let plannerImage = UIImage(systemName: "calendar.badge.plus")!
+        let plannerItem = BATabBarItem(image: plannerImage, selectedImage: plannerImage, title: plannerTitle)
+        plannerViewController.tabBarController(tabBarController, didSelect: plannerViewController)//UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
+
 
         let paymentsViewController = paymentsCoordinator.start()
         paymentsCoordinator.parentCoordinator = self
-        paymentsViewController.tabBarItem = UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
+        let paymentsTitle = NSMutableAttributedString(string: "Payments")
+        let paymentsImage = UIImage(systemName: "arrow.triangle.2.circlepath.circle")!
+        let paymentsItem = BATabBarItem(image: paymentsImage, selectedImage: paymentsImage, title: paymentsTitle)
+        paymentsViewController.tabBarController(tabBarController, didSelect: paymentsViewController)//UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
+
 
         let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
-        (rootViewController as? UITabBarController)?.setViewControllers(tabBarControllers, animated: true)
-        (rootViewController as? UITabBarController)?.selectedIndex = 1
+//        (rootViewController as? BATabBarController)?.setViewControllers(tabBarControllers, animated: true)
+//        (rootViewController as? BATabBarController)?.selectedIndex = 1
+        (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, expensesItem, plannerItem, paymentsItem]
+        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[1]
+        (rootViewController as? BATabBarController)?.viewControllers = tabBarControllers
         return rootViewController
     }
 
@@ -90,5 +117,8 @@ class MainCoordinator: MainBaseCoordinator {
         homeCoordinator.resetToRoot(animated: false)
         moveTo(flow: .home(.initialScreen), userData: nil)
         return self
+    }
+
+    func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {
     }
 }
