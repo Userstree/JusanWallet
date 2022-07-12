@@ -40,6 +40,16 @@ CREATE TABLE transaction
     CONSTRAINT FK_client foreign key (client_ID) references client(id),
     CONSTRAINT FK_category foreign key (category_ID) references category(id)
 );
+create table planned_company_types
+(
+    id int,
+    client_id int NOT NULL,
+    company_type_id int,
+    plan double,
+    CONSTRAINT PK_planned_company_type PRIMARY KEY  (id),
+    CONSTRAINT FK_planned_client foreign key (client_id) references client(id),
+    CONSTRAINT FK_planned_company_type foreign key (company_type_id) references company_type(id)
+);
 insert into client Values(1, 'Alikhan_Mazhiken') ;
 insert into company_type VALUES (1, 'food', 0.15);
 insert into company values (1, 'cafe', 1);

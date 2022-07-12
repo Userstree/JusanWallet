@@ -1,4 +1,4 @@
-package com.example.jusanwallet.Controllers;
+package com.example.jusanwallet.Controllers.Requests;
 
 import lombok.Data;
 import lombok.Getter;

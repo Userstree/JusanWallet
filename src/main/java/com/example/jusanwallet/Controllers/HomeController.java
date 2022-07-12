@@ -1,5 +1,8 @@
 package com.example.jusanwallet.Controllers;
 
+import com.example.jusanwallet.Controllers.Requests.RequestPeriod;
+import com.example.jusanwallet.Controllers.Responses.ResponseCategory;
+import com.example.jusanwallet.Controllers.Responses.ResponseMoney;
 import com.example.jusanwallet.Entities.Category;
 import com.example.jusanwallet.Services.*;
 import lombok.AllArgsConstructor;
@@ -18,24 +21,24 @@ public class HomeController {
     private TransactionService transactionService;
     private CategoryService categoryService;
     @GetMapping("/{clientID}")
-    public List<Response> getAllGroupByCategory(@PathVariable int clientID){
-        List<Response> result = new ArrayList<>();
+    public List<ResponseCategory> getAllGroupByCategory(@PathVariable int clientID){
+        List<ResponseCategory> result = new ArrayList<>();
         List<Category> categories = categoryService.findAll();
         for(Category category : categories) {
             ResponseMoney responseMoney = transactionService.sumByCategory(clientID, category.getId());
-            Response response = new Response(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
-            result.add(response);
+            ResponseCategory responseCategory = new ResponseCategory(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
+            result.add(responseCategory);
         }
         return result;
     }
     @PostMapping({"/{clientID}"})
-    public List<Response> getAllByTimeGroupByCategory(@PathVariable int clientID, @RequestBody RequestPeriod request){
-        List<Response> result = new ArrayList<>();
+    public List<ResponseCategory> getAllByTimeGroupByCategory(@PathVariable int clientID, @RequestBody RequestPeriod request){
+        List<ResponseCategory> result = new ArrayList<>();
         List<Category> categories = categoryService.findAll();
         for(Category category : categories) {
             ResponseMoney responseMoney = transactionService.sumByCategoryByPeriod(clientID, category.getId(), request.getFrom(), request.getTo());
-            Response response = new Response(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
-            result.add(response);
+            ResponseCategory responseCategory = new ResponseCategory(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
+            result.add(responseCategory);
         }
         return result;
     }

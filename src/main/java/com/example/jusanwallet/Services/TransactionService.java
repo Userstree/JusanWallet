@@ -1,6 +1,6 @@
 package com.example.jusanwallet.Services;
 
-import com.example.jusanwallet.Controllers.ResponseMoney;
+import com.example.jusanwallet.Controllers.Responses.ResponseMoney;
 import com.example.jusanwallet.Entities.Transaction;
 import com.example.jusanwallet.Repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class TransactionService {
     }
     @Transactional
     public ResponseMoney sumByCompanyType(int clientID, int id) {
-        return sum(transactionRepository.findAllByCompany_CompanyType_IdAndClient_Id(clientID, id));
+        return sum(transactionRepository.findAllByClient_IdAndCompany_CompanyType_Id(clientID, id));
     }
 
     private ResponseMoney sum(List<Transaction> allByCompany_companyType_idAndClient_id) {
@@ -32,7 +32,7 @@ public class TransactionService {
     }
     @Transactional
     public ResponseMoney sumByCompanyTypeByPeriod(int clientID, int id, Date from, Date to) {
-        return sum(transactionRepository.findAllByCompany_CompanyType_IdAndClient_IdAndDateBetween(clientID, id, from, to));
+        return sum(transactionRepository.findAllByClient_IdAndCompany_CompanyType_IdAndDateBetween(clientID, id, from, to));
     }
     @Transactional
     public ResponseMoney sumByCategory(int clientID, int id) {

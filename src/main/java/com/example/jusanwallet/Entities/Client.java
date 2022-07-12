@@ -20,6 +20,9 @@ public class Client {
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Transaction> transactions = new ArrayList<>();
+    @OneToMany(mappedBy = "client")
+    @ToString.Exclude
+    private List<PlannedCompanyType> CompanyTypes = new ArrayList<>();
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);

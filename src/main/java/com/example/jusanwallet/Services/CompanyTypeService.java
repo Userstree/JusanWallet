@@ -18,4 +18,8 @@ public class CompanyTypeService {
     public List<CompanyType> findAll() {
         return (List<CompanyType>) companyTypeRepository.findAll();
     }
+    @Transactional
+    public CompanyType findById(int companyTypeID) {
+        return companyTypeRepository.findById(companyTypeID).orElse(null);
+    }
 }

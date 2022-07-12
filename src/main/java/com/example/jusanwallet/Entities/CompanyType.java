@@ -1,6 +1,9 @@
 package com.example.jusanwallet.Entities;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,6 +24,9 @@ public class CompanyType {
     @OneToMany(mappedBy = "companyType", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Company> companies = new ArrayList<>();
+    @ToString.Exclude
+    @OneToMany(mappedBy = "companyType")
+    private List<PlannedCompanyType> clients = new ArrayList<>();
     public void addCompany(Company company) {
         companies.add(company);
         company.setCompanyType(this);

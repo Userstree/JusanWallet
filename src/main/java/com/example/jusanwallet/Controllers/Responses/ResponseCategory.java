@@ -1,4 +1,4 @@
-package com.example.jusanwallet.Controllers;
+package com.example.jusanwallet.Controllers.Responses;
 
 import lombok.Data;
 import lombok.Getter;
@@ -7,12 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class Response {
+public class ResponseCategory {
     private String category;
     private double sum;
     private double bonuses;
 
-    Response (String category, double sum, double bonuses) {
+    public ResponseCategory(String category, double sum, double bonuses) {
         this.category = category;
         this.sum = sum;
         this.bonuses = bonuses;
