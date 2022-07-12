@@ -1,32 +1,32 @@
 package com.jwallet.jwallet.presentation.home
 
 import androidx.lifecycle.ViewModel
-import com.jwallet.jwallet.domain.models.SpendingCategory
-import com.jwallet.jwallet.domain.models.Transaction
+import com.jwallet.jwallet.data.database.Category
+import com.jwallet.jwallet.data.database.Transaction
 
 class HomeViewModel : ViewModel() {
 
     private var counterT = 0L
     private var counterC = 0L
 
-    fun getCategory() : SpendingCategory {
-        return SpendingCategory(counterC, "Bills & Pills", 0)
+    fun getCategory() : Category {
+        return Category( "Bills & Pills", 0)
     }
 
-    fun getCategoriesList(): List<SpendingCategory> {
-        val list = mutableListOf<SpendingCategory>()
-        repeat(11) { list.add(SpendingCategory(counterC++, "category$it", it)) }
+    fun getCategoriesList(): List<Category> {
+        val list = mutableListOf<Category>()
+        repeat(11) { list.add(Category( "category$it", it)) }
         return list
     }
 
     fun getTransaction() : Transaction {
-        return Transaction(counterT, 0, "Coffee Boom", "Cafe", 12.10, "")
+        return Transaction(counterT, "", "Coffee Boom", "Cafe", 12.10, "")
     }
 
     fun getTransactionsList(): List<Transaction> {
         val list = mutableListOf<Transaction>()
         repeat(20) {
-            list.add(Transaction(counterT++, 0, "Starbucks", "Coffee Company", 30.05, ""))
+            list.add(Transaction(counterT++, "", "Starbucks", "Coffee Company", 30.05, ""))
         }
         return list
     }

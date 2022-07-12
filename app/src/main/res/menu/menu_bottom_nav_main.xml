@@ -3,17 +3,26 @@
     <item
         android:id="@+id/home_fragment"
         android:icon="@drawable/home_48px"
+        android:orderInCategory="1"
         android:title="@string/home" />
     <item
         android:id="@+id/monitoring_fragment"
         android:icon="@drawable/monitoring_48px"
+        android:orderInCategory="2"
         android:title="@string/history" />
+    <item
+        android:id="@+id/item_add_transaction"
+        android:icon="@drawable/add_circle_48px"
+        android:orderInCategory="3"
+        android:title="@string/add" />
     <item
         android:id="@+id/subscriptions_fragment"
         android:icon="@drawable/restart_alt_48px"
+        android:orderInCategory="4"
         android:title="@string/subscription" />
     <item
         android:id="@+id/planner_fragment"
         android:icon="@drawable/calendar_month_48px"
+        android:orderInCategory="5"
         android:title="@string/planner" />
 </menu>

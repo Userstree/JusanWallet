@@ -1,12 +1,12 @@
 package com.jwallet.jwallet.presentation.home
 
 import androidx.recyclerview.widget.DiffUtil
-import com.jwallet.jwallet.domain.models.SpendingCategory
+import com.jwallet.jwallet.data.database.Category
 
-class CategoryDiffUtilItemCallback : DiffUtil.ItemCallback<SpendingCategory>() {
-    override fun areItemsTheSame(oldItem: SpendingCategory, newItem: SpendingCategory) =
+class CategoryDiffUtilItemCallback : DiffUtil.ItemCallback<Category>() {
+    override fun areItemsTheSame(oldItem: Category, newItem: Category) =
         oldItem.name == newItem.name
 
-    override fun areContentsTheSame(oldItem: SpendingCategory, newItem: SpendingCategory) =
+    override fun areContentsTheSame(oldItem: Category, newItem: Category) =
         oldItem == newItem
 }

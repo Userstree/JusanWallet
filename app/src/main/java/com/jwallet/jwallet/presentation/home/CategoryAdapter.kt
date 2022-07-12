@@ -2,10 +2,10 @@ package com.jwallet.jwallet.presentation.home
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.jwallet.jwallet.domain.models.SpendingCategory
+import com.jwallet.jwallet.data.database.Category
 
 class CategoryAdapter :
-    ListAdapter<SpendingCategory, CategoryViewHolder>(CategoryDiffUtilItemCallback()) {
+    ListAdapter<Category, CategoryViewHolder>(CategoryDiffUtilItemCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder.inflateFrom(parent)
     }

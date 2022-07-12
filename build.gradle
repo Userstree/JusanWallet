@@ -12,4 +12,5 @@ task clean(type: Delete) {
 ext {
     lifecycler_version = "2.5.0"
     nav_version = "2.5.0"
+    room_version = "2.4.2"
 }

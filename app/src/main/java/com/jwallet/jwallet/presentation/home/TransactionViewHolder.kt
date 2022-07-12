@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jwallet.jwallet.databinding.ItemTransactionBinding
-import com.jwallet.jwallet.domain.models.Transaction
+import com.jwallet.jwallet.data.database.Transaction
 
 class TransactionViewHolder(val binding: ItemTransactionBinding) : RecyclerView.ViewHolder(binding.root) {
 

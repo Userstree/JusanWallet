@@ -2,7 +2,7 @@ package com.jwallet.jwallet.presentation.home
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.jwallet.jwallet.domain.models.Transaction
+import com.jwallet.jwallet.data.database.Transaction
 
 class TransactionAdapter :
     ListAdapter<Transaction, TransactionViewHolder>(TransactionDiffUtilItemCallback()) {

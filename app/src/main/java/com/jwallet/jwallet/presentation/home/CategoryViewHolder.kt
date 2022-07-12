@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jwallet.jwallet.databinding.ItemCategoryBinding
-import com.jwallet.jwallet.domain.models.SpendingCategory
+import com.jwallet.jwallet.data.database.Category
 
 class CategoryViewHolder(val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(category: SpendingCategory) {
+    fun bind(category: Category) {
 
     }
 

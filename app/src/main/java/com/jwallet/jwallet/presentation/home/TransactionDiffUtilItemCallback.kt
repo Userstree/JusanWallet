@@ -1,7 +1,7 @@
 package com.jwallet.jwallet.presentation.home
 
 import androidx.recyclerview.widget.DiffUtil
-import com.jwallet.jwallet.domain.models.Transaction
+import com.jwallet.jwallet.data.database.Transaction
 
 class TransactionDiffUtilItemCallback : DiffUtil.ItemCallback<Transaction>() {
     override fun areItemsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
