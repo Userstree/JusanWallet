@@ -1,7 +1,6 @@
 import '../../App.css';
-import {Home} from '../Home';
-import {Menu} from '../Menu';
-
+import { Home } from '../Home';
+import { Menu } from '../Menu';
 
 export function Main() {
   return (
@@ -11,5 +10,3 @@ export function Main() {
     </div>
   );
 }
-
-// export default Main;

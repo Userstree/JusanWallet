@@ -1,9 +1,4 @@
 import './home.css';
-// import { Card } from '../Card';
-// import { ReactComponent as Logo } from './jusan-logo.svg';
-// import { ReactComponent as Jmart } from './jmart2.svg';
-import { Autopayment } from "../Autopayment";
-
 import * as React from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,13 +10,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
-// import FolderIcon from '@mui/icons-material/Folder';
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
     React.cloneElement(element, {
       key: value,
-    }),
+    })
   );
 }
 
@@ -53,44 +47,32 @@ export function Home() {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            <Grid  item xs={2} sm={4} md={4}>
-              <Item>
-                JUSAN Invest
-              </Item>
+            <Grid item xs={2} sm={4} md={4}>
+              <Item>JUSAN Invest</Item>
             </Grid>
             <Grid item xs={2} sm={4} md={4}>
-              <Item>
-                J-mart
-              </Item>
+              <Item>J-mart</Item>
             </Grid>
             <Grid item xs={2} sm={4} md={4}>
-              <Item>
-                JUSAN Garant
-              </Item>
+              <Item>JUSAN Garant</Item>
             </Grid>
             <Grid item xs={2} sm={4} md={4}>
-              <Item>
-                J-mart
-              </Item>
+              <Item>J-mart</Item>
             </Grid>
           </Grid>
         </Box>
       </div>
       <div className='table'>
-      <List>
-              {generate(
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      {/* <FolderIcon /> */}
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="Single-line item"
-                  />
-                </ListItem>,
-              )}
-            </List>
+        <List>
+          {generate(
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>{/* <FolderIcon /> */}</Avatar>
+              </ListItemAvatar>
+              <ListItemText primary='Single-line item' />
+            </ListItem>
+          )}
+        </List>
       </div>
     </div>
   );

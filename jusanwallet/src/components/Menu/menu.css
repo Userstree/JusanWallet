@@ -20,7 +20,7 @@
     color: white;
   }
   
-  .Menu a:hover:not(.active) {
+  .Menu a:hover{
     background-color: #9ba4d0;
     color: white;
   }
