@@ -82,4 +82,19 @@ public class ExpensesController {
         }
         return responsePlans;
     }
+    @PostMapping("/{clientID}/plans")
+    public List<ResponsePlan> getPlansByPeriod(@PathVariable int clientID, @RequestBody RequestPeriod request){
+        Client client = clientService.findById(clientID);
+        List<PlannedCompanyType> plannedCompanyTypes = plannedCompanyTypeService.findByClientId(clientID);
+        List<ResponsePlan> responsePlans = new ArrayList<>();
+        for(PlannedCompanyType plannedCompanyType: plannedCompanyTypes) {
+            ResponsePlan responsePlan = new ResponsePlan();
+            ResponseMoney responseMoney = transactionService.sumByCompanyTypeByPeriod(clientID, plannedCompanyType.getCompanyType().getId(), request.getFrom(), request.getTo());
+            responsePlan.setPlan(plannedCompanyType.getPlan());
+            responsePlan.setSpend(responseMoney.getSum());
+            responsePlan.setCompanyType(plannedCompanyType.getCompanyType().getName());
+            responsePlans.add(responsePlan);
+        }
+        return responsePlans;
+    }
 }
