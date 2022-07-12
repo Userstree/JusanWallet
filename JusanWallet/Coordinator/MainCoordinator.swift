@@ -38,7 +38,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let homeViewController = homeCoordinator.start()
         homeCoordinator.parentCoordinator = self
         let homeTitle = NSMutableAttributedString(string: "Home")
-        let homeImage = UIImage(systemName: "house")!
+        let homeImage = UIImage(named: "homeIcon")!
         let homeItem = BATabBarItem(image: homeImage, selectedImage: homeImage, title: homeTitle)
         homeViewController.tabBarController(tabBarController, didSelect: homeViewController)//UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
 
@@ -46,7 +46,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let expensesViewController = expensesCoordinator.start()
         expensesCoordinator.parentCoordinator = self
         let expensesTitle = NSMutableAttributedString(string: "Expenses")
-        let expensesImage = UIImage(systemName: "dollarsign.circle.fill")!
+        let expensesImage = UIImage(named: "expensesIcon")!
         let expensesItem = BATabBarItem(image: expensesImage, selectedImage: expensesImage, title: expensesTitle)
         expensesViewController.tabBarController(tabBarController, didSelect: expensesViewController) //UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
 
@@ -54,7 +54,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let plannerViewController = plannerCoordinator.start()
         plannerCoordinator.parentCoordinator = self
         let plannerTitle = NSMutableAttributedString(string: "Planner")
-        let plannerImage = UIImage(systemName: "calendar.badge.plus")!
+        let plannerImage = UIImage(named: "planner28")!
         let plannerItem = BATabBarItem(image: plannerImage, selectedImage: plannerImage, title: plannerTitle)
         plannerViewController.tabBarController(tabBarController, didSelect: plannerViewController)//UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
 
@@ -62,7 +62,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let paymentsViewController = paymentsCoordinator.start()
         paymentsCoordinator.parentCoordinator = self
         let paymentsTitle = NSMutableAttributedString(string: "Payments")
-        let paymentsImage = UIImage(systemName: "arrow.triangle.2.circlepath.circle")!
+        let paymentsImage = UIImage(named: "paymentsIcon")!
         let paymentsItem = BATabBarItem(image: paymentsImage, selectedImage: paymentsImage, title: paymentsTitle)
         paymentsViewController.tabBarController(tabBarController, didSelect: paymentsViewController)//UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
 
