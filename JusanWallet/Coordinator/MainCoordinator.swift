@@ -34,9 +34,10 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
 
         let homeViewController = homeCoordinator.start()
         homeCoordinator.parentCoordinator = self
-        let homeTitle = NSMutableAttributedString(string: "Home")
+        let homeAttributedTitle = NSMutableAttributedString(string: "Home")
         let homeImage = UIImage(named: "homeIcon")!
-        let homeItem = BATabBarItem(image: homeImage, selectedImage: homeImage, title: homeTitle)
+        let homeItem = BATabBarItem(image: homeImage, selectedImage: homeImage, title: homeAttributedTitle)
+        homeItem.title?.textColor = .onPrimary
         homeViewController.tabBarController(tabBarController, didSelect: homeViewController)//UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
 
 
@@ -45,6 +46,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let expensesTitle = NSMutableAttributedString(string: "Expenses")
         let expensesImage = UIImage(named: "expensesIcon")!
         let expensesItem = BATabBarItem(image: expensesImage, selectedImage: expensesImage, title: expensesTitle)
+        expensesItem.title?.textColor = .onPrimary
         expensesViewController.tabBarController(tabBarController, didSelect: expensesViewController) //UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
 
 
@@ -53,6 +55,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let plannerTitle = NSMutableAttributedString(string: "Planner")
         let plannerImage = UIImage(named: "planner28")!
         let plannerItem = BATabBarItem(image: plannerImage, selectedImage: plannerImage, title: plannerTitle)
+        plannerItem.title?.textColor = .onPrimary
         plannerViewController.tabBarController(tabBarController, didSelect: plannerViewController)//UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
 
 
@@ -61,6 +64,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let paymentsTitle = NSMutableAttributedString(string: "Payments")
         let paymentsImage = UIImage(named: "paymentsIcon")!
         let paymentsItem = BATabBarItem(image: paymentsImage, selectedImage: paymentsImage, title: paymentsTitle)
+        paymentsItem.title?.textColor = .onPrimary
         paymentsViewController.tabBarController(tabBarController, didSelect: paymentsViewController)//UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
 
 
