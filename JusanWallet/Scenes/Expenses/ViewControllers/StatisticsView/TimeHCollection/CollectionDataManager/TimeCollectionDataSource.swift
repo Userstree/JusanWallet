@@ -4,30 +4,32 @@
 
 import UIKit
 
-protocol TimeCollectionViewModel{
-
-}
 
 class TimeCollectionDataSource: NSObject, UICollectionViewDataSource {
-    private var viewModel: TimeCollectionViewModel!
+    private var viewModel: TimeCellDataSource!
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        viewModel.months.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TimeCollectionCell.self), for: indexPath) as! TimeCollectionCell
+        cell.configure(with: viewModel.months[indexPath.row])
         return cell
     }
 
-    override init(viewModel: TimeCollectionViewModel) {
+    
+    init(viewModel: TimeCollectionViewModel) {
         super.init()
-        self.viewModel = viewModel
+        self.viewModel = viewModel.monthsDataSource
     }
 }
 
 extension TimeCollectionDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 40, height: 30)
+        let label = UILabel(frame: CGRect.zero)
+        label.text = viewModel.months[indexPath.item]
+        label.sizeToFit()
+        return CGSize(width: label.frame.width, height: 30)
     }
 }

@@ -9,7 +9,10 @@ class ExpensesCoordinator: ExpensesBaseCoordinator {
     var parentCoordinator: MainBaseCoordinator?
 
     func start() -> UIViewController {
-        rootViewController = UINavigationController(rootViewController: ExpensesViewController(coordinator: self))
+        let controller = ExpensesViewController(coordinator: self)
+        let expensesViewModel = ExpensesViewModelImpl()
+        controller.bind(to: expensesViewModel)
+        rootViewController = UINavigationController(rootViewController: controller)
         return rootViewController
     }
 

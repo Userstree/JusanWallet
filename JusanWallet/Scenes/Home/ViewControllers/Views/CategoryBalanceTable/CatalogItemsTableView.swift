@@ -8,20 +8,6 @@ protocol CatalogItemsDataListProvidable {
     var catalogData: [CatalogTableItemDataSource] { get set }
 }
 
-extension CatalogItemsDataList {
-    var catalogData: [CatalogTableItemDataSource] {
-        get {
-            let catalogTableItems: [CatalogTableItemDataSource] = [
-                CatalogTableItem(title: "IPhone 13 mini", subTitle: "IPoint", amount: 799, logoImage: UIImage(systemName: "iphone")!),
-                CatalogTableItem(title: "Sony Headphones", subTitle: "Sony Store", amount: 499, logoImage: UIImage(systemName: "headphones")!),
-                CatalogTableItem(title: "Magic Mouse", subTitle: "IPoint", amount: 249, logoImage: UIImage(systemName: "magicmouse")!),
-                CatalogTableItem(title: "Macbook Pro 14'", subTitle: "Apple", amount: 1799, logoImage: UIImage(systemName: "laptopcomputer")!),
-            ]
-            return catalogTableItems
-        }
-    }
-}
-
 class CatalogItemsTableView: UIViewController {
     var dataSource: CatalogItemsDataList!
 

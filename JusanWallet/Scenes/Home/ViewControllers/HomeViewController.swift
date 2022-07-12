@@ -96,7 +96,6 @@ class HomeViewController: DesignableViewController, HomeBaseCoordinated, Bindabl
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
     }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
