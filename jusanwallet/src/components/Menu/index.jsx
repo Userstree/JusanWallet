@@ -2,39 +2,44 @@ import './menu.css';
 import { AiFillHome, AiOutlineHistory, AiFillSetting } from 'react-icons/ai';
 import { IoIosNotifications } from 'react-icons/io';
 import { MdOutlineEditCalendar, MdAutorenew } from 'react-icons/md';
-import Home from '../Home'
-
+import { Home } from '../Home';
+import { Autopayment } from '../Autopayment';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+} from 'react-router-dom';
 
 export function Menu() {
   return (
-    <div className='Menu'>
-      <a className='active links' id='homepage' href='./Home'>
-        <AiFillHome/>
-      </a>
-      <a href='/Statistics' className='links' id='history'><AiOutlineHistory /></a>
-      <a href='./Autopayment' className='links' id='autopayment'><MdAutorenew /></a>
-      <a href='#' className='links' id='Calendar'><MdOutlineEditCalendar /></a>
-      <a href='#' className='links' id='noti'><IoIosNotifications /></a>
-      <a href='#' className='links' id='sett'><AiFillSetting /></a>
+      <div className='Menu'>
+      {/*    <Link className='active' to='/'>
+           <AiFillHome />
+         </Link>
+         <Link className='links' id='autopayment' to='/autopayment'>
+           <MdAutorenew />
+         </Link>
+         <Link className='links' to='/Noti'>
+           <IoIosNotifications />
+         </Link>
+         <Link className='links' to='/Settings'>
+           <AiFillSetting />
+         </Link>  */}
 
-    </div>
+        <a className='active' id='homepage' href='./'>
+         <AiFillHome/>
+       </a>
+       <a href='/statistics'id='history'><AiOutlineHistory /></a>
+       <a href='./autopayment' id='autopayment'><MdAutorenew /></a>
+       <a href='#' id='Calendar'><MdOutlineEditCalendar /></a>
+       <a href='#' id='noti'><IoIosNotifications /></a>
+       <a href='#' id='sett'><AiFillSetting /></a> 
+
+      </div>
+
   );
 }
-
-export async function links() {
-  const homepage = document.getElementById('homepage');
-  homepage.onclick = async () => {
-    <Home />
-  };
-  const history = document.getElementById('history');
-  history.onclick = async () => {
-    document.location.replace('./Statistics');
-  };
-  const autopayment = document.getElementById('autopayment');
-  autopayment.onclick = async () => {
-    document.location.replace('./Autopayment');
-  };
-  
-}
-
-// export default Menu;

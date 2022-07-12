@@ -33,13 +33,13 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function Home() {
+export function Home() {
   return (
     <div className='Home'>
       <div className='header'>
         <p className='title'>JUSAN</p>
         <p>
-          $14 000{' '}
+          14 000{' '}
           <select>
             <option>KZT</option>
             <option>USD</option>
@@ -92,7 +92,6 @@ export default function Home() {
               )}
             </List>
       </div>
-      <Autopayment />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import {Home} from '../Home';
 import {Menu} from '../Menu';
 
 
-function Main() {
+export function Main() {
   return (
     <div className='Main'>
       <Menu />
@@ -12,4 +12,4 @@ function Main() {
   );
 }
 
-export default Main;
+// export default Main;
