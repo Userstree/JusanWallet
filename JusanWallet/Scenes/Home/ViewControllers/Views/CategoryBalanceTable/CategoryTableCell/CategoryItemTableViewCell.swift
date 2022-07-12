@@ -8,6 +8,7 @@ import SnapKit
 class CategoryItemTableViewCell: UITableViewCell {
     private lazy var logoImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.setContentHuggingPriority(.defaultHigh + 5, for: .horizontal)
         imageView.layer.cornerRadius = 20
         return imageView

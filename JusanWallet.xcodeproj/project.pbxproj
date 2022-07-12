@@ -54,6 +54,7 @@
 		F88431B371C089DBAFD593FA /* BalanceStatisticsServiceProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843C0E616E0970CD8D578F /* BalanceStatisticsServiceProvidable.swift */; };
 		F88431FA22FA80C0856572BE /* TimeCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F884342C3C44BBCC0B27AE0A /* TimeCollectionDataSource.swift */; };
 		F88432030240037CF6B7075E /* ExpensesViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843FC0DC8A553EA15E6280 /* ExpensesViewModelImpl.swift */; };
+		F884326512B6D4FED341AF7B /* CenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843C92781A8D56297BBB2A /* CenterFlowLayout.swift */; };
 		F884330EB5E58235C9581629 /* TimeCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843072FDED9043207E96C3 /* TimeCollectionDelegate.swift */; };
 		F884392B8AD62F5350C511C6 /* DynamicAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843E1DB7F8C33E44737CF3 /* DynamicAsync.swift */; };
 		F88439EA69FF96D322C334D9 /* TouchesPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88432BDBA9A8ECFD638D1BE /* TouchesPassView.swift */; };
@@ -129,6 +130,7 @@
 		F8843922197A1484745C263C /* ExpensesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		F8843C0E616E0970CD8D578F /* BalanceStatisticsServiceProvidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceStatisticsServiceProvidable.swift; sourceTree = "<group>"; };
 		F8843C733BBA57138A91346A /* CatalogTableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogTableItem.swift; sourceTree = "<group>"; };
+		F8843C92781A8D56297BBB2A /* CenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterFlowLayout.swift; sourceTree = "<group>"; };
 		F8843CCB733B6802B61642F6 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		F8843DBC22BA13A603D697E5 /* TimeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCollectionCell.swift; sourceTree = "<group>"; };
 		F8843E1DB7F8C33E44737CF3 /* DynamicAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAsync.swift; sourceTree = "<group>"; };
@@ -242,7 +244,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		615B45975802E88892A43E84 /* Companies */ = {
+		615B45975802E88892A43E84 /* CompaniesCollection */ = {
 			isa = PBXGroup;
 			children = (
 				615B42F7D3CEDAA397409908 /* CompaniesDataManager */,
@@ -250,14 +252,14 @@
 				615B4F2E9DD0DC70B51C580C /* CompaniesCollectionCell */,
 				615B43351C8D8A2DF39974A4 /* CompaniesCollectionView.swift */,
 			);
-			path = Companies;
+			path = CompaniesCollection;
 			sourceTree = "<group>";
 		};
 		615B45BEE2647A21D994493B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				615B4A63FC712F040313BE01 /* Balance */,
-				615B45975802E88892A43E84 /* Companies */,
+				615B45975802E88892A43E84 /* CompaniesCollection */,
 				615B44AE953FA989A6E6EECE /* CategoryBalanceTable */,
 			);
 			path = Views;
@@ -303,6 +305,7 @@
 			children = (
 				615B4066CD233F853D7A7E4A /* Extensions */,
 				F8843ABD17E1791FDFA1EBC5 /* View */,
+				F8843C92781A8D56297BBB2A /* CenterFlowLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				F884305C3E7DBD91EE96F039 /* HistoryChildViewController.swift in Sources */,
 				F88439EA69FF96D322C334D9 /* TouchesPassView.swift in Sources */,
 				F8843BE3676C4FE94C71A5ED /* UIView+ext.swift in Sources */,
+				F884326512B6D4FED341AF7B /* CenterFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

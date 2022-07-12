@@ -5,6 +5,7 @@
 import UIKit
 import SnapKit
 import Charts
+import Persei
 
 final class ExpensesStatisticsChildViewController: UIViewController, BindableType {
     var viewModel: ExpensesViewModel!
@@ -26,6 +27,8 @@ final class ExpensesStatisticsChildViewController: UIViewController, BindableTyp
         super.viewDidLoad()
         timeCollectionDataSource = TimeCollectionDataSource(viewModel: viewModel)
         timeCollectionDelegate = TimeCollectionDelegate()
+        view.backgroundColor = .red
+        configureViews()
     }
 
     func bindViewModel() {
@@ -48,7 +51,6 @@ final class ExpensesStatisticsChildViewController: UIViewController, BindableTyp
     init(viewModel: ExpensesViewModel!) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .red
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

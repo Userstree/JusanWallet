@@ -4,6 +4,7 @@
 
 import UIKit
 import SnapKit
+import EasySocialButton
 
 final class ExpensesParentViewController: UIViewController, ExpensesBaseCoordinated, BindableType {
     var coordinator: ExpensesCoordinator?
@@ -20,21 +21,26 @@ final class ExpensesParentViewController: UIViewController, ExpensesBaseCoordina
         }
     }
 
-    private lazy var statisticsButton: UIButton = {
-        let button = UIButton()
+    private lazy var statisticsButton: AZSocialButton = {
+        let button = AZSocialButton()
+        button.animateInteraction = true
+        button.useCornerRadius = true
         button.setTitle("Statistics", for: .normal)
         button.backgroundColor = .systemGray5
-        button.makeSmoothCorners(ofRadius: 8)
+        button.cornerRadius = 12
+        button.layer.cornerCurve = .continuous
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(statisticsButtonTapped), for: .touchUpInside)
         return button
     }()
 
-    private lazy var historyButton: UIButton = {
-        let button = UIButton()
+    private lazy var historyButton: AZSocialButton = {
+        let button = AZSocialButton()
+        button.animateInteraction = true
+        button.useCornerRadius = true
         button.setTitle("History", for: .normal)
         button.backgroundColor = .systemGray5
-        button.makeSmoothCorners(ofRadius: 8)
+        button.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(historyButtonTapped), for: .touchUpInside)
         return button

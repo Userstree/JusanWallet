@@ -17,6 +17,7 @@ struct MonthCell: TimeCellDataSource {
 class TimeCollectionCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()

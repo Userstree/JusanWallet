@@ -6,9 +6,12 @@ import UIKit
 
 class CompaniesCollectionView: UICollectionView {
     init() {
+//        let layout = CenterFlowLayout()
+//        layout.animationMode = .scale(sideItemScale: 1.2, sideItemAlpha: 0.6, sideItemShift: 100)
+//        layout.itemSize = CGSize(width: 180, height: 145)
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 108, height: 138)
+        layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0

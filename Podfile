@@ -10,4 +10,6 @@ target 'JusanWallet' do
 	pod 'DropDown', '2.3.2'
 	pod 'Charts'
 	pod 'BATabBarController', '~> 2.0.2'
+	pod 'EasySocialButton'
+	pod 'Persei', '~> 4.0'
 end

@@ -6,6 +6,8 @@ PODS:
   - Charts/Core (4.0.2):
     - SwiftAlgorithms (~> 1.0)
   - DropDown (2.3.2)
+  - EasySocialButton (1.0.2)
+  - Persei (4.0.0)
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
 
@@ -13,6 +15,8 @@ DEPENDENCIES:
   - BATabBarController (~> 2.0.2)
   - Charts
   - DropDown (= 2.3.2)
+  - EasySocialButton
+  - Persei (~> 4.0)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
@@ -20,6 +24,8 @@ SPEC REPOS:
     - BATabBarController
     - Charts
     - DropDown
+    - EasySocialButton
+    - Persei
     - SnapKit
     - SwiftAlgorithms
 
@@ -27,9 +33,11 @@ SPEC CHECKSUMS:
   BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
   Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  EasySocialButton: 8f2464e11dd5b52d612964243cc899d8fae0f1eb
+  Persei: 9c22ebdea5ae5d54347dfdd6a2e2c600bbb08e10
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: fd113f6eb34f4d9cc906a2007d6a555bb2265ac3
+PODFILE CHECKSUM: 2aed6f4c79f8217a50c15b443efbf3bf2c66e2e3
 
 COCOAPODS: 1.11.3
