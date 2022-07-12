@@ -1,6 +1,5 @@
 package com.example.jusanwallet.Controllers;
 
-import com.example.jusanwallet.Entities.CompanyType;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,15 +8,13 @@ import lombok.Setter;
 @Setter
 @Data
 public class Response {
-    private String companyType;
+    private String category;
     private double sum;
     private double bonuses;
-    private double possibleBonuses;
 
-    Response (CompanyType companyType, double sum, double bonuses) {
-        this.companyType = companyType.getName();
+    Response (String category, double sum, double bonuses) {
+        this.category = category;
         this.sum = sum;
         this.bonuses = bonuses;
-        this.possibleBonuses = sum * companyType.getPercent();
     }
 }

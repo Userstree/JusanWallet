@@ -1,10 +1,7 @@
 package com.example.jusanwallet.Controllers;
 
-import com.example.jusanwallet.Entities.CompanyType;
-import com.example.jusanwallet.Services.ClientService;
-import com.example.jusanwallet.Services.CompanyService;
-import com.example.jusanwallet.Services.CompanyTypeService;
-import com.example.jusanwallet.Services.TransactionService;
+import com.example.jusanwallet.Entities.Category;
+import com.example.jusanwallet.Services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,24 +16,25 @@ public class HomeController {
     private CompanyService companyService;
     private CompanyTypeService companyTypeService;
     private TransactionService transactionService;
+    private CategoryService categoryService;
     @GetMapping("/{clientID}")
-    public List<Response> getAllGroupByType(@PathVariable int clientID){
+    public List<Response> getAllGroupByCategory(@PathVariable int clientID){
         List<Response> result = new ArrayList<>();
-        List<CompanyType> companyTypes = companyTypeService.findAll();
-        for(CompanyType companyType : companyTypes) {
-            ResponseMoney responseMoney = transactionService.sumByCompanyType(clientID, companyType.getId());
-            Response response = new Response(companyType, responseMoney.getSum(), responseMoney.getBonuses());
+        List<Category> categories = categoryService.findAll();
+        for(Category category : categories) {
+            ResponseMoney responseMoney = transactionService.sumByCategory(clientID, category.getId());
+            Response response = new Response(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
             result.add(response);
         }
         return result;
     }
     @PostMapping({"/{clientID}"})
-    public List<Response> getAllByTimeGroupByType(@PathVariable int clientID, @RequestBody RequestPeriod request){
+    public List<Response> getAllByTimeGroupByCategory(@PathVariable int clientID, @RequestBody RequestPeriod request){
         List<Response> result = new ArrayList<>();
-        List<CompanyType> companyTypes = companyTypeService.findAll();
-        for(CompanyType companyType : companyTypes) {
-            ResponseMoney responseMoney = transactionService.sumByCompanyTypeByPeriod(clientID, companyType.getId(), request.getFrom(), request.getTo());
-            Response response = new Response(companyType, responseMoney.getSum(), responseMoney.getBonuses());
+        List<Category> categories = categoryService.findAll();
+        for(Category category : categories) {
+            ResponseMoney responseMoney = transactionService.sumByCategoryByPeriod(clientID, category.getId(), request.getFrom(), request.getTo());
+            Response response = new Response(category.getName(), responseMoney.getSum(), responseMoney.getBonuses());
             result.add(response);
         }
         return result;

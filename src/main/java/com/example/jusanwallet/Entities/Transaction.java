@@ -26,6 +26,9 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "company_ID", referencedColumnName = "id")
     private Company company = null;
+    @ManyToOne
+    @JoinColumn(name = "category_ID", referencedColumnName = "id")
+    private Category category = null;
 
     @Override
     public boolean equals(Object o) {

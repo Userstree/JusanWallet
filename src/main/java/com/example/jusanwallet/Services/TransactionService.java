@@ -34,4 +34,12 @@ public class TransactionService {
     public ResponseMoney sumByCompanyTypeByPeriod(int clientID, int id, Date from, Date to) {
         return sum(transactionRepository.findAllByCompany_CompanyType_IdAndClient_IdAndDateBetween(clientID, id, from, to));
     }
+    @Transactional
+    public ResponseMoney sumByCategory(int clientID, int id) {
+        return sum(transactionRepository.findAllByClient_IdAndCategory_Id(clientID, id));
+    }
+    @Transactional
+    public ResponseMoney sumByCategoryByPeriod(int clientID, int id, Date from, Date to) {
+        return sum(transactionRepository.findAllByClient_IdAndCategory_IdAndDateBetween(clientID, id, from, to));
+    }
 }

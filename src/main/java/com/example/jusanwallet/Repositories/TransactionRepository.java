@@ -14,4 +14,6 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
     List<Transaction> findAllByCompany_CompanyType_IdAndClient_IdAndDateBetween(int clientID, int id, Date from, Date to);
     @Query("SELECT * FROM TRANSACTION T JOIN COMPANY C on T.COMPANY_ID = C.ID WHERE COMPANY_TYPE_ID = ?2 and CLIENT_ID = ?1")
     List<Transaction> findAllByCompany_CompanyType_IdAndClient_Id(int clientID, int id);
+    List<Transaction> findAllByClient_IdAndCategory_IdAndDateBetween(int clientID, int id, Date from, Date to);
+    List<Transaction> findAllByClient_IdAndCategory_Id(int clientID, int id);
 }
