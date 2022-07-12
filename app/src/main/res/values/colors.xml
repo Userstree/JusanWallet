@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text_color_tertiary">@android:color/black</color>
     <color name="text_color_tertiary_night">@android:color/white</color>
+    <color name="screen_background">#c6c6c6</color>
+    <color name="button_background">#a0ffffff</color>
+    <color name="button_background_gray">#e4e4e4</color>
 </resources>

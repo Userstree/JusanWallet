@@ -21,4 +21,9 @@
     <string name="family_and_friends">Family and Friends</string>
     <string name="income">Income</string>
     <string name="expense">Expense</string>
+    <string name="log_out">Log out</string>
+    <string name="change_password">Change password</string>
+    <string name="wallets">Wallets</string>
+    <string name="up_arrow">up arrow</string>
+    <string name="e_mail">E-mail</string>
 </resources>
