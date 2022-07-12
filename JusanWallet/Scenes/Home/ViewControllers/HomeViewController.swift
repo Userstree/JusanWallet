@@ -5,7 +5,7 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: DesignableViewController, HomeBaseCoordinated, BindableType {
+final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableType {
     var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
     private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)

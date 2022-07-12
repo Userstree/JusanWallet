@@ -10,12 +10,12 @@ class BalanceCardView: UIViewController {
     private lazy var totalBalanceTextLabel: UILabel = {
         let label = UILabel()
         label.text = "Total balance"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
     private lazy var totalBalanceNumericLabel: UILabel = {
         let label = UILabel()
-        label.text = "12,530"
+        label.text = "\(Int.random(in: 1000..<9999))"
         label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         return label
@@ -54,17 +54,13 @@ class BalanceCardView: UIViewController {
     }()
     lazy var cardView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 16
-        view.layer.cornerCurve = .continuous
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 3, height: 3)
-        view.layer.shadowOpacity = 0.7
-        view.layer.shadowRadius = 4
-        view.backgroundColor = .white
+        view.makeSmoothCorners(ofRadius: 16)
+        view.elevateView()
+        view.backgroundColor = .systemGray5
         return view
     }()
-    private let incomeCard: StatisticsView
-    private let expensesCard: StatisticsView
+    private let incomeCard: HomeStatisticsView
+    private let expensesCard: HomeStatisticsView
 
     private lazy var bottomHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
@@ -75,21 +71,18 @@ class BalanceCardView: UIViewController {
     lazy var mainHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [leadingVStack,incomeCard.view, expensesCard.view])
         stack.alignment = .center
-        stack.layer.cornerRadius = 16
-        stack.layer.cornerCurve = .continuous
-        stack.layer.shadowColor = UIColor.black.cgColor
-        stack.layer.shadowOffset = CGSize(width: 3, height: 3)
-        stack.layer.shadowOpacity = 0.7
-        stack.layer.shadowRadius = 4
+        stack.makeSmoothCorners(ofRadius: 16)
+        stack.elevateView()
         stack.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         stack.isLayoutMarginsRelativeArrangement = true
         stack.setContentCompressionResistancePriority(.defaultHigh + 50, for: .horizontal)
         stack.spacing = 5
-        stack.backgroundColor = .white
+        stack.backgroundColor = .systemGray5
         return stack
     }()
     private lazy var leadingVStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
+        stack.spacing = 6
         stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
         stack.axis = .vertical
         return stack
@@ -116,8 +109,8 @@ class BalanceCardView: UIViewController {
     }
 
     init(frame: CGRect, dataSource: BalanceStatisticsServiceProvidable) {
-        incomeCard = StatisticsView(dataSource: dataSource.incomeStatistics)
-        expensesCard = StatisticsView(dataSource: dataSource.expensesStatistics)
+        incomeCard = HomeStatisticsView(dataSource: dataSource.incomeStatistics)
+        expensesCard = HomeStatisticsView(dataSource: dataSource.expensesStatistics)
         super.init(nibName: nil, bundle: nil)
         view.frame = frame
     }

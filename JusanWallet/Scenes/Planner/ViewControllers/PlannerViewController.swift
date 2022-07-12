@@ -4,7 +4,7 @@
 
 import UIKit
 
-class PlannerViewController: UIViewController, AccountBaseCoordinated {
+final class PlannerViewController: UIViewController, AccountBaseCoordinated {
     var coordinator: PlannerCoordinator?
 
     override func viewDidLoad() {

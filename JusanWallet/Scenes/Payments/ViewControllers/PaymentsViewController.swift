@@ -4,7 +4,7 @@
 
 import UIKit
 
-class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
+final class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
     private(set) var coordinator: PaymentsCoordinator?
 
     override func viewDidLoad() {

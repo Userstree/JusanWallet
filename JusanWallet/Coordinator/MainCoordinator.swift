@@ -45,6 +45,7 @@ class MainCoordinator: MainBaseCoordinator {
 
         let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
         (rootViewController as? UITabBarController)?.setViewControllers(tabBarControllers, animated: true)
+        (rootViewController as? UITabBarController)?.selectedIndex = 1
         return rootViewController
     }
 

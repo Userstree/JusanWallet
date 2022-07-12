@@ -4,16 +4,15 @@
 
 import UIKit
 
-class StatisticsViewController: UIViewController {
+final class HistoryChildViewController: UIViewController {
     var viewModel: ExpensesViewModel!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    init(viewModel: ExpensesViewModel!) {
+    init(viewModel: ExpensesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

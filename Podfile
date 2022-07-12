@@ -8,5 +8,5 @@ target 'JusanWallet' do
   # Pods for JusanWallet
 	pod 'SnapKit', '~> 5.6.0'
 	pod 'DropDown', '2.3.2'
-
+	pod 'Charts'
 end
