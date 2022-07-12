@@ -1,0 +1,15 @@
+package com.example.jusanwallet.Controllers;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+@Getter
+@Setter
+@Data
+public class RequestPeriod {
+    private Date from;
+    private Date to;
+}

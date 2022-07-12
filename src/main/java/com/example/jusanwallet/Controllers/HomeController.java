@@ -6,14 +6,10 @@ import com.example.jusanwallet.Services.CompanyService;
 import com.example.jusanwallet.Services.CompanyTypeService;
 import com.example.jusanwallet.Services.TransactionService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/home")
@@ -24,11 +20,24 @@ public class HomeController {
     private CompanyTypeService companyTypeService;
     private TransactionService transactionService;
     @GetMapping("/{clientID}")
-    public Map<String, Double> getAllGroupByType(@PathVariable int clientID){
-        Map<String, Double> result = new HashMap<>();
+    public List<Response> getAllGroupByType(@PathVariable int clientID){
+        List<Response> result = new ArrayList<>();
         List<CompanyType> companyTypes = companyTypeService.findAll();
         for(CompanyType companyType : companyTypes) {
-            result.put(companyType.getName(), transactionService.sumByCompanyType(clientID, companyType.getId()));
+            ResponseMoney responseMoney = transactionService.sumByCompanyType(clientID, companyType.getId());
+            Response response = new Response(companyType, responseMoney.getSum(), responseMoney.getBonuses());
+            result.add(response);
+        }
+        return result;
+    }
+    @PostMapping({"/{clientID}"})
+    public List<Response> getAllByTimeGroupByType(@PathVariable int clientID, @RequestBody RequestPeriod request){
+        List<Response> result = new ArrayList<>();
+        List<CompanyType> companyTypes = companyTypeService.findAll();
+        for(CompanyType companyType : companyTypes) {
+            ResponseMoney responseMoney = transactionService.sumByCompanyTypeByPeriod(clientID, companyType.getId(), request.getFrom(), request.getTo());
+            Response response = new Response(companyType, responseMoney.getSum(), responseMoney.getBonuses());
+            result.add(response);
         }
         return result;
     }

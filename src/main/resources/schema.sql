@@ -26,6 +26,7 @@ CREATE TABLE transaction
     id INT NOT NULL,
     client_ID int NOT NULL,
     monetary DOUBLE,
+    bonus DOUBLE,
     date DATE,
     company_ID int,
     CONSTRAINT PK_transaction PRIMARY KEY  (id),
@@ -35,4 +36,4 @@ CREATE TABLE transaction
 insert into client Values(1, 'Alikhan_Mazhiken') ;
 insert into company_type VALUES (1, 'food', 0.15);
 insert into company values (1, 'cafe', 1);
-insert into transaction values (1, 1, 150, '2019-12-12', 1);
+insert into transaction values (1, 1, 150, 1.5, '2019-12-12', 1);

@@ -18,6 +18,7 @@ public class Transaction {
     private int id;
     @Column(name = "monetary", nullable = false)
     private double monetary;
+    private double bonus;
     private Date date;
     @ManyToOne
     @JoinColumn(name = "client_ID", referencedColumnName = "id")
