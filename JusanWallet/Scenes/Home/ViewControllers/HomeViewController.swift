@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
     private lazy var companyTitle: UILabel = {
         let label = UILabel()
         label.text = viewModel.companyCards[0].title
-        label.textColor = .white
+        label.textColor = .onBackground
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
@@ -42,12 +42,14 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
 
     private func configureNavBar() {
         let notifications = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(notificationsButtonTapped))
-        notifications.tintColor = .white
+        notifications.tintColor = .onPrimary
         navigationItem.rightBarButtonItem = notifications
         title = "Home"
         let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = .primary
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]
         navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
     }
 
     @objc private func notificationsButtonTapped() {
@@ -76,7 +78,9 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
         }
         companiesCollection.snp.makeConstraints {
             $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)
-            $0.width.equalTo(balanceCardView.mainHStack.snp.width)
+//            $0.width.equalTo(view.snp.width)
+            $0.leading.equalTo(view.snp.leading).offset(10)
+            $0.trailing.equalTo(view.snp.trailing).offset(-10)
             $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(140)
         }

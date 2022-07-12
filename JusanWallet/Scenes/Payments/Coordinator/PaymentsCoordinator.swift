@@ -9,7 +9,7 @@ class PaymentsCoordinator: PaymentsBaseCoordinator {
     var parentCoordinator: MainBaseCoordinator?
 
     func start() -> UIViewController {
-        let rootViewController = UINavigationController(rootViewController: PaymentsViewController(coordinator: self))
+        let rootViewController = UINavigationController(rootViewController: PaymentsParentViewController(coordinator: self))
         return rootViewController
     }
 

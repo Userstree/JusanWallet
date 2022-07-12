@@ -4,7 +4,7 @@
 
 import UIKit
 
-final class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
+final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordinated {
     private(set) var coordinator: PaymentsCoordinator?
 
     override func viewDidLoad() {
@@ -15,8 +15,8 @@ final class PaymentsViewController: UIViewController, PaymentsBaseCoordinated {
 
     private func configureNavTitle() {
         let appearance = UINavigationBarAppearance(idiom: .phone)
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.onPrimary]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]
         appearance.backgroundColor = .primary
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance

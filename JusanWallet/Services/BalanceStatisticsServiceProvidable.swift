@@ -17,7 +17,7 @@ extension BalanceStatisticsServiceProvidable {
                     currentMonth: "July",
                     title: "Доходы",
                     moneyAmount: 1440,
-                    moneyMode: .income(UIImage(named: "uptrendChart")!)
+                    moneyMode: .income(UIImage(systemName: "arrow.up.right")!, 4124)
             )
             return income
         }
@@ -29,7 +29,7 @@ extension BalanceStatisticsServiceProvidable {
                     currentMonth: "July",
                     title: "Расходы",
                     moneyAmount: 1440,
-                    moneyMode: .expenses(UIImage(named: "declineChart")!)
+                    moneyMode: .expenses(UIImage(systemName: "arrow.down.right")!, 1423)
             )
             return expenses
         }

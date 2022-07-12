@@ -10,11 +10,13 @@ class BalanceCardView: UIViewController {
     private lazy var totalBalanceTextLabel: UILabel = {
         let label = UILabel()
         label.text = "Total balance"
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
     private lazy var totalBalanceNumericLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onSurface
         label.text = "\(Int.random(in: 1000..<9999))"
         label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
@@ -25,7 +27,9 @@ class BalanceCardView: UIViewController {
     private lazy var dropDownView: DropDown = {
         let dropDown = DropDown()
         dropDown.dataSource = currenciesList
+        dropDown.backgroundColor = .secondary
         dropDown.direction = .bottom
+        dropDown.textColor = .onSecondary
         dropDown.anchorView = currencyLabel
         dropDown.selectionAction = { [unowned self] index, item in
             if index == 0 {
@@ -44,46 +48,43 @@ class BalanceCardView: UIViewController {
         label.text = "KZT"
         label.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 2, right: 4)
         label.layer.cornerRadius = 6
+        label.textColor = .onSecondary
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        label.layer.borderWidth = 0.4
-        label.layer.borderColor = UIColor.black.cgColor
+        label.layer.borderWidth = 0.7
+        label.layer.borderColor = UIColor.primaryVariant.cgColor
         label.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(currencyButtonTapped(_:)))
         label.addGestureRecognizer(tap)
         return label
     }()
-    lazy var cardView: UIView = {
-        let view = UIView()
-        view.makeSmoothCorners(ofRadius: 16)
-        view.elevateView()
-        view.backgroundColor = .systemGray5
-        return view
-    }()
     private let incomeCard: HomeStatisticsView
     private let expensesCard: HomeStatisticsView
 
-    private lazy var bottomHStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
-        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
-        stack.spacing = 8
-        return stack
-    }()
     lazy var mainHStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [leadingVStack,incomeCard.view, expensesCard.view])
+        let stack = UIStackView(arrangedSubviews: [leadingVStack, incomeCard.view, expensesCard.view])
         stack.alignment = .center
+        stack.distribution = .fillEqually
         stack.makeSmoothCorners(ofRadius: 16)
         stack.elevateView()
         stack.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.setContentCompressionResistancePriority(.defaultHigh + 50, for: .horizontal)
-        stack.spacing = 5
-        stack.backgroundColor = .systemGray5
+        stack.spacing = 8
+        stack.backgroundColor = .surface
+        return stack
+    }()
+    private lazy var bottomHStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
+//        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
+        stack.distribution = .fillProportionally
+        stack.spacing = 4
         return stack
     }()
     private lazy var leadingVStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
+//        stack.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
+        stack.setContentCompressionResistancePriority(.defaultHigh + 10, for: .horizontal)
+        stack.distribution = .equalCentering
         stack.spacing = 6
-        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
         stack.axis = .vertical
         return stack
     }()
@@ -91,13 +92,22 @@ class BalanceCardView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        settingColors()
     }
 
     @objc private func currencyButtonTapped(_ sender: UITapGestureRecognizer) {
         dropDownView.show()
     }
 
+    private func settingColors() {
+        incomeCard.view.backgroundColor = .secondaryIncomeVariant
+
+        expensesCard.view.backgroundColor = .secondaryExpensesVariant
+    }
+
     private func configureViews() {
+        incomeCard.view.setContentCompressionResistancePriority(.defaultHigh+10, for: .horizontal)
+        incomeCard.view.setContentHuggingPriority(.defaultLow - 10, for: .horizontal)
         view.addSubview(mainHStack)
         makeConstraints()
     }

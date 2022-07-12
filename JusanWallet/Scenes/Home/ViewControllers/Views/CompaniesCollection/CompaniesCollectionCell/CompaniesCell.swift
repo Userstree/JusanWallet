@@ -20,12 +20,14 @@ class CompaniesCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.numberOfLines = 2
+        label.textColor = .onSurface
         label.lineBreakMode = .byClipping
         return label
     }()
 
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.lineBreakMode = .byClipping
         return label
@@ -41,7 +43,7 @@ class CompaniesCell: UICollectionViewCell {
         contentView.layer.shadowOffset = CGSize(width: 5, height: 3)
         contentView.layer.shadowOpacity = 0.4
         contentView.layer.shadowRadius = 3
-        contentView.backgroundColor = .systemGray5
+        contentView.backgroundColor = .surface
         configureViews()
     }
 

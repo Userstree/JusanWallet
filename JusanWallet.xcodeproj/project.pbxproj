@@ -25,7 +25,7 @@
 		615B45F55C841C5331309521 /* UILabel+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E86DB6B59866BECA456 /* UILabel+ext.swift */; };
 		615B465C1FCFD34ABD6EA53B /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B40ADF24AA481F16C6BCE /* UIViewController+ext.swift */; };
 		615B46896AC75139523CBBBC /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4E73CCC784E2AA8F2C84 /* BalanceCardView.swift */; };
-		615B4708D1AA8FC2734260B2 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */; };
+		615B4708D1AA8FC2734260B2 /* PaymentsParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4F1CB9845BA8BBEA877C /* PaymentsParentViewController.swift */; };
 		615B4726E03D16907F42FDC2 /* CurrentStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B425857F5B9DE749DA4CA /* CurrentStatistics.swift */; };
 		615B47DF97279CBB168E188C /* UIStackView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B4AE4CBAFADDE2A5437FB /* UIStackView+ext.swift */; };
 		615B480256DBB123AA566BC2 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B488FB37EE73F5B2F129B /* AppFlow.swift */; };
@@ -109,7 +109,7 @@
 		615B4EB60013FBD5F49E0B02 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
 		615B4ECCAD399E9C0449828F /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
 		615B4EE2C792D0C32506883C /* MainBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBaseCoordinator.swift; sourceTree = "<group>"; };
-		615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		615B4F1CB9845BA8BBEA877C /* PaymentsParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsParentViewController.swift; sourceTree = "<group>"; };
 		615B4F2BDAF027D438E4D1F7 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
 		BD6119CA5A8524C9A23AA370 /* Pods-JusanWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JusanWallet.debug.xcconfig"; path = "Target Support Files/Pods-JusanWallet/Pods-JusanWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		C2D1786D2879DDFB005662DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		615B45BEE2647A21D994493B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				615B4A63FC712F040313BE01 /* Balance */,
+				615B4A63FC712F040313BE01 /* BalanceOnTop */,
 				615B45975802E88892A43E84 /* CompaniesCollection */,
 				615B44AE953FA989A6E6EECE /* CategoryBalanceTable */,
 			);
@@ -357,14 +357,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		615B4A63FC712F040313BE01 /* Balance */ = {
+		615B4A63FC712F040313BE01 /* BalanceOnTop */ = {
 			isa = PBXGroup;
 			children = (
 				615B4E73CCC784E2AA8F2C84 /* BalanceCardView.swift */,
 				615B42FD356FBF8C7FCC67E8 /* HomeStatisticsView.swift */,
 				615B44B2574F0C37B7340A5B /* Models */,
 			);
-			path = Balance;
+			path = BalanceOnTop;
 			sourceTree = "<group>";
 		};
 		615B4BF5699C25CA856355D1 /* CategoryTableCell */ = {
@@ -443,7 +443,7 @@
 		615B4F32164B5F8DF4F4AF58 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				615B4F1CB9845BA8BBEA877C /* PaymentsViewController.swift */,
+				615B4F1CB9845BA8BBEA877C /* PaymentsParentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -750,7 +750,7 @@
 				615B414E67A98513A88CBC4A /* PaymentsBaseCoordinator.swift in Sources */,
 				615B422BBBD5345D7AA90364 /* PaymentsCoordinator.swift in Sources */,
 				615B441F1D7DD2D54E8865B3 /* ExpensesParentViewController.swift in Sources */,
-				615B4708D1AA8FC2734260B2 /* PaymentsViewController.swift in Sources */,
+				615B4708D1AA8FC2734260B2 /* PaymentsParentViewController.swift in Sources */,
 				615B48C0463361AE5B1D5CBD /* HomeViewModelImpl.swift in Sources */,
 				615B4139D2AC26F16FE7E8B1 /* BindableType.swift in Sources */,
 				615B4256D305C9BA4538ACCE /* HomeService.swift in Sources */,

@@ -16,18 +16,21 @@ class CategoryItemTableViewCell: UITableViewCell {
 
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return label
     }()
 
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
@@ -68,7 +71,7 @@ class CategoryItemTableViewCell: UITableViewCell {
         configureViews()
         contentView.layer.cornerRadius = 12
         contentView.layer.cornerCurve = .continuous
-        contentView.backgroundColor = .systemGray4
+        contentView.backgroundColor = .surface
     }
 
     func configure(with dataSource: CatalogTableItemDataSource) {

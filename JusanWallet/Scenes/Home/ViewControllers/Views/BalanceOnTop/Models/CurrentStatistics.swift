@@ -13,8 +13,8 @@ protocol CurrentStatisticsDataSource {
 }
 
 enum MoneyMode {
-    case income(UIImage)
-    case expenses(UIImage)
+    case income(UIImage, Int)
+    case expenses(UIImage, Int)
 }
 
 struct CurrentStatistics: CurrentStatisticsDataSource {

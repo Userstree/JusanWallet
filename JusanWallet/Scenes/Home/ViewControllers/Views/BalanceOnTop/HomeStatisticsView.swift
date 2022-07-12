@@ -31,8 +31,8 @@ class HomeStatisticsView: UIViewController {
 
     private lazy var upperHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [currentMonthLabel, chartView])
-        stack.distribution = .fillProportionally
-        stack.spacing = 8
+        stack.distribution = .equalCentering
+        stack.spacing = 4
         return stack
     }()
 
@@ -40,11 +40,12 @@ class HomeStatisticsView: UIViewController {
         let stack = UIStackView(arrangedSubviews: [upperHStack, titleLabel, moneyAmountLabel])
         stack.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.layer.cornerRadius = 8
-        stack.layer.cornerCurve = .continuous
+        stack.makeSmoothCorners(ofRadius: 8)
+        stack.elevateView(shadowWidth: 3, shadowHeight: 3, withShadowRadius: 2)
+        stack.layer.borderWidth = 0.44
+        stack.layer.borderColor = UIColor.onSecondary.withAlphaComponent(0.35).cgColor
         stack.axis = .vertical
         stack.spacing = 8
-        stack.backgroundColor = .black.withAlphaComponent(0.64)
         return stack
     }()
 
@@ -62,19 +63,26 @@ class HomeStatisticsView: UIViewController {
     init(dataSource: CurrentStatisticsDataSource) {
         super.init(nibName: nil, bundle: nil)
         switch dataSource.moneyMode {
-        case .income(let image):
+        case .income(let image, let moneyAmount):
             chartView.image = image
-            chartView.tintColor = .red
+            chartView.tintColor = .onSecondaryIncomeVariant
+            currentMonthLabel.textColor = .onSecondaryIncomeVariant
             titleLabel.text = dataSource.title
-            moneyAmountLabel.text = "+$\(dataSource.moneyAmount)"
-            moneyAmountLabel.textColor = .systemGreen.withAlphaComponent(0.78)
-        case .expenses(let image):
+            titleLabel.textColor = .onSecondaryIncomeVariant
+            moneyAmountLabel.text = "+$\(moneyAmount)"
+            moneyAmountLabel.textColor = .systemGreen.withAlphaComponent(0.88)
+            mainVStack.backgroundColor = .secondaryIncomeVariant
+        case .expenses(let image, let moneyAmount):
             chartView.image = image
+            chartView.tintColor = .onSecondaryIncomeVariant
+            currentMonthLabel.textColor = .onSecondaryExpenseVariant
             titleLabel.text = dataSource.title
-            moneyAmountLabel.text = "-$\(dataSource.moneyAmount)"
-            moneyAmountLabel.textColor = .systemRed
+            titleLabel.textColor = .onSecondaryExpenseVariant
+            moneyAmountLabel.text = "-$\(moneyAmount)"
+            moneyAmountLabel.textColor = .systemRed.withAlphaComponent(0.88)
+            mainVStack.backgroundColor = .secondaryExpensesVariant
         }
-//        mainVStack.backgroundColor = .systemGreen
+        chartView.contentMode = .scaleAspectFit
         currentMonthLabel.text = dataSource.currentMonth
     }
 

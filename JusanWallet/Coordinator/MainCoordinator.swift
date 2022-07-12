@@ -20,15 +20,12 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
     lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(mainBaseCoordinator: self)
 
     private lazy var tabBarController: BATabBarController = {
-//        let tabController = UITabBarController()
-        let tab = BATabBarController()
-        tab.delegate = self
-        tab.tabBarBackgroundColor = .primary
-        tab.tabBarItemStrokeColor = .primaryVariant
-//        tabController.tabBar.backgroundColor = .primaryDarkColor
-//        tabController.tabBar.tintColor = .secondaryColor
-//        tabController.tabBar.unselectedItemTintColor = .systemGray2
-        return tab
+        let tabController = BATabBarController()
+        tabController.tabBarAnimationDuration = 0.46
+        tabController.delegate = self
+        tabController.tabBarBackgroundColor = .primary//.withAlphaComponent(0.95)
+        tabController.tabBarItemStrokeColor = .primaryVariant
+        return tabController
     }()
 
     lazy var rootViewController: UIViewController = tabBarController
@@ -68,10 +65,8 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
 
 
         let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
-//        (rootViewController as? BATabBarController)?.setViewControllers(tabBarControllers, animated: true)
-//        (rootViewController as? BATabBarController)?.selectedIndex = 1
         (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, expensesItem, plannerItem, paymentsItem]
-        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[1]
+        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[0]
         (rootViewController as? BATabBarController)?.viewControllers = tabBarControllers
         return rootViewController
     }
