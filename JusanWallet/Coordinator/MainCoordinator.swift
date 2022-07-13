@@ -93,7 +93,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
 
         let tabBarControllers = [homeViewController, analyticsViewController, plannerViewController, paymentsViewController]
         (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, analyticsItem, plannerItem, paymentsItem]
-        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[0]
+        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[1]
         (rootViewController as? BATabBarController)?.viewControllers = tabBarControllers
         return rootViewController
     }

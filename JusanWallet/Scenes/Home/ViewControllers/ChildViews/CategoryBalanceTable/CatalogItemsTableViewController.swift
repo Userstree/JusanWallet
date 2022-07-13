@@ -8,12 +8,12 @@ protocol CatalogItemsDataListProvidable {
     var companyData: [CatalogTableItemDataSource] { get set }
 }
 
-class CatalogItemsTableView: UIViewController {
+class CatalogItemsTableViewController: UIViewController {
     var dataSource: CatalogItemsDataList!
 
     lazy var companyTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(CategoryItemTableViewCell.self, forCellReuseIdentifier: String(describing: CategoryItemTableViewCell.self))
+        table.register(CompanyItemTableViewCell.self, forCellReuseIdentifier: String(describing: CompanyItemTableViewCell.self))
         table.dataSource = self
         table.delegate = self
         table.showsVerticalScrollIndicator = false
@@ -59,7 +59,7 @@ class CatalogItemsTableView: UIViewController {
     }
 }
 
-extension CatalogItemsTableView: UITableViewDelegate {
+extension CatalogItemsTableViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         CGFloat(75)
     }
@@ -74,7 +74,7 @@ extension CatalogItemsTableView: UITableViewDelegate {
     }
 }
 
-extension CatalogItemsTableView: UITableViewDataSource {
+extension CatalogItemsTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -84,7 +84,7 @@ extension CatalogItemsTableView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoryItemTableViewCell.self), for: indexPath) as! CategoryItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CompanyItemTableViewCell.self), for: indexPath) as! CompanyItemTableViewCell
         cell.configure(with: dataSource.companyData[indexPath.section])
         cell.backgroundColor = .clear
         return cell

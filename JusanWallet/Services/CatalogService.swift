@@ -15,20 +15,13 @@ class MockCatalogService: CatalogService {
             CatalogCard(
                     title: title,
                     amount: Int.random(in: 0..<5000),
-                    cardColor: cardColors[index],
+                    cardColor: cardColor,
                     icon: iconsList[index]!
             )
         }
     }
 
-    let cardColors: [UIColor] = [
-        .orange,
-        .blue,
-        .orange,
-        .systemCyan,
-        .blue,
-        .orange
-    ]
+    let cardColor: UIColor = .orange
 
     let iconsList = [
         UIImage(systemName: "bag"),

@@ -11,6 +11,9 @@ final class AnalyticsParentViewController: UIViewController, AnalyticsBaseCoordi
     var coordinator: AnalyticsCoordinator?
     var viewModel: AnalyticsViewModel!
 
+    let categoriesService = MockCatalogService()
+    lazy var homeViewModel = HomeViewModelImpl(categoryService: categoriesService)
+
     private var controllerTitles = ["Expenses",
                                     "Income",
                                     "Investments",
@@ -26,7 +29,7 @@ final class AnalyticsParentViewController: UIViewController, AnalyticsBaseCoordi
     ]
 
     private lazy var expensesStatChildViewController = ExpensesStatisticsChildViewController(viewModel: viewModel)
-    private lazy var historyChildViewController = HistoryChildViewController(viewModel: viewModel)
+    private lazy var historyChildViewController = HistoryChildViewController(viewModel: homeViewModel)
     private lazy var incomeStatChildViewController = IncomeStatisticsChildViewController(viewModel: viewModel)
     private lazy var investmentStatChildViewController = InvestmentStatisticsChildViewController(viewModel: viewModel)
     private lazy var transferStatChildViewController = TransferStatisticsChildViewController(viewModel: viewModel)

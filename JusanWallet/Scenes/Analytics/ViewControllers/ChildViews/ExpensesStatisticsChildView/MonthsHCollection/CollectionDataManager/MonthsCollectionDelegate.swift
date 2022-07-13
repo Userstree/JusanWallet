@@ -4,7 +4,7 @@
 
 import UIKit
 
-class TimeCollectionDelegate: NSObject, UICollectionViewDelegate {
+class MonthsCollectionDelegate: NSObject, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
 

@@ -13,7 +13,7 @@ protocol CompaniesCardDataSource {
 }
 
 class CompaniesCell: UICollectionViewCell {
-
+//    private var viewModel: CompaniesCardDataSource!
     private lazy var iconImage = UIImageView()
 
     private lazy var titleLabel: UILabel = {
@@ -28,7 +28,15 @@ class CompaniesCell: UICollectionViewCell {
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .onSurface
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.lineBreakMode = .byClipping
+        return label
+    }()
+
+    private lazy var bonustLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .green
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.lineBreakMode = .byClipping
         return label
     }()
@@ -50,15 +58,19 @@ class CompaniesCell: UICollectionViewCell {
     func configure(with dataSource: CompaniesCardDataSource) {
         titleLabel.text = dataSource.title
         iconImage.image = dataSource.icon
-        amountLabel.text = "$\(dataSource.amount)"
-        self.iconImage.tintColor = dataSource.cardColor
+        amountLabel.text = "\(dataSource.amount)"
+        bonustLabel.text = " + \(Int(dataSource.amount / 95))"
+        iconImage.tintColor = dataSource.cardColor
     }
 
     private func configureViews() {
-        [titleLabel, iconImage, amountLabel].forEach(contentView.addSubview)
+        [titleLabel,
+         iconImage,
+         amountLabel,
+         bonustLabel
+        ].forEach(contentView.addSubview)
         makeConstraints()
     }
-
     private func makeConstraints() {
         iconImage.snp.makeConstraints {
             $0.top.equalTo(contentView.snp.top).offset(28)
@@ -71,7 +83,11 @@ class CompaniesCell: UICollectionViewCell {
         }
         amountLabel.snp.makeConstraints {
             $0.bottom.equalTo(contentView.snp.bottom).offset(-10)
-            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.centerX.equalTo(contentView.snp.centerX).offset(-18)
+        }
+        bonustLabel.snp.makeConstraints {
+            $0.bottom.equalTo(amountLabel.snp.bottom)
+            $0.leading.equalTo(amountLabel.snp.trailing)
         }
     }
 }

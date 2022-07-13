@@ -14,10 +14,12 @@ struct MonthCell: TimeCellDataSource {
     var months: [String] = []
 }
 
-class TimeCollectionCell: UICollectionViewCell {
+class MonthCollectionCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.sizeToFit()
+        label.textAlignment = .center
+        label.textColor = .onSurface
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
@@ -32,7 +34,6 @@ class TimeCollectionCell: UICollectionViewCell {
     }
 
     private func configureViews(){
-        contentView.layer.cornerRadius = 8
         contentView.addSubview(titleLabel)
         makeConstraints()
     }

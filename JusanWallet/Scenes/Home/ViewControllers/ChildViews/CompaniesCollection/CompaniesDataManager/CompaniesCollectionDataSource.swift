@@ -4,9 +4,11 @@
 
 import UIKit
 
+//extension BindableType: AnalyticsViewModel {}
+
 class CompaniesCollectionDataSource: NSObject, UICollectionViewDataSource {
 
-    private var viewModel: HomeViewModel!
+    var viewModel: HomeViewModel!
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel

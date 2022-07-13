@@ -4,4 +4,6 @@
 
 import UIKit
 
-protocol AnalyticsViewModel: TimeCollectionViewModel {  }
+protocol AnalyticsViewModel: TimeCollectionViewModel, DataProvidable{
+    var companyCards: [CatalogCard] { get set }
+}

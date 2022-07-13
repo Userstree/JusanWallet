@@ -17,7 +17,7 @@ class BalanceCardViewController: UIViewController {
     private lazy var totalBalanceNumericLabel: UILabel = {
         let label = UILabel()
         label.textColor = .onSurface
-        label.text = "\(Int.random(in: 1000..<9999))"
+        label.text = "\(3244)"
         label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         return label
@@ -49,6 +49,7 @@ class BalanceCardViewController: UIViewController {
         label.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 2, right: 4)
         label.layer.cornerRadius = 6
         label.textColor = .onSecondary
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.layer.borderWidth = 0.7
         label.layer.borderColor = UIColor.primaryVariant.cgColor
@@ -66,7 +67,7 @@ class BalanceCardViewController: UIViewController {
         stack.distribution = .fillEqually
         stack.makeSmoothCorners(ofRadius: 16)
         stack.elevateView()
-        stack.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        stack.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         stack.isLayoutMarginsRelativeArrangement = true
         stack.spacing = 8
         stack.backgroundColor = .surface
@@ -74,14 +75,12 @@ class BalanceCardViewController: UIViewController {
     }()
     private lazy var bottomHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceNumericLabel, currencyLabel])
-//        stack.setContentHuggingPriority(.defaultHigh + 20, for: .horizontal)
         stack.distribution = .fillProportionally
-        stack.spacing = 4
+        stack.spacing = 2
         return stack
     }()
     private lazy var leadingVStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [totalBalanceTextLabel, bottomHStack])
-//        stack.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         stack.setContentCompressionResistancePriority(.defaultHigh + 10, for: .horizontal)
         stack.distribution = .equalCentering
         stack.spacing = 6
@@ -116,6 +115,12 @@ class BalanceCardViewController: UIViewController {
         mainHStack.snp.makeConstraints{
             $0.edges.equalTo(view.snp.edges)
         }
+        currencyLabel.snp.makeConstraints {
+            $0.width.equalTo(40)
+        }
+//        totalBalanceNumericLabel.snp.makeConstraints {
+//            $0.width.equalTo(55)
+//        }
     }
 
     init(frame: CGRect, dataSource: BalanceStatisticsServiceProvidable) {

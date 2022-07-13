@@ -10,7 +10,8 @@ class AnalyticsCoordinator: AnalyticsBaseCoordinator {
 
     func start() -> UIViewController {
         let controller = AnalyticsParentViewController(coordinator: self)
-        let expensesViewModel = AnalyticsViewModelImpl()
+        let categoriesService = MockCatalogService()
+        let expensesViewModel = AnalyticsViewModelImpl(catalogService: categoriesService)
         controller.bind(to: expensesViewModel)
         rootViewController = UINavigationController(rootViewController: controller)
         return rootViewController
