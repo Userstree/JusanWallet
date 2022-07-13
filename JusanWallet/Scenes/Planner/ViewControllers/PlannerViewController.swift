@@ -4,8 +4,9 @@
 
 import UIKit
 
-final class PlannerViewController: UIViewController, AccountBaseCoordinated {
+final class PlannerViewController: UIViewController, AccountBaseCoordinated, BindableType {
     var coordinator: PlannerCoordinator?
+    var viewModel: PlannerViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,9 @@ final class PlannerViewController: UIViewController, AccountBaseCoordinated {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+
+    func bindViewModel() {
     }
 }

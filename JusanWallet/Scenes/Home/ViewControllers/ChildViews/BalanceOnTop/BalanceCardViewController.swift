@@ -6,7 +6,7 @@ import UIKit
 import SnapKit
 import DropDown
 
-class BalanceCardView: UIViewController {
+class BalanceCardViewController: UIViewController {
     private lazy var totalBalanceTextLabel: UILabel = {
         let label = UILabel()
         label.text = "Total balance"
@@ -57,8 +57,8 @@ class BalanceCardView: UIViewController {
         label.addGestureRecognizer(tap)
         return label
     }()
-    private let incomeCard: HomeStatisticsView
-    private let expensesCard: HomeStatisticsView
+    private let incomeCard: HomeStatisticsViewController
+    private let expensesCard: HomeStatisticsViewController
 
     lazy var mainHStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [leadingVStack, incomeCard.view, expensesCard.view])
@@ -119,8 +119,8 @@ class BalanceCardView: UIViewController {
     }
 
     init(frame: CGRect, dataSource: BalanceStatisticsServiceProvidable) {
-        incomeCard = HomeStatisticsView(dataSource: dataSource.incomeStatistics)
-        expensesCard = HomeStatisticsView(dataSource: dataSource.expensesStatistics)
+        incomeCard = HomeStatisticsViewController(dataSource: dataSource.incomeStatistics)
+        expensesCard = HomeStatisticsViewController(dataSource: dataSource.expensesStatistics)
         super.init(nibName: nil, bundle: nil)
         view.frame = frame
     }

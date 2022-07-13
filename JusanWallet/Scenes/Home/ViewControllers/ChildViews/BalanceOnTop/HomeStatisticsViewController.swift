@@ -5,7 +5,7 @@
 import UIKit
 
 
-class HomeStatisticsView: UIViewController {
+class HomeStatisticsViewController: UIViewController {
     private lazy var chartView = UIImageView()
 
     private lazy var currentMonthLabel: UILabel = {

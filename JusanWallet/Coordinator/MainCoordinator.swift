@@ -9,6 +9,29 @@ extension UIViewController: BATabBarControllerDelegate {
     public func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {  }
 }
 
+//final class BalanceCoordinatorFactory {
+//
+//    let taxCalculator
+//    let payment
+//    let transfer
+//
+//    var container: DIContainer
+//
+//    init(container: DIContainer) {
+//        self.container = container
+//    }
+//
+//
+//    func makeBalanceCardViewController() -> UIViewController {
+//        let balanceService: BalanceStatisticsServiceProvidable = container.sadfasdfs // Service
+//        let viewModel = BalanceViewModel(service: balanceService)
+//        let viewController = BalanceCardView()
+//        viewController.viewModel = viewModel
+//
+//        return viewController
+//    }
+//}
+
 class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate {
 
     var parentCoordinator: MainBaseCoordinator?
@@ -70,7 +93,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
 
         let tabBarControllers = [homeViewController, analyticsViewController, plannerViewController, paymentsViewController]
         (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, analyticsItem, plannerItem, paymentsItem]
-        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[1]
+        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[0]
         (rootViewController as? BATabBarController)?.viewControllers = tabBarControllers
         return rootViewController
     }

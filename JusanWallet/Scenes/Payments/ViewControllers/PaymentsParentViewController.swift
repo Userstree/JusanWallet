@@ -4,8 +4,9 @@
 
 import UIKit
 
-final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordinated {
+final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordinated, BindableType {
     var coordinator: PaymentsCoordinator?
+    var viewModel: PaymentsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,9 @@ final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordina
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+
+    func bindViewModel() {
     }
 }

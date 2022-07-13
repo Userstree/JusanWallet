@@ -13,7 +13,7 @@ final class AnalyticsParentViewController: UIViewController, AnalyticsBaseCoordi
 
     private var controllerTitles = ["Expenses",
                                     "Income",
-                                    "Investment",
+                                    "Investments",
                                     "Transfer",
                                     "History"
     ]
@@ -51,7 +51,7 @@ final class AnalyticsParentViewController: UIViewController, AnalyticsBaseCoordi
     }
 
     private func configureNavBar() {
-        title = "Expenses"
+        title = "Analytics"
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .primary
         appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]

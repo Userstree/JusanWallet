@@ -8,7 +8,7 @@ import SnapKit
 final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableType {
     var viewModel: HomeViewModel!
     var coordinator: HomeBaseCoordinator?
-    private lazy var balanceCardView = BalanceCardView(frame: .zero, dataSource: viewModel)
+    private lazy var balanceCardView = BalanceCardViewController(frame: .zero, dataSource: viewModel)
     private var selectedCatalog: Int = 0
 
     private lazy var collectionDataSource = CompaniesCollectionDataSource(viewModel: viewModel)
