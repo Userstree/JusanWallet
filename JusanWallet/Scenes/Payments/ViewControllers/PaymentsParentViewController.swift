@@ -5,19 +5,19 @@
 import UIKit
 
 final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordinated {
-    private(set) var coordinator: PaymentsCoordinator?
+    var coordinator: PaymentsCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-        configureNavTitle()
+        configureNavBar()
     }
 
-    private func configureNavTitle() {
-        let appearance = UINavigationBarAppearance(idiom: .phone)
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.onPrimary]
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]
+    private func configureNavBar() {
+        title = "Payments"
+        let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .primary
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
     }
@@ -25,7 +25,6 @@ final class PaymentsParentViewController: UIViewController, PaymentsBaseCoordina
     init(coordinator: PaymentsCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
-        title = "Payments"
     }
 
     required init?(coder: NSCoder) {

@@ -4,5 +4,5 @@
 
 import Foundation
 
-class ExpensesViewModelImpl: ExpensesViewModel {
+class AnalyticsViewModelImpl: AnalyticsViewModel {
 }

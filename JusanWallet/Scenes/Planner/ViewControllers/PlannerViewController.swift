@@ -10,14 +10,14 @@ final class PlannerViewController: UIViewController, AccountBaseCoordinated {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-        configureNavTitle()
+        configureNavBar()
     }
 
-    private func configureNavTitle() {
-        let appearance = UINavigationBarAppearance(idiom: .phone)
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    private func configureNavBar() {
+        title = "Planner"
+        let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .primary
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.onPrimary]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
     }
@@ -25,7 +25,6 @@ final class PlannerViewController: UIViewController, AccountBaseCoordinated {
     init(coordinator: PlannerCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
-        title = "Planner"
     }
 
     required init?(coder: NSCoder) {

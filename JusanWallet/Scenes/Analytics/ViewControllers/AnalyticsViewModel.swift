@@ -4,4 +4,4 @@
 
 import UIKit
 
-protocol ExpensesViewModel: TimeCollectionViewModel {  }
+protocol AnalyticsViewModel: TimeCollectionViewModel {  }

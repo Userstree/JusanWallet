@@ -14,7 +14,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
     var parentCoordinator: MainBaseCoordinator?
 
     lazy var homeCoordinator: HomeBaseCoordinator = HomeCoordinator()
-    lazy var expensesCoordinator: ExpensesBaseCoordinator = ExpensesCoordinator()
+    lazy var analyticsCoordinator: AnalyticsBaseCoordinator = AnalyticsCoordinator()
     lazy var paymentsCoordinator: PaymentsBaseCoordinator = PaymentsCoordinator()
     lazy var plannerCoordinator: PlannerBaseCoordinator = PlannerCoordinator()
     lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(mainBaseCoordinator: self)
@@ -23,7 +23,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let tabController = BATabBarController()
         tabController.tabBarAnimationDuration = 0.46
         tabController.delegate = self
-        tabController.tabBarBackgroundColor = .primary//.withAlphaComponent(0.95)
+        tabController.tabBarBackgroundColor = .primary
         tabController.tabBarItemStrokeColor = .primaryVariant
         return tabController
     }()
@@ -38,16 +38,16 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let homeImage = UIImage(named: "homeIcon")!
         let homeItem = BATabBarItem(image: homeImage, selectedImage: homeImage, title: homeAttributedTitle)
         homeItem.title?.textColor = .onPrimary
-        homeViewController.tabBarController(tabBarController, didSelect: homeViewController)//UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        homeViewController.tabBarController(tabBarController, didSelect: homeViewController)
 
 
-        let expensesViewController = expensesCoordinator.start()
-        expensesCoordinator.parentCoordinator = self
-        let expensesTitle = NSMutableAttributedString(string: "Expenses")
-        let expensesImage = UIImage(named: "expensesIcon")!
-        let expensesItem = BATabBarItem(image: expensesImage, selectedImage: expensesImage, title: expensesTitle)
-        expensesItem.title?.textColor = .onPrimary
-        expensesViewController.tabBarController(tabBarController, didSelect: expensesViewController) //UITabBarItem(title: "Expenses", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 1)
+        let analyticsViewController = analyticsCoordinator.start()
+        analyticsCoordinator.parentCoordinator = self
+        let analyticsTitle = NSMutableAttributedString(string: "Analytics")
+        let analyticsImage = UIImage(named: "expensesIcon")!
+        let analyticsItem = BATabBarItem(image: analyticsImage, selectedImage: analyticsImage, title: analyticsTitle)
+        analyticsItem.title?.textColor = .onPrimary
+        analyticsViewController.tabBarController(tabBarController, didSelect: analyticsViewController)
 
 
         let plannerViewController = plannerCoordinator.start()
@@ -56,7 +56,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let plannerImage = UIImage(named: "planner28")!
         let plannerItem = BATabBarItem(image: plannerImage, selectedImage: plannerImage, title: plannerTitle)
         plannerItem.title?.textColor = .onPrimary
-        plannerViewController.tabBarController(tabBarController, didSelect: plannerViewController)//UITabBarItem(title: "Planner", image: UIImage(systemName: "calendar.badge.plus"), tag: 2)
+        plannerViewController.tabBarController(tabBarController, didSelect: plannerViewController)
 
 
         let paymentsViewController = paymentsCoordinator.start()
@@ -65,12 +65,12 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
         let paymentsImage = UIImage(named: "paymentsIcon")!
         let paymentsItem = BATabBarItem(image: paymentsImage, selectedImage: paymentsImage, title: paymentsTitle)
         paymentsItem.title?.textColor = .onPrimary
-        paymentsViewController.tabBarController(tabBarController, didSelect: paymentsViewController)//UITabBarItem(title: "Payments", image: UIImage(systemName: "arrow.triangle.2.circlepath.circle"), tag: 3)
+        paymentsViewController.tabBarController(tabBarController, didSelect: paymentsViewController)
 
 
-        let tabBarControllers = [homeViewController, expensesViewController, plannerViewController, paymentsViewController]
-        (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, expensesItem, plannerItem, paymentsItem]
-        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[0]
+        let tabBarControllers = [homeViewController, analyticsViewController, plannerViewController, paymentsViewController]
+        (rootViewController as? BATabBarController)?.tabBarItems = [homeItem, analyticsItem, plannerItem, paymentsItem]
+        (rootViewController as? BATabBarController)?.initialViewController = tabBarControllers[1]
         (rootViewController as? BATabBarController)?.viewControllers = tabBarControllers
         return rootViewController
     }
@@ -94,7 +94,7 @@ class MainCoordinator: NSObject, MainBaseCoordinator, BATabBarControllerDelegate
     }
 
     private func goToExpenses(_ flow: AppFlow) {
-        expensesCoordinator.moveTo(flow: flow, userData: nil)
+        analyticsCoordinator.moveTo(flow: flow, userData: nil)
         (rootViewController as? UITabBarController)?.selectedIndex = 1
     }
 

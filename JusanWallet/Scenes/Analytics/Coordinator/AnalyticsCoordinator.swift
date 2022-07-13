@@ -4,13 +4,13 @@
 
 import UIKit
 
-class ExpensesCoordinator: ExpensesBaseCoordinator {
+class AnalyticsCoordinator: AnalyticsBaseCoordinator {
     var rootViewController: UIViewController = UIViewController()
     var parentCoordinator: MainBaseCoordinator?
 
     func start() -> UIViewController {
-        let controller = ExpensesParentViewController(coordinator: self)
-        let expensesViewModel = ExpensesViewModelImpl()
+        let controller = AnalyticsParentViewController(coordinator: self)
+        let expensesViewModel = AnalyticsViewModelImpl()
         controller.bind(to: expensesViewModel)
         rootViewController = UINavigationController(rootViewController: controller)
         return rootViewController

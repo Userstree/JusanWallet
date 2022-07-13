@@ -78,10 +78,8 @@ final class HomeViewController: UIViewController, HomeBaseCoordinated, BindableT
         }
         companiesCollection.snp.makeConstraints {
             $0.top.equalTo(balanceCardView.view.snp.bottom).offset(20)
-//            $0.width.equalTo(view.snp.width)
             $0.leading.equalTo(view.snp.leading).offset(10)
             $0.trailing.equalTo(view.snp.trailing).offset(-10)
-            $0.centerX.equalTo(view.snp.centerX)
             $0.height.equalTo(140)
         }
         companyTitle.snp.makeConstraints {

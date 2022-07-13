@@ -8,7 +8,7 @@ import Charts
 import Persei
 
 final class ExpensesStatisticsChildViewController: UIViewController, BindableType {
-    var viewModel: ExpensesViewModel!
+    var viewModel: AnalyticsViewModel!
     private var timeCollectionDataSource: TimeCollectionDataSource!
     private var timeCollectionDelegate: TimeCollectionDelegate!
 
@@ -27,7 +27,7 @@ final class ExpensesStatisticsChildViewController: UIViewController, BindableTyp
         super.viewDidLoad()
         timeCollectionDataSource = TimeCollectionDataSource(viewModel: viewModel)
         timeCollectionDelegate = TimeCollectionDelegate()
-        view.backgroundColor = .red
+        view.backgroundColor = .background
         configureViews()
     }
 
@@ -48,7 +48,7 @@ final class ExpensesStatisticsChildViewController: UIViewController, BindableTyp
         }
     }
 
-    init(viewModel: ExpensesViewModel!) {
+    init(viewModel: AnalyticsViewModel!) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
