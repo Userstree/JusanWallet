@@ -1,11 +1,9 @@
 package com.jwallet.jwallet.presentation.main
 
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
-import android.widget.Toast
-import androidx.core.view.children
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,6 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.jwallet.jwallet.R
+import com.jwallet.jwallet.data.database.Transaction
 import com.jwallet.jwallet.databinding.ActivityMainBinding
 import com.jwallet.jwallet.presentation.addtransaction.AddTransactionFragment
 
@@ -22,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private val TAG = javaClass.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,15 @@ class MainActivity : AppCompatActivity() {
         val menuItem = menuView.getChildAt(2) as BottomNavigationItemView
         menuItem.setIconSize(48.dp)
         menuItem.setOnClickListener {
-            AddTransactionFragment().show(supportFragmentManager, AddTransactionFragment.TAG)
+            addTransaction()
         }
+    }
+
+    private fun addTransaction() {
+        AddTransactionFragment(::getTransaction).show(supportFragmentManager, AddTransactionFragment.TAG)
+    }
+
+    private fun getTransaction(transaction: Transaction) {
+        Log.e(TAG, transaction.title)
     }
 }

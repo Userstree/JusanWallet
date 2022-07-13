@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/account_circle_48px.xml" value="0.238" />
+        <entry key="app/src/main/res/drawable/add_24px.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/add_48px.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/calendar_month_48px.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.238" />
@@ -16,7 +17,9 @@
         <entry key="app/src/main/res/drawable/shape_bottom_nav_main.xml" value="0.2975" />
         <entry key="app/src/main/res/drawable/shape_card_view_balance.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/shape_gradient_green.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/shape_oval_gradient_green.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/shape_oval_gradient_red.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/shape_oval_outline.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/shape_rectangle_outline_rounded_16dp.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/shape_rectangle_outline_rounded_8dp.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/shape_rectangle_rounded.xml" value="0.2735" />
@@ -27,8 +30,9 @@
         <entry key="app/src/main/res/drawable/shape_rectangle_top_corners_rounded_8dp.xml" value="0.29" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.38958333333333334" />
-        <entry key="app/src/main/res/layout/fragment_add_transaction.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_add_transaction.xml" value="0.5346733668341709" />
         <entry key="app/src/main/res/layout/fragment_add_transaction2.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_amount.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.5" />
@@ -38,8 +42,10 @@
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_subscriptions.xml" value="0.4015625" />
         <entry key="app/src/main/res/layout/item_add_category.xml" value="0.3885416666666667" />
+        <entry key="app/src/main/res/layout/item_back_btn.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.3885416666666667" />
         <entry key="app/src/main/res/layout/item_category_mini.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_num_btn.xml" value="0.67" />
         <entry key="app/src/main/res/layout/item_statistic.xml" value="0.3885416666666667" />
         <entry key="app/src/main/res/layout/item_transaction.xml" value="0.33" />
         <entry key="app/src/main/res/layout/sheet_add_transaction.xml" value="0.5" />

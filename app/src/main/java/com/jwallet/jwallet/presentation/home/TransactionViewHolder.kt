@@ -10,7 +10,7 @@ class TransactionViewHolder(val binding: ItemTransactionBinding) : RecyclerView.
 
     fun bind(item: Transaction) {
         binding.tvTransactionTitle.text = item.title
-        binding.tvTransactionMessage.text = item.message
+        binding.tvTransactionMessage.text = item.note
         binding.tvTransactionPrice.text = "-$${item.price}"
         binding.tvTransactionDate.text = "1:30 PM"
     }
