@@ -25,4 +25,9 @@
         android:name="com.jwallet.jwallet.presentation.planner.PlannerFragment"
         android:label="Planner"
         tools:layout="@layout/fragment_planner" />
+    <fragment
+        android:id="@+id/add_transaction_fragment"
+        android:name="com.jwallet.jwallet.presentation.addtransaction.AddTransactionFragment"
+        android:label="Add Transaction"
+        tools:layout="@layout/fragment_add_transaction"/>
 </navigation>

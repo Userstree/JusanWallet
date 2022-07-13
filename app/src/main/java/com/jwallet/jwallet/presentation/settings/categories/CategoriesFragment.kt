@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import com.jwallet.jwallet.data.database.TransactionDatabase
 import com.jwallet.jwallet.databinding.FragmentCategoriesBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CategoriesFragment : Fragment() {
 
     private var _binding: FragmentCategoriesBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CategoriesViewModel by viewModels()
+    private val viewModel: CategoriesViewModel by viewModel()
 
     private lateinit var expenseCategoriesAdapter: CategoryAdapter
     private lateinit var incomeCategoriesAdapter: CategoryAdapter
@@ -24,6 +25,7 @@ class CategoriesFragment : Fragment() {
     ): View {
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
         setupRecyclerViews()
+        setupObservers()
         return binding.root
     }
 
@@ -32,15 +34,22 @@ class CategoriesFragment : Fragment() {
         setupIncomeRecyclerView()
     }
 
+    private fun setupObservers() {
+        viewModel.incomeCategories.observe(viewLifecycleOwner) {
+            incomeCategoriesAdapter.submitList(it)
+        }
+        viewModel.expenseCategories.observe(viewLifecycleOwner) {
+            expenseCategoriesAdapter.submitList(it)
+        }
+    }
+
     private fun setupExpenseRecyclerView() {
         expenseCategoriesAdapter = CategoryAdapter()
-        expenseCategoriesAdapter.submitList(viewModel.getExpenseCategories())
         binding.rvExpenseCategories.adapter = expenseCategoriesAdapter
     }
 
     private fun setupIncomeRecyclerView() {
         incomeCategoriesAdapter = CategoryAdapter()
-        incomeCategoriesAdapter.submitList(viewModel.getIncomeCategories())
         binding.rvIncomeCategories.adapter = incomeCategoriesAdapter
     }
 
