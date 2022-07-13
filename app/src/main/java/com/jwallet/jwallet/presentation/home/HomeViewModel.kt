@@ -9,16 +9,6 @@ class HomeViewModel : ViewModel() {
     private var counterT = 0L
     private var counterC = 0L
 
-    fun getCategory() : Category {
-        return Category( "Bills & Pills", 0)
-    }
-
-    fun getCategoriesList(): List<Category> {
-        val list = mutableListOf<Category>()
-        repeat(11) { list.add(Category( "category$it", it)) }
-        return list
-    }
-
     fun getTransaction() : Transaction {
         return Transaction(counterT, "", "Coffee Boom", "Cafe", 12.10, "")
     }

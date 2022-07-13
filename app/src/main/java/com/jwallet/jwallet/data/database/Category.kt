@@ -6,5 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "category_table")
 data class Category(
     @PrimaryKey(autoGenerate = false) var name: String,
-    var image: Int
+    var image: Int,
+    val type: String
 )

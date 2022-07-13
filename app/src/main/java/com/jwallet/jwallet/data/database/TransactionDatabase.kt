@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [Transaction::class, Category::class],
     version = 1,
-    exportSchema = true
+    exportSchema = false
 )
 abstract class TransactionDatabase : RoomDatabase() {
     abstract val transactionDao: TransactionDao
@@ -27,8 +27,8 @@ abstract class TransactionDatabase : RoomDatabase() {
                         "transaction_database"
                     ).build()
                 }
+                return INSTANCE
             }
-            return INSTANCE
         }
     }
 }
