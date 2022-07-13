@@ -15,10 +15,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/shape_rectangle_rounded_black_8dp"
-        android:textColor="@android:color/white"
         android:padding="6dp"
         android:text="@string/statistics"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/tv_history"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,9 +35,25 @@
         android:padding="6dp"
         android:text="@string/history"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_investing"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_statistics"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_investing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/shape_rectangle_rounded_8dp"
+        android:padding="6dp"
+        android:text="Investing"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/tv_history"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView

@@ -18,11 +18,11 @@
     <item
         android:id="@+id/subscriptions_fragment"
         android:icon="@drawable/restart_alt_48px"
-        android:orderInCategory="4"
+        android:orderInCategory="5"
         android:title="@string/subscription" />
     <item
         android:id="@+id/planner_fragment"
         android:icon="@drawable/calendar_month_48px"
-        android:orderInCategory="5"
+        android:orderInCategory="4"
         android:title="@string/planner" />
 </menu>

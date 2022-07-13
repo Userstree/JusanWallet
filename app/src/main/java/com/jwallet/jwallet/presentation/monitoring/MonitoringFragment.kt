@@ -37,7 +37,8 @@ class MonitoringFragment : Fragment() {
     }
 
     private fun setupNavigation() {
-        navHostFragment = childFragmentManager.findFragmentById(R.id.nav_host_fragment_monitoring) as NavHostFragment
+        navHostFragment =
+            childFragmentManager.findFragmentById(R.id.nav_host_fragment_monitoring) as NavHostFragment
         navController = navHostFragment.navController
     }
 
@@ -50,6 +51,11 @@ class MonitoringFragment : Fragment() {
         binding.tvHistory.setOnClickListener {
             navController.navigate(R.id.historyFragment)
             toggleBackground(binding.tvHistory)
+        }
+
+        binding.tvInvesting.setOnClickListener {
+            navController.navigate(R.id.investingFragment)
+            toggleBackground(binding.tvInvesting)
         }
     }
 

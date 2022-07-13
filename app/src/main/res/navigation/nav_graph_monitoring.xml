@@ -15,4 +15,9 @@
         android:name="com.jwallet.jwallet.presentation.monitoring.statistics.StatisticsFragment"
         android:label="fragment_statistics"
         tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/investingFragment"
+        android:name="com.jwallet.jwallet.presentation.monitoring.investing.InvestingFragment"
+        android:label="fragment_investing"
+        tools:layout="@layout/fragment_investing" />
 </navigation>

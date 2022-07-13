@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1945443645083933" />
         <entry key="app/src/main/res/drawable/account_circle_48px.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/add_48px.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/calendar_month_48px.xml" value="0.29" />
@@ -30,7 +31,8 @@
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_monitoring.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_investing.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_monitoring.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_planner.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.38958333333333334" />
@@ -39,8 +41,9 @@
         <entry key="app/src/main/res/layout/item_category.xml" value="0.3885416666666667" />
         <entry key="app/src/main/res/layout/item_category_mini.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_statistic.xml" value="0.3885416666666667" />
+        <entry key="app/src/main/res/layout/item_stock.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/item_transaction.xml" value="0.33" />
-        <entry key="app/src/main/res/menu/menu_bottom_nav_main.xml" value="0.4005208333333333" />
+        <entry key="app/src/main/res/menu/menu_bottom_nav_main.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_toolbar_home.xml" value="0.3885416666666667" />
       </map>
     </option>
