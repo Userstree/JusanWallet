@@ -4,6 +4,7 @@ import com.example.jusanwallet.Controllers.Requests.RequestPeriod;
 import com.example.jusanwallet.Controllers.Responses.ResponseCategory;
 import com.example.jusanwallet.Controllers.Responses.ResponseMoney;
 import com.example.jusanwallet.Entities.Category;
+import com.example.jusanwallet.Entities.Transaction;
 import com.example.jusanwallet.Services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,16 @@ public class HomeController {
             result.add(responseCategory);
         }
         return result;
+    }
+    @GetMapping("/{clientID}/allspend")
+    public ResponseMoney getAllSpend(@PathVariable int clientID){
+        List<Transaction> transactions = transactionService.findAll();
+        double sum = 0;
+        double bonuses = 0;
+        for(Transaction transaction: transactions) {
+            sum += transaction.getMonetary();
+            bonuses += transaction.getBonus();
+        }
+        return new ResponseMoney(sum, bonuses);
     }
 }

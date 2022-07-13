@@ -1,6 +1,7 @@
 package com.example.jusanwallet.Controllers;
 
 import com.example.jusanwallet.Controllers.Requests.RequestCategory;
+import com.example.jusanwallet.Controllers.Requests.RequestCompany;
 import com.example.jusanwallet.Controllers.Requests.RequestCompanyType;
 import com.example.jusanwallet.Controllers.Requests.RequestTransaction;
 import com.example.jusanwallet.Entities.*;

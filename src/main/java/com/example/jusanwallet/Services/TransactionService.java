@@ -49,4 +49,8 @@ public class TransactionService {
         last++;
         transactionRepository.save(transaction);
     }
+    @Transactional
+    public List<Transaction> findAll() {
+        return transactionRepository.findAll();
+    }
 }

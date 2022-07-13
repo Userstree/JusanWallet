@@ -26,15 +26,6 @@ public class CompanyType {
     @ToString.Exclude
     @OneToMany(mappedBy = "companyType")
     private List<PlannedCompanyType> clients = new ArrayList<>();
-    public void addCompany(Company company) {
-        companies.add(company);
-        company.setCompanyType(this);
-    }
-
-    public void removeCompany(Company company) {
-        companies.remove(company);
-        company.setCompanyType(null);
-    }
 
     @Override
     public boolean equals(Object o) {

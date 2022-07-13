@@ -9,13 +9,13 @@ import lombok.Setter;
 @Setter
 @Data
 public class ResponseCompanyTypeMoney {
-    private String category;
+    private String companyType;
     private double sum;
     private double bonuses;
     private double possibleBonuses;
 
     public ResponseCompanyTypeMoney(CompanyType companyType, double sum, double bonuses) {
-        this.category = companyType.getName();
+        this.companyType = companyType.getName();
         this.sum = sum;
         this.bonuses = bonuses;
         this.possibleBonuses = sum * companyType.getPercent();

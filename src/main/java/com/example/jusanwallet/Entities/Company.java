@@ -23,16 +23,6 @@ public class Company {
     @ToString.Exclude
     private List<Transaction> transactions = new ArrayList<>();
 
-    public void addTransaction(Transaction transaction) {
-        transactions.add(transaction);
-        transaction.setCompany(this);
-    }
-
-    public void removeTransaction(Transaction transaction) {
-        transactions.remove(transaction);
-        transaction.setCompany(null);
-    }
-
     @Override
     public boolean equals(Object o) {
         return this == o;

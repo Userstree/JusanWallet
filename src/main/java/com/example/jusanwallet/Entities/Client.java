@@ -24,16 +24,6 @@ public class Client {
     @ToString.Exclude
     private List<PlannedCompanyType> CompanyTypes = new ArrayList<>();
 
-    public void addTransaction(Transaction transaction) {
-        transactions.add(transaction);
-        transaction.setClient(this);
-    }
-
-    public void removeTransaction(Transaction transaction) {
-        transactions.remove(transaction);
-        transaction.setClient(null);
-    }
-
     @Override
     public boolean equals(Object o) {
         return this == o;
