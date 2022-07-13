@@ -11,7 +11,7 @@
         android:orderInCategory="2"
         android:title="@string/history" />
     <item
-        android:id="@+id/item_add_transaction"
+        android:id="@+id/add_transaction_fragment"
         android:icon="@drawable/add_circle_48px"
         android:orderInCategory="3"
         android:title="@string/add" />

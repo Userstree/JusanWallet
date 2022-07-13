@@ -29,4 +29,5 @@
     <string name="notifications">Notifications</string>
     <string name="category_icon">category icon</string>
     <string name="monthly_budget">Monthly budget</string>
+    <string name="finish">Finish</string>
 </resources>

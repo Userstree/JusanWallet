@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.jwallet.jwallet.R
 import com.jwallet.jwallet.databinding.ActivityMainBinding
+import com.jwallet.jwallet.presentation.addtransaction.AddTransactionFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,5 +45,8 @@ class MainActivity : AppCompatActivity() {
         val menuView = binding.bnvMain.menuView as BottomNavigationMenuView
         val menuItem = menuView.getChildAt(2) as BottomNavigationItemView
         menuItem.setIconSize(48.dp)
+        menuItem.setOnClickListener {
+            AddTransactionFragment().show(supportFragmentManager, AddTransactionFragment.TAG)
+        }
     }
 }
