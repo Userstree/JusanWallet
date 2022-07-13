@@ -1,9 +1,23 @@
-.Home{
-    margin-left: 50px;
-    padding: 10px;
-    height: 100%;
-    overflow: auto;
+.Home {
+  margin-left: 50px;
+  padding: 10px;
+  height: 100%;
+  overflow: auto;
 }
-header{
-    color: black;
+header {
+  color: black;
+}
+
+.card {
+  padding: 3%;
+  width: 20%;
+}
+.active {
+  color: brown;
+}
+.category {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 0%;
+  padding: 2%;
 }

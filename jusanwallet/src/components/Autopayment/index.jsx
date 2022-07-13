@@ -7,11 +7,11 @@ import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fd6900',
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',
-  color: theme.palette.text.secondary,
+  color: '#fafafa',
 }));
 
 export function Autopayment() {
@@ -35,7 +35,7 @@ export function Autopayment() {
 </div>
         
         <Box sx={{ flexGrow: 2 }}>
-          <Grid
+          <Grid 
             container
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 2, sm: 5, md: 10 }}
