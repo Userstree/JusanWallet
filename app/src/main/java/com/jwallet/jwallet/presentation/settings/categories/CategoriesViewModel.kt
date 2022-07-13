@@ -19,12 +19,6 @@ class CategoriesViewModel : ViewModel() {
         return list
     }
 
-    fun <T> multiplyList(count: Int, l: List<T>): List<T> {
-        val list = mutableListOf<T>()
-        repeat(count) { list.addAll(l) }
-        return list
-    }
-
     fun getIncomeCategories(): List<Category> {
         val list = mutableListOf<Category>()
         list.add(Category("Salary", R.drawable.wallet_48px))

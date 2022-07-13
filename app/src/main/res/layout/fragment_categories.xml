@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_categories_expense"
-            app:spanCount="4"
+            app:spanCount="3"
             tools:layout_height="100dp" />
 
         <ImageView
@@ -78,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_categories_income"
-            app:spanCount="4"
+            app:spanCount="3"
             tools:layout_height="100dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

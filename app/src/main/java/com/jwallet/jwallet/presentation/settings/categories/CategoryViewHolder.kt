@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jwallet.jwallet.data.database.Category
-import com.jwallet.jwallet.databinding.ItemCategoryMiniBinding
+import com.jwallet.jwallet.databinding.ItemCategoryBinding
 
-class CategoryMiniViewHolder(val binding: ItemCategoryMiniBinding) :
+class CategoryViewHolder(val binding: ItemCategoryBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Category) {
@@ -15,10 +15,10 @@ class CategoryMiniViewHolder(val binding: ItemCategoryMiniBinding) :
     }
 
     companion object {
-        fun inflateFrom(parent: ViewGroup) : CategoryMiniViewHolder {
+        fun inflateFrom(parent: ViewGroup): CategoryViewHolder {
             val inflater = LayoutInflater.from(parent.context)
-            val binding = ItemCategoryMiniBinding.inflate(inflater, parent, false)
-            return CategoryMiniViewHolder(binding)
+            val binding = ItemCategoryBinding.inflate(inflater, parent, false)
+            return CategoryViewHolder(binding)
         }
     }
 }

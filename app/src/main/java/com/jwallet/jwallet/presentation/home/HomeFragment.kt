@@ -19,7 +19,6 @@ class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by viewModels()
 
-    private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var menuHost: MenuHost
     private lateinit var menuProvider: MenuProvider
@@ -29,29 +28,15 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        setupCategoriesRecyclerView()
         setupTransactionsRecyclerView()
-        setupLayout()
         setupToolbarMenu()
         return binding.root
-    }
-
-    private fun setupCategoriesRecyclerView() {
-        categoryAdapter = CategoryAdapter()
-        categoryAdapter.submitList(viewModel.getCategoriesList())
-        binding.rvCategories.adapter = categoryAdapter
     }
 
     private fun setupTransactionsRecyclerView() {
         transactionAdapter = TransactionAdapter()
         transactionAdapter.submitList(viewModel.getTransactionsList())
         binding.rvTransactions.adapter = transactionAdapter
-    }
-
-    private fun setupLayout() {
-        binding.ibtnAddCategory.setOnClickListener {
-            displayToast("Add category button clicked!")
-        }
     }
 
     private fun setupToolbarMenu() {
@@ -71,7 +56,6 @@ class HomeFragment : Fragment() {
             }
             return true
         }
-
     }
 
     private fun onProfileClick() {

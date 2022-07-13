@@ -1,4 +1,4 @@
-package com.jwallet.jwallet.presentation.home
+package com.jwallet.jwallet.presentation.settings.categories
 
 import androidx.recyclerview.widget.DiffUtil
 import com.jwallet.jwallet.data.database.Category

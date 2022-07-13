@@ -15,8 +15,8 @@ class CategoriesFragment : Fragment() {
 
     private val viewModel: CategoriesViewModel by viewModels()
 
-    private lateinit var expenseCategoriesAdapter: CategoryMiniAdapter
-    private lateinit var incomeCategoriesAdapter: CategoryMiniAdapter
+    private lateinit var expenseCategoriesAdapter: CategoryAdapter
+    private lateinit var incomeCategoriesAdapter: CategoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,16 +33,14 @@ class CategoriesFragment : Fragment() {
     }
 
     private fun setupExpenseRecyclerView() {
-        val list = viewModel.multiplyList(5, viewModel.getExpenseCategories())
-        expenseCategoriesAdapter = CategoryMiniAdapter()
-        expenseCategoriesAdapter.submitList(list)
+        expenseCategoriesAdapter = CategoryAdapter()
+        expenseCategoriesAdapter.submitList(viewModel.getExpenseCategories())
         binding.rvExpenseCategories.adapter = expenseCategoriesAdapter
     }
 
     private fun setupIncomeRecyclerView() {
-        val list = viewModel.multiplyList(5, viewModel.getIncomeCategories())
-        incomeCategoriesAdapter = CategoryMiniAdapter()
-        incomeCategoriesAdapter.submitList(list)
+        incomeCategoriesAdapter = CategoryAdapter()
+        incomeCategoriesAdapter.submitList(viewModel.getIncomeCategories())
         binding.rvIncomeCategories.adapter = incomeCategoriesAdapter
     }
 
