@@ -7,11 +7,6 @@ import com.jwallet.jwallet.data.database.Transaction
 class HomeViewModel : ViewModel() {
 
     private var counterT = 0L
-    private var counterC = 0L
-
-    fun getTransaction() : Transaction {
-        return Transaction(counterT, "", "Coffee Boom", "Cafe", 12.10, "")
-    }
 
     fun getTransactionsList(): List<Transaction> {
         val list = mutableListOf<Transaction>()
