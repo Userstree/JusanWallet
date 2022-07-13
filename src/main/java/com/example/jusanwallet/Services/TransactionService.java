@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class TransactionService {
     private final TransactionRepository transactionRepository;
+    private int last = 2;
 
     public TransactionService(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
@@ -41,5 +42,11 @@ public class TransactionService {
     @Transactional
     public ResponseMoney sumByCategoryByPeriod(int clientID, int id, Date from, Date to) {
         return sum(transactionRepository.findAllByClient_IdAndCategory_IdAndDateBetween(clientID, id, from, to));
+    }
+    @Transactional
+    public void save(Transaction transaction) {
+        transaction.setId(last);
+        last++;
+        transactionRepository.save(transaction);
     }
 }

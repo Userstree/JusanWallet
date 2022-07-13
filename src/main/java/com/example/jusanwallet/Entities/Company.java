@@ -14,7 +14,6 @@ import java.util.List;
 @ToString
 public class Company {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     @ManyToOne

@@ -14,7 +14,6 @@ import java.util.Date;
 @ToString
 public class Transaction {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     @Column(name = "monetary", nullable = false)
     private double monetary;

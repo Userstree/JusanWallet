@@ -17,7 +17,6 @@ import java.util.List;
 @ToString
 public class CompanyType {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private double percent;
