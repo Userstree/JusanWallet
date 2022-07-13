@@ -1,9 +1,8 @@
 package com.jwallet.jwallet.presentation.main
 
-import android.nfc.Tag
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +13,7 @@ import com.jwallet.jwallet.R
 import com.jwallet.jwallet.data.database.Transaction
 import com.jwallet.jwallet.databinding.ActivityMainBinding
 import com.jwallet.jwallet.presentation.addtransaction.AddTransactionFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private val viewModel: MainViewModel by viewModel()
 
     private val TAG = javaClass.simpleName
 
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.mtbMain)
         setupNavigation()
         setupBottomNav()
+        viewModel
     }
 
     private fun setupNavigation() {
@@ -52,10 +55,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addTransaction() {
-        AddTransactionFragment(::getTransaction).show(supportFragmentManager, AddTransactionFragment.TAG)
+        AddTransactionFragment(::getTransaction).show(
+            supportFragmentManager,
+            AddTransactionFragment.TAG
+        )
     }
 
     private fun getTransaction(transaction: Transaction) {
-        Log.e(TAG, transaction.title)
+        Log.e(TAG, transaction.toString())
+        viewModel.addTransaction(transaction)
     }
 }

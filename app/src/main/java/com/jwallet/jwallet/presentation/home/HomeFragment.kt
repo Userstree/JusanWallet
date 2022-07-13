@@ -11,13 +11,14 @@ import androidx.fragment.app.viewModels
 import com.jwallet.jwallet.R
 import com.jwallet.jwallet.databinding.FragmentHomeBinding
 import com.jwallet.jwallet.presentation.settings.SettingsActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModel()
 
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var menuHost: MenuHost
@@ -29,14 +30,20 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         setupTransactionsRecyclerView()
+        setupObservers()
         setupToolbarMenu()
         return binding.root
     }
 
     private fun setupTransactionsRecyclerView() {
         transactionAdapter = TransactionAdapter()
-        transactionAdapter.submitList(viewModel.getTransactionsList())
         binding.rvTransactions.adapter = transactionAdapter
+    }
+
+    private fun setupObservers() {
+        viewModel.transaction.observe(viewLifecycleOwner) {
+            transactionAdapter.submitList(it)
+        }
     }
 
     private fun setupToolbarMenu() {

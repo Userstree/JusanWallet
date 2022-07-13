@@ -6,12 +6,13 @@ import java.util.*
 
 @Entity(tableName = "transaction_table")
 data class Transaction(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+    @PrimaryKey
+    val id: String = UUID.randomUUID().toString(),
     val category: String,
     val title: String,
     val note: String,
     val price: Double,
     val date: Date,
+    val categoryType: String,
     val recurring: Boolean
 )

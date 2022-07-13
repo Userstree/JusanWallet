@@ -5,13 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jwallet.jwallet.databinding.ItemTransactionBinding
 import com.jwallet.jwallet.data.database.Transaction
+import com.jwallet.jwallet.data.repositories.TransactionRepository
 
 class TransactionViewHolder(val binding: ItemTransactionBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Transaction) {
+        val sign = if (item.categoryType == TransactionRepository.EXPENSE) "-" else ""
+
         binding.tvTransactionTitle.text = item.title
-        binding.tvTransactionMessage.text = item.note
-        binding.tvTransactionPrice.text = "-$${item.price}"
+        binding.tvTransactionMessage.text = item.category
+        binding.tvTransactionPrice.text = "$sign${item.price}"
         binding.tvTransactionDate.text = "1:30 PM"
     }
 

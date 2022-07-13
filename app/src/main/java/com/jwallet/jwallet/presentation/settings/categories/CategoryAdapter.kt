@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jwallet.jwallet.data.database.Category
 
-class CategoryAdapter :
+class CategoryAdapter() :
     ListAdapter<Category, RecyclerView.ViewHolder>(CategoryDiffUtilItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
