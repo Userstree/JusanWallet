@@ -5,5 +5,4 @@
 import Foundation
 
 protocol PlannerViewModel {
-
 }

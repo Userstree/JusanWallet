@@ -173,6 +173,11 @@ extension ExpensesStatisticsChildViewController: UICollectionViewDelegateFlowLay
     }
 }
 
+extension ExpensesStatisticsChildViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+}
+
 extension ExpensesStatisticsChildViewController: UITableViewDataSource, CategoriesTableItemsService {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -194,10 +199,5 @@ extension ExpensesStatisticsChildViewController: UITableViewDataSource, Categori
 extension ExpensesStatisticsChildViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension ExpensesStatisticsChildViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }

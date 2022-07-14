@@ -6,34 +6,42 @@ import UIKit
 import Charts
 import SnapKit
 
-final class IncomeStatisticsChildViewController: UIViewController {
+final class IncomeStatisticsChildViewController: UIViewController, RandomColorsMakeable {
     var viewModel: AnalyticsViewModel!
+    private let categories = ["Income", "Expenses"]
+    private lazy var rawData: [Double] = (0..<categories.count).map { _ -> Double in
+        .random(in: 1000..<2340)
+    }
+    private lazy var barChartView: BarChartView = {
+        let chart = BarChartView(frame: .zero)
+        chart.drawValueAboveBarEnabled = true
+        chart.legend.enabled = false
+        chart.drawValueAboveBarEnabled = true
 
-    private lazy var pieChartView: PieChartView = {
-        let chart = PieChartView(frame: .zero)
-        chart.drawEntryLabelsEnabled = false
-        chart.rotationEnabled = false
-        chart.holeRadiusPercent = 0.65
-
-        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.center
-
-        let totalSpendingAttribures = [NSAttributedString.Key.foregroundColor: UIColor.onSurface,
-                                       NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
-                                       NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ]
-        var totalSpendingCenterText = NSMutableAttributedString(string: "Total Spending", attributes: totalSpendingAttribures)
-
-        let amountAttribures = [NSAttributedString.Key.foregroundColor: UIColor.onSurface,
-                                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24),
-                                NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ]
-        var amountCenterText = NSAttributedString(string: " \(Int.random(in: 1001 ..< 2234))", attributes: amountAttribures)
-        totalSpendingCenterText.append(amountCenterText)
-        chart.centerAttributedText = totalSpendingCenterText
-        chart.holeColor = .clear
+        let formato:BarChartFormatter = BarChartFormatter()
+        let xaxis:XAxis = XAxis()
+        chart.xAxis.valueFormatter = xaxis.valueFormatter
+        xaxis.valueFormatter = formato
+        chart.xAxis.axisLineWidth = 4
+        chart.xAxis.axisRange = 1312
         return chart
     }()
+
+    @objc(BarChartFormatter)
+    public class BarChartFormatter: NSObject, AxisValueFormatter
+    {
+        var names = [String]()
+
+        public func stringForValue(_ value: Double, axis: AxisBase?) -> String
+        {
+            names[Int(value)]
+        }
+
+        public func setValues(values: [String])
+        {
+            names = values
+        }
+    }
 
     lazy var cotegoryTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -54,24 +62,47 @@ final class IncomeStatisticsChildViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
+        configureViews()
+        setDataForChart(
+                dataPoints: categories,
+                values: rawData
+        )
+    }
+
+    private func setDataForChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(x: rawData[i], y: rawData[i])
+            dataEntries.append(dataEntry)
+        }
+
+        let barChartDataSet = BarChartDataSet(entries: dataEntries, label: "")
+        barChartDataSet.colors = colorsOfCharts(numberOfColors: dataPoints.count)
+
+        let barChartData = BarChartData(dataSet: barChartDataSet)
+        let format = NumberFormatter()
+        format.numberStyle = .none
+        let formatter = DefaultValueFormatter(formatter: format)
+        barChartData.setValueFormatter(formatter)
+        barChartView.data = barChartData
     }
 
     private func configureViews() {
-        [pieChartView,
+        [barChartView,
          cotegoryTable,
         ].forEach(view.addSubview)
         makeConstraints()
     }
 
     private func makeConstraints() {
-        pieChartView.snp.makeConstraints {
+        barChartView.snp.makeConstraints {
             $0.top.equalTo(view.snp.top).offset(8)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.height.equalTo(324)
         }
         cotegoryTable.snp.makeConstraints {
-            $0.top.equalTo(pieChartView.snp.bottom)
+            $0.top.equalTo(barChartView.snp.bottom)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
@@ -112,18 +143,18 @@ extension IncomeStatisticsChildViewController: UICollectionViewDelegateFlowLayou
     }
 }
 
-extension IncomeStatisticsChildViewController: UITableViewDataSource, CategoriesTableItemsService {
+extension IncomeStatisticsChildViewController: UITableViewDataSource, IncomesTableItemsService {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        categoryItems.count
+        incomeItems.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoryItemTableViewCell.self), for: indexPath) as! CategoryItemTableViewCell
-        cell.configure(with: categoryItems[indexPath.section])
+        cell.configure(with: incomeItems[indexPath.section])
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         return cell

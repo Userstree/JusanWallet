@@ -9,7 +9,7 @@ final class InvestmentStatisticsChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = .background
     }
 
     init(viewModel: AnalyticsViewModel) {

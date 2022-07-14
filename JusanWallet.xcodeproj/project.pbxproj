@@ -57,9 +57,11 @@
 		F884326512B6D4FED341AF7B /* CenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843C92781A8D56297BBB2A /* CenterFlowLayout.swift */; };
 		F884330EB5E58235C9581629 /* MonthsCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843072FDED9043207E96C3 /* MonthsCollectionDelegate.swift */; };
 		F884345A480D7B1E69377E2F /* TransferStatisticsChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843F09B5C3AEB57E31568D /* TransferStatisticsChildViewController.swift */; };
+		F88434A4D93CE91FD7FB2C3C /* IncomesTableItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88439749E4E0808A79262E9 /* IncomesTableItemsService.swift */; };
 		F8843512BC9FF79BDC0A3D88 /* PlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88436DF2E512EEBF166A169 /* PlannerViewModel.swift */; };
 		F884362339DA8B07EC6A4DD9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88434BE018C3C3423CDAD5F /* UIColor.swift */; };
 		F884369375D57DBD1E8DEB35 /* CompaniesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843A096FEDB6D6D6DE8CD2 /* CompaniesCollectionCell.swift */; };
+		F88438055D7C61D4F621EF94 /* GoalsTableItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843BBBF7544E2E1C694CF1 /* GoalsTableItemsService.swift */; };
 		F884392B8AD62F5350C511C6 /* DynamicAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843E1DB7F8C33E44737CF3 /* DynamicAsync.swift */; };
 		F884398C36D80ABBF178354B /* RandomColorsMakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8843691382F3A48FA8FFCFD /* RandomColorsMakeable.swift */; };
 		F88439EA69FF96D322C334D9 /* TouchesPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88432BDBA9A8ECFD638D1BE /* TouchesPassView.swift */; };
@@ -144,7 +146,9 @@
 		F884384BCA772827C81CE2F1 /* PaymentsViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewModelImpl.swift; sourceTree = "<group>"; };
 		F884386744479809386EE143 /* InvestmentStatisticsChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentStatisticsChildViewController.swift; sourceTree = "<group>"; };
 		F8843922197A1484745C263C /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		F88439749E4E0808A79262E9 /* IncomesTableItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomesTableItemsService.swift; sourceTree = "<group>"; };
 		F8843A096FEDB6D6D6DE8CD2 /* CompaniesCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesCollectionCell.swift; sourceTree = "<group>"; };
+		F8843BBBF7544E2E1C694CF1 /* GoalsTableItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableItemsService.swift; sourceTree = "<group>"; };
 		F8843C0E616E0970CD8D578F /* BalanceStatisticsServiceProvidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceStatisticsServiceProvidable.swift; sourceTree = "<group>"; };
 		F8843C733BBA57138A91346A /* CatalogTableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogTableItem.swift; sourceTree = "<group>"; };
 		F8843C7C88554FCAFAF7D441 /* PlannerViewModelmpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewModelmpl.swift; sourceTree = "<group>"; };
@@ -452,6 +456,7 @@
 				615B492608F63E0A4A7DFB25 /* HomeParentViewController.swift */,
 				615B45BEE2647A21D994493B /* ChildViews */,
 				615B47E05D5EC9742EBA3486 /* HomeViewModelImpl.swift */,
+				F884354BB198AA1CCBC2D777 /* Models */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -532,6 +537,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F88431E1279A4D997F11425E /* SystemModels */ = {
+			isa = PBXGroup;
+			children = (
+				F8843BBBF7544E2E1C694CF1 /* GoalsTableItemsService.swift */,
+			);
+			path = SystemModels;
+			sourceTree = "<group>";
+		};
 		F884324B9CF4EE2CC30FBB5C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +562,14 @@
 				F8843A096FEDB6D6D6DE8CD2 /* CompaniesCollectionCell.swift */,
 			);
 			path = CompaniesCollection;
+			sourceTree = "<group>";
+		};
+		F88432AB546240DACF4CE2C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8843D48F74E4E37D22D623E /* SystemModels */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F8843398C6D4E053F1846DEA /* Models */ = {
@@ -583,6 +604,14 @@
 				F88435588BA0D41606093C2B /* TimeCollectionViewModel.swift */,
 			);
 			path = CollectionViewModel;
+			sourceTree = "<group>";
+		};
+		F884354BB198AA1CCBC2D777 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F88431E1279A4D997F11425E /* SystemModels */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F884356A8FE0DD0346D5DA5E /* MonthsHCollection */ = {
@@ -666,6 +695,14 @@
 			path = Dynamics;
 			sourceTree = "<group>";
 		};
+		F8843D48F74E4E37D22D623E /* SystemModels */ = {
+			isa = PBXGroup;
+			children = (
+				F88439749E4E0808A79262E9 /* IncomesTableItemsService.swift */,
+			);
+			path = SystemModels;
+			sourceTree = "<group>";
+		};
 		F8843DD5E0ED913E5E5133C1 /* IncomeStatisticsChildView */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +732,7 @@
 			isa = PBXGroup;
 			children = (
 				F884386744479809386EE143 /* InvestmentStatisticsChildViewController.swift */,
+				F88432AB546240DACF4CE2C3 /* Models */,
 			);
 			path = InvestmentStatisticsChildView;
 			sourceTree = "<group>";
@@ -881,6 +919,8 @@
 				F884398C36D80ABBF178354B /* RandomColorsMakeable.swift in Sources */,
 				F884323BE52BA4A17CCC6346 /* CategoryItemTableViewCell.swift in Sources */,
 				F8843C1FF222827AA054127B /* CategoriesTableItemsService.swift in Sources */,
+				F88438055D7C61D4F621EF94 /* GoalsTableItemsService.swift in Sources */,
+				F88434A4D93CE91FD7FB2C3C /* IncomesTableItemsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

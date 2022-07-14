@@ -4,4 +4,5 @@
 
 import Foundation
 
-class PlannerViewModelImpl: PlannerViewModel {  }
+class PlannerViewModelImpl: PlannerViewModel {
+}
