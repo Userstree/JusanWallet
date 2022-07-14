@@ -27,7 +27,7 @@ class MockCatalogService: CatalogService {
         UIImage(systemName: "bag"),
         UIImage(systemName: "chart.line.uptrend.xyaxis"),
         UIImage(systemName: "bolt.shield"),
-        UIImage(systemName: "phone.connection"),
+        UIImage(systemName: "creditcard"),
         UIImage(systemName: "hare"),
         UIImage(systemName: "dots.and.line.vertical.and.cursorarrow.rectangle"),
     ]
@@ -36,7 +36,7 @@ class MockCatalogService: CatalogService {
         "Магазин",
         "Jusan Invest",
         "Страхование",
-        "Jusan Mobile",
+        "Мой Банк",
         "Jusan Junior",
         "Остальные"
     ]

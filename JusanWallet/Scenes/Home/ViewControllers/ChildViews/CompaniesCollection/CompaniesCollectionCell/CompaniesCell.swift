@@ -35,7 +35,7 @@ class CompaniesCell: UICollectionViewCell {
 
     private lazy var bonustLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .green
+        label.textColor = .systemGreen
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.lineBreakMode = .byClipping
         return label

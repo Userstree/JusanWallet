@@ -18,6 +18,7 @@ class BalanceCardViewController: UIViewController {
         let label = UILabel()
         label.textColor = .onSurface
         label.text = "\(3244)"
+        label.allowsDefaultTighteningForTruncation = true
         label.setContentHuggingPriority(.defaultHigh + 10, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         return label
@@ -118,9 +119,9 @@ class BalanceCardViewController: UIViewController {
         currencyLabel.snp.makeConstraints {
             $0.width.equalTo(40)
         }
-//        totalBalanceNumericLabel.snp.makeConstraints {
-//            $0.width.equalTo(55)
-//        }
+        totalBalanceNumericLabel.snp.makeConstraints {
+            $0.width.equalTo(55)
+        }
     }
 
     init(frame: CGRect, dataSource: BalanceStatisticsServiceProvidable) {
