@@ -12,36 +12,19 @@ final class IncomeStatisticsChildViewController: UIViewController, RandomColorsM
     private lazy var rawData: [Double] = (0..<categories.count).map { _ -> Double in
         .random(in: 1000..<2340)
     }
-    private lazy var barChartView: BarChartView = {
-        let chart = BarChartView(frame: .zero)
-        chart.drawValueAboveBarEnabled = true
+    private lazy var pieChartView: PieChartView = {
+        let chart = PieChartView(frame: .zero)
         chart.legend.enabled = false
-        chart.drawValueAboveBarEnabled = true
+        chart.rotationEnabled = false
+        chart.drawHoleEnabled = false
+        chart.holeRadiusPercent = 0.65
+        chart.usePercentValuesEnabled = false
+        chart.tintColor = .red
 
-        let formato:BarChartFormatter = BarChartFormatter()
-        let xaxis:XAxis = XAxis()
-        chart.xAxis.valueFormatter = xaxis.valueFormatter
-        xaxis.valueFormatter = formato
-        chart.xAxis.axisLineWidth = 4
-        chart.xAxis.axisRange = 1312
+        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        chart.holeColor = .clear
         return chart
     }()
-
-    @objc(BarChartFormatter)
-    public class BarChartFormatter: NSObject, AxisValueFormatter
-    {
-        var names = [String]()
-
-        public func stringForValue(_ value: Double, axis: AxisBase?) -> String
-        {
-            names[Int(value)]
-        }
-
-        public func setValues(values: [String])
-        {
-            names = values
-        }
-    }
 
     lazy var cotegoryTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -72,37 +55,38 @@ final class IncomeStatisticsChildViewController: UIViewController, RandomColorsM
     private func setDataForChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: rawData[i], y: rawData[i])
+            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
             dataEntries.append(dataEntry)
         }
 
-        let barChartDataSet = BarChartDataSet(entries: dataEntries, label: "")
-        barChartDataSet.colors = colorsOfCharts(numberOfColors: dataPoints.count)
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "")
+        pieChartDataSet.sliceSpace = 4
+        pieChartDataSet.colors = colorsOfCharts(numberOfColors: dataPoints.count)
 
-        let barChartData = BarChartData(dataSet: barChartDataSet)
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
         format.numberStyle = .none
         let formatter = DefaultValueFormatter(formatter: format)
-        barChartData.setValueFormatter(formatter)
-        barChartView.data = barChartData
+        pieChartData.setValueFormatter(formatter)
+        pieChartView.data = pieChartData
     }
 
     private func configureViews() {
-        [barChartView,
+        [pieChartView,
          cotegoryTable,
         ].forEach(view.addSubview)
         makeConstraints()
     }
 
     private func makeConstraints() {
-        barChartView.snp.makeConstraints {
+        pieChartView.snp.makeConstraints {
             $0.top.equalTo(view.snp.top).offset(8)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.height.equalTo(324)
         }
         cotegoryTable.snp.makeConstraints {
-            $0.top.equalTo(barChartView.snp.bottom)
+            $0.top.equalTo(pieChartView.snp.bottom)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
